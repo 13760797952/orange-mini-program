@@ -1,0 +1,66 @@
+@import "../../templates/address-overview/address-overview.wxss";
+
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+}
+
+.main-view {
+    flex-grow: 1;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+
+.address-item-wrap {
+    border-bottom: 1rpx solid #eee;
+    background-color: #fff;
+    transition: background-color .2s ease;
+}
+
+.address-item-hover {
+    background-color: #f4f4f4;
+}
+
+.address-item-content {
+    width: 100%;
+}
+
+.address-item-expand {
+    width: 340rpx;
+    display: flex;
+}
+
+.address-item-expand>view {
+    flex: 1;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50rpx;
+    white-space: nowrap;
+}
+
+.address-item-expand>._set {
+    font-size: 26rpx;
+    flex: 1.2;
+    background-color: #ddd;
+}
+
+.address-item-expand>._remove {
+    background-color: #cc353c;
+}
+
+.common-bottom-btns>._wechat {
+    color: #09BB07;
+    border-color: #09BB07;
+}
+
+.edit-view {
+    background-color: #fff;
+}

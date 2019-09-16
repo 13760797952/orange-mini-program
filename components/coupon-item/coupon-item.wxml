@@ -1,0 +1,24 @@
+<view class="_coupon-item {{data.isDiscount?'_discount':''}}">
+    <view class="_coupon-item-content {{expand?'':'_collapse'}}">
+        <view bindtap="itemTap" class="_top">
+            <view class="_left">
+                <text class="_flag" wx:if="{{data.flag}}">{{data.flag}}</text>
+                <view class="_info">
+                    <view class="_face-value">{{data.faceValue}}<samll>{{data.faceUnit}}</samll>
+                    </view>
+                    <view class="_middle">
+                        <text class="_title">{{data.title}}</text>
+                        <text class="_deadline">{{data.deadline}}</text>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="itemBtnTap" class="_button">{{btnText}}</view>
+        </view>
+        <view catchtap="itemToggle" class="_bottom" wx:if="{{data.detail}}">
+            <view class="_detail">{{data.detail}}</view>
+            <view class="_expand-icon">
+                <i class="iconfont icon-next"></i>
+            </view>
+        </view>
+    </view>
+</view>

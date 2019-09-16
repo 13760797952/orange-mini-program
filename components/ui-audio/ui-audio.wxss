@@ -1,0 +1,57 @@
+._ui-audio-wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+._ui-audio {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+._ui-audio ._title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 10rpx;
+}
+
+._ui-audio>i,._ui-audio loading-icon {
+    font-size: 1.4em;
+    line-height: 1em;
+    height: 1em;
+    margin-right: 20rpx;
+}
+
+._ui-audio-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+._ui-audio-progress ._railway,._ui-audio-progress ._car {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+._ui-audio-progress ._railway {
+    background-color: rgba(0,0,0,.04);
+}
+
+._ui-audio-progress ._car {
+    background-color: rgba(0,0,0,.06);
+    transition: transform .2s linear;
+    transform: scaleX(0) translateZ(0);
+    transform-origin: left;
+}

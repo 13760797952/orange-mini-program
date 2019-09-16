@@ -1,0 +1,35 @@
+<view class="container" hidden="{{loadingShow}}" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-top">
+        <view class="box-bg" style="background: #fff;"></view>
+        <view class="box-user">
+            <view class="box-img">
+                <image src="{{user.avatar}}"></image>
+            </view>
+            <view class="box-user-name">{{user.nicename}}</view>
+        </view>
+    </view>
+    <view class="entrance-section">
+        <view bindtap="targetActionRun" data-action=">favorites" hoverClass="entrance-hover" wx:if="{{listData.status_good==='1'}}">
+            <i class="iconfont icon-favorite"></i>商品收藏</view>
+        <view bindtap="targetActionRun" data-action="/pages/ucenter/fav/fav" hoverClass="entrance-hover" wx:if="{{listData.status_pic==='1'}}">
+            <i class="iconfont icon-favorite"></i>图片收藏</view>
+        <view bindtap="targetActionRun" data-action="/pages/ucenter/district/district" hoverClass="entrance-hover" wx:if="{{listData.status_site==='1'}}">
+            <i class="iconfont icon-favorite"></i>工地收藏</view>
+        <view bindtap="targetActionRun" data-action="/pages/ucenter/product/product" hoverClass="entrance-hover" wx:if="{{listData.status_product==='1'}}">
+            <i class="iconfont icon-favorite"></i>产品收藏</view>
+        <view bindtap="targetActionRun" data-action="/pages/ucenter/panorama/panorama" hoverClass="entrance-hover" wx:if="{{listData.status_panorama==='1'}}">
+            <i class="iconfont icon-favorite"></i>全景图收藏</view>
+        <text class="space-line"></text>
+        <view bindtap="targetActionRun" data-action=">orders" hoverClass="entrance-hover" wx:if="{{listData.status_order==='1'}}">
+            <i class="iconfont icon-order"></i>我的订单</view>
+        <view bindtap="targetActionRun" data-action=">address" hoverClass="entrance-hover" wx:if="{{listData.status_address==='1'}}">
+            <i class="iconfont icon-marker"></i>我的地址</view>
+        <view bindtap="targetActionRun" data-action=">coupons" hoverClass="entrance-hover" wx:if="{{listData.status_coupon==='1'}}">
+            <i class="iconfont icon-coupon"></i>我的优惠券</view>
+        <view bindtap="targetActionRun" data-action="/pages/ucenter/relist/relist" hoverClass="entrance-hover" wx:if="{{listData.status_reserve==='1'}}">
+            <i class="iconfont icon-reserve"></i>我的预约</view>
+        <view bindtap="targetActionRun" data-action=":callPresetPhone" hoverClass="entrance-hover" wx:if="{{listData.status_consult==='1'}}">
+            <i class="iconfont icon-service"></i>联系客服</view>
+        <text bindtap="clearStorage" class="clear">清除缓存</text>
+    </view>
+</view>

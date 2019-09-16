@@ -1,0 +1,39 @@
+@import "../../wuBaseWxss/0.wxss";
+
+._ui-checkbox-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+._ui-checkbox {
+    font-size: 40rpx;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0.05em solid #eee;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    transition: color .2s ease-out,background-color .2s ease;
+}
+
+._ui-checkbox._checked {
+    border-color: transparent;
+    background-color: #666;
+    color: #fff;
+}
+
+._ui-checkbox:before {
+    margin-top: .1em;
+    font-size: .6em;
+    content: "\e605";
+    font-family: "iconfont";
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

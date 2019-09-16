@@ -1,0 +1,268 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAVAAAsAAAAAB7QAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8zkhpY21hcAAAAYAAAABdAAABlM4jNQZnbHlmAAAB4AAAAUYAAAFou3aPdmhlYWQAAAMoAAAAMQAAADYTMD/taGhlYQAAA1wAAAAgAAAAJAfaA39obXR4AAADfAAAABAAAAAQEAD/9WxvY2EAAAOMAAAACgAAAAoBDABwbWF4cAAAA5gAAAAeAAAAIAESADxuYW1lAAADuAAAAUUAAAJtPlT+fXBvc3QAAAUAAAAAPwAAAFhTbhXDeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByesTwrZW7438AQw9zEcAUozAiSAwDpMgyyeJztkNENgDAIRB+lNcY4ivHLafxyia7MGhWoY3jJ48KR8HFAA9Q5nAryIIRuTyVzZcu8cvq+uAvFmvUxwOp0l/htTS/xURZ+7Tmvb9PoaxLdWpt4X1ifoC+XthEeAAAAeJw1jj9Lw2AQh++X921KEYP0TxKNtU00aYeS0lhaEGylqeCgHyBd1A8hOghqZy2ODnaog7gJVadApZO7SAVXP4ObpCaox3E893A/OOJE0xI7YjrNkELLVCaKWVRooL4ERSQmIS6TUqO6DWbjz0uIfAjhagPfSvCo8sngZsLVkM59noGRzkDPMP/C9QTBc9se4LUrLaBVcaL5lsbDcDDhYWwY7LB7Nur1g5NkEmf93ihYCyNuB+i4rgfpP+NUWgQKS/CFDxKJEognoEDwg1sNjWCsYQOn6GjBOOJmdIrp13Sfi6xLFpFpIy5FXbBq9fD3mlUIjSVGUkwqMv+V7MqtyophCN27Q+Rkk3PVMfKyulkw82y2/fSCy11zlYnF55IaE7JOKnPdPV5M6frc9pajAVpuYX2lHHy+vx40s3vF+SrRD/+dTv4AAHicY2BkYGAA4o9zv3rF89t8ZeBmYQCBG1z/FGH0/6//dVjYmJuAXA4GJpAoAF+ODDgAAAB4nGNgZGBgbvjfwBDDwvD/6/9fLGwMQBEUwAIAn9MGYAQAAAAEAAAABAAAAAQA//UAAAAAAFgAcAC0AAB4nGNgZGBgYGEwAGIQYAJiLiBkYPgP5jMAAA3CAU8AAHicZY9NTsMwEIVf+gekEqqoYIfkBWIBKP0Rq25YVGr3XXTfpk6bKokjx63UA3AejsAJOALcgDvwSCebNpbH37x5Y08A3OAHHo7fLfeRPVwyO3INF7gXrlN/EG6QX4SbaONVuEX9TdjHM6bCbXRheYPXuGL2hHdhDx18CNdwjU/hOvUv4Qb5W7iJO/wKt9Dx6sI+5l5XuI1HL/bHVi+cXqnlQcWhySKTOb+CmV7vkoWt0uqca1vEJlODoF9JU51pW91T7NdD5yIVWZOqCas6SYzKrdnq0AUb5/JRrxeJHoQm5Vhj/rbGAo5xBYUlDowxQhhkiMro6DtVZvSvsUPCXntWPc3ndFsU1P9zhQEC9M9cU7qy0nk6T4E9XxtSdXQrbsuelDSRXs1JErJCXta2VELqATZlV44RelzRiT8oZ0j/AAlabsgAAAB4nGNgYoAALgbsgIWRiZGZkYWRlYE9MSWlKLW4WLIyv7Q4MS8rMzFfNzm/oBJBcBRk5Oel5qWWMzAAAIuQEI8A') format('woff');
+}
+
+.iconfont {
+    font-family: "iconfont"!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-address:before {
+    content: "\e604";
+}
+
+.icon-yousanjiao-copy-copy-copy:before {
+    content: "\e605";
+    font-weight: 700;
+    color: #666;
+}
+
+.icon-phonenew:before {
+    content: "\e675";
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.content-box {
+    padding: 0 10px;
+}
+
+.swiper .item {
+    height: 150px;
+}
+
+.swiper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.swiper .count {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 10;
+    color: #fff;
+    font-size: 13px;
+}
+
+.company-main .logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 28px;
+    margin-right: 15px;
+}
+
+.company-main .title {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.company-main .rz {
+    font-size: 10px;
+    color: darkorange;
+    display: inline-block;
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    position: relative;
+    padding: 0 5px 0 17px;
+    margin-left: 5px;
+}
+
+.company-main .rz .v {
+    height: 14px;
+    display: inline-block;
+    width: 14px;
+    background: darkorange;
+    text-align: center;
+    line-height: 10px;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+}
+
+.company-main .anli {
+    font-size: 11px;
+}
+
+.company-main .anli text {
+    margin-right: 5px;
+}
+
+.company-main .add {
+    padding: 10px 15px 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.company-main .add .icon-address {
+    color: #555;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.company-main .add .icon-phonenew {
+    color: lawn#2fbd80;
+}
+
+.company-main .tsfw {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.company-main .tsfw view {
+    font-size: 13px;
+}
+
+.company-main .tsfw text {
+    color: #000;
+    font-size: 13px;
+}
+
+.company-item {
+    margin-bottom: 20px;
+}
+
+.company-item .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.company-item .title .more {
+    font-size: 12px;
+    color: #666;
+}
+
+.company-item .title text:last-child {
+    color: #888;
+    font-size: 12px;
+}
+
+.company-item .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.company-item.a .item {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.company-item.a .item .tit {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.company-item.a .item:nth-child(2n) {
+    margin-left: 4%;
+}
+
+.company-item.a image {
+    width: 100%;
+    height: 30vw;
+}
+
+.company-item.a .info {
+    font-size: 12px;
+    color: #888;
+}
+
+.company-item.b .item {
+    width: 25%;
+    box-sizing: border-box;
+    padding-right: 23px;
+    text-align: center;
+}
+
+.company-item.b .item:nth-child(4n) {
+    padding-right: 0;
+}
+
+.company-item.b .item image {
+    width: 16vw;
+    height: 16vw;
+    border-radius: 50%;
+}
+
+.company-item.b .item .zw {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.company-item.b .item .jy {
+    color: #666;
+    font-size: 12px;
+}
+
+.company-item.c .item {
+    width: 100%;
+    display: flex;
+}
+
+.company-item.c .item image {
+    width: 30vw;
+    height: 20vw;
+    margin-right: 15px;
+}
+
+.company-item.c .item .jj {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #666;
+}
+
+.company-item.d .item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    color: #666;
+}
+
+.company-item.d .item .name {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.company-item.d .item .count {
+    display: flex;
+    align-items: center;
+}
+
+.company-item.f .info {
+    font-size: 12px;
+    color: #666;
+}
+
+.company-item.f .info text {
+    color: #000;
+}
+
+.company-item.f .info>view {
+    margin-bottom: 8px;
+}

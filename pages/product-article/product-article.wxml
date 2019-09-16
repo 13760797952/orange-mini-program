@@ -1,0 +1,17 @@
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<view class="article-view" wx:else>
+    <view class="article-title">{{article.title}}</view>
+    <view class="article-subtitle" wx:if="{{article.subTitle}}">{{article.subTitle}}</view>
+    <view class="article-source">
+        <text class="article-time">{{article.time}}</text>
+        <view class="article-flag">
+            <view class="view" style="margin-right: 20rpx;">
+                <i class="iconfont icon-view"></i> {{article.view_count}}</view>
+            <view class="fav">
+                <i bindtap="favFn" class="iconfont {{article.fav===0?'icon-favor':'icon-favorfill'}}"></i> {{article.fav_count}}</view>
+        </view>
+    </view>
+    <html-content class="article-content" nodes="{{article.content}}"></html-content>
+    <image bindtap="targetActionRun" class="article-action" data-action="{{article.action}}" mode="widthFix" src="{{article.actionImage}}" wx:if="{{article.actionImage}}"></image>
+</view>
+<ipx-bottom></ipx-bottom>

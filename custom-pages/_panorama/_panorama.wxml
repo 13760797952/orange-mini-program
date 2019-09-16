@@ -1,0 +1,8 @@
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <view class="products-list">
+        <articles-list items="{{list}}" mode="{{listMode}}" type="" url="panorama-detail"></articles-list>
+    </view>
+    <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+</block>
+<slcommon bind:setSysInfo="setSysInfo" bind:setuserinfo="setuserinfo" contactShow="{{false}}" copyRightShow="{{false}}" hasAuth="{{true}}"></slcommon>

@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="box-bg" style="{{pageConfig.topcolor.length>0?'background:'+pageConfig.topcolor:''}}"></view>
+    <view class="box-opus" hidden="{{loadingShow}}">
+        <view class="bo-header">
+            <view class="bo-div-1">
+                <view class="bo-user">
+                    <image src="{{opusdata.thumb_url}}"></image>
+                </view>
+                <view class="bo-word">
+                    <view class="bo-n">{{opusdata.name}}</view>
+                    <view class="bo-h">{{opusdata.honour}}</view>
+                    <view class="bo-intro">{{opusdata.attr_3}}</view>
+                </view>
+            </view>
+            <view class="bo-div-2">
+                <view class="bo-btn-panel">
+                    <view class="btn-li">
+                        <view bindtap="clickOpusCallMe" class="bo-btn bob-left" data-tel="{{opusdata.mobile}}" style="{{syscfg.color.btncolor.length>0?'background:'+syscfg.color.btncolor:''}}">
+                            <i class="icon iconfont icon-tel"></i>
+                            <text>电话咨询</text>
+                        </view>
+                    </view>
+                    <view class="btn-li">
+                        <view bindtap="clickOpusGuestbook" class="bo-btn bob-right" style="{{syscfg.color.btncolor.length>0?'background:'+syscfg.color.btncolor:''}}">
+                            <i class="icon iconfont icon-guestbook"></i>
+                            <text>在线留言</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bo-body">
+            <view class="bo-cont">
+                <view class="bo-title">
+                    <view>作品案例（<text>{{listCount}}</text>）</view>
+                </view>
+                <view class="bo-list">
+                    <view bindtap="clickPic" class="bo-li" data-id="{{item.id}}" data-ptype="{{item.type}}" wx:for="{{opList}}" wx:key="{{item.id}}">
+                        <image mode="widthFix" src="{{item.thumb_url}}"></image>
+                        <view class="bo-list-title">{{item.name}}</view>
+                        <view class="bo-list-attr">
+                            <view class="ba-left">{{item.options_cn}}</view>
+                            <view class="ba-right">
+                                <i class="icon iconfont icon-favor"></i> {{item.fav_num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

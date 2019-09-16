@@ -1,0 +1,43 @@
+<view class="nav" wx:if="{{styleNum===0}}">
+    <form reportSubmit bindsubmit="bindFormClick" class="nav-item btn" style="width: {{100/colNum}}%" wx:for="{{items}}" wx:key="{{item.id}}">
+        <input class="hide" name="url" type="text" value="{{item.page_url}}"></input>
+        <button formType="submit">
+            <image src="{{item.thumb_url}}"></image>
+            <text>{{item.title}}</text>
+        </button>
+    </form>
+</view>
+<view class="box-group-ad {{picClass}}" wx:if="{{styleNum===1}}">
+    <form reportSubmit bindsubmit="bindFormClick" class="box-item btn" wx:for="{{items}}" wx:key="{{item.id}}">
+        <input class="hide" name="url" type="text" value="{{item.page_url}}"></input>
+        <button formType="submit">
+            <image mode="widthFix" src="{{item.attr_url}}"></image>
+        </button>
+    </form>
+</view>
+<view class="guide-map" wx:if="{{styleNum===2}}">
+    <form reportSubmit bindsubmit="bindFormClick" class="box-item btn" style="width:{{100/guide.column}}%;box-sizing:border-box;padding: 0 20rpx;" wx:for="{{guide.items}}" wx:key="{{index}}">
+        <input class="hide" name="url" type="text" value="{{item.action}}"></input>
+        <button formType="submit">
+            <i class="iconfont icon-{{item.icon}}" wx:if="{{item.icon}}"></i>
+            <image mode="aspectFit" src="{{item.image}}" wx:else></image>
+            <text>{{item.label}}</text>
+        </button>
+    </form>
+</view>
+<block wx:if="{{styleNum===3}}">
+    <form reportSubmit bindsubmit="bindFormClick" class="common-ad-one btn" wx:for="{{items}}" wx:key="{{index}}">
+        <input class="hide" name="url" type="text" value="{{item.action}}"></input>
+        <button formType="submit">
+            <image mode="widthFix" src="{{item.image}}"></image>
+        </button>
+    </form>
+</block>
+<view class="common-ad-group" wx:if="{{styleNum===4}}">
+    <form reportSubmit bindsubmit="bindFormClick" class="common-ad-one btn" wx:for="{{items}}" wx:key="{{index}}">
+        <input class="hide" name="url" type="text" value="{{item.action}}"></input>
+        <button formType="submit">
+            <image mode="aspectFill" src="{{item.image}}"></image>
+        </button>
+    </form>
+</view>

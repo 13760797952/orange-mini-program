@@ -1,0 +1,16 @@
+<form bindsubmit="formSubmit" reportSubmit="true">
+    <view class="section">
+        <i class="icon iconfont icon-fnav icon-my"></i>
+        <input maxlength="50" name="user" placeholder="您的姓名" value="{{senduser}}"></input>
+    </view>
+    <view class="section">
+        <i class="icon iconfont icon-fnav icon-tel"></i>
+        <input maxlength="30" name="tel" placeholder="您的电话" type="number" value="{{sendtel}}"></input>
+    </view>
+    <view class="box-btn">
+        <button formType="submit" style="{{syscfg.color.maincolor.length>0?'background:'+syscfg.color.maincolor:''}}" type="default">马上预约</button>
+    </view>
+    <view class="box-btn">
+        <button bindtap="openlink" type="default">另一小程序</button>
+    </view>
+</form>

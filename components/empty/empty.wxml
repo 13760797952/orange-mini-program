@@ -1,0 +1,4 @@
+<view class="empty">
+    <i class="iconfont icon-warn"></i>
+    <text class="msg">{{msg}}</text>
+</view>

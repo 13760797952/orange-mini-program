@@ -1,0 +1,74 @@
+<import src="../../templates/user-comment/user-comment.wxml"></import>
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <scroll-view scrollY class="main-view" style="height:{{mainHeight}}">
+        <view class="section-view">
+            <swiper autoplay="true" class="commodity-image" indicatorActiveColor="rgba(255, 255, 255, .9)" indicatorColor="rgba(255, 255, 255, .5)" indicatorDots="true">
+                <swiper-item wx:for="{{commodityData.images}}" wx:key="{{index}}">
+                    <image bindtap="previewImage" data-index="{{index}}" mode="aspectFit" src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="section-content commodity-info">
+                <text class="_title">{{buyData.title}}</text>
+                <text class="_description">{{buyData.description}}</text>
+                <ui-price value="{{buyData.priceStr}}"></ui-price>
+            </view>
+            <view bindtap="buyShow" class="section-entrance" hoverClass="entrance-hover">
+                <label>已选：</label>
+                <text class="commodity-selected">{{buyData.selectedOptionsTip}}</text>
+            </view>
+        </view>
+        <view class="details-tabs-wrap">
+            <switch-tabs bindchange="tabChange" class="details-tabs" current="{{detailsViewIndex}}" items="{{tabItems}}" style="position: {{detailsTabsPosition}}"></switch-tabs>
+        </view>
+        <view class="details-view" hidden="{{detailsViewIndex!==0}}">
+            <html-content nodes="{{commodityDetails}}" wx:if="{{commodityDetails.length}}"></html-content>
+            <view class="details-empty" wx:else>
+                <i class="iconfont icon-warn"></i>
+                <text>暂无概述</text>
+            </view>
+        </view>
+        <view class="parameters-view" hidden="{{detailsViewIndex!==1}}">
+            <view class="commodity-parameters" wx:if="{{commodityParameters.length}}">
+                <view class="_row" wx:for="{{commodityParameters}}" wx:key="{{index}}">
+                    <view class="_label">{{item.label}}</view>
+                    <view class="_value">{{item.value}}</view>
+                </view>
+            </view>
+            <view class="details-empty" wx:else>
+                <i class="iconfont icon-warn"></i>
+                <text>暂无参数</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="common-bottom-panel-wrap">
+        <view class="bottom-panel">
+            <view bindtap="favoriteToggle" class="icon-btn" style="color:{{isFavorite?commonStyles.themeColor:''}}">
+                <i class="iconfont icon-favorite"></i>
+                <text>{{isFavorite?'已':''}}收藏</text>
+            </view>
+            <view bindtap="cartToggle" class="icon-btn">
+                <i class="iconfont icon-cart"></i>
+                <text>购物车</text>
+                <view class="_bubble" wx:if="{{shopcartData.itemsLength}}">{{shopcartData.itemsLength}}</view>
+            </view>
+            <view bindtap="buyAction" class="bottom-btn _hover-brightness-btn" data-mode="add" hoverClass="_hover" style="background-color:{{commonStyles.themeColor}};color:{{commonStyles.themeColorFront}};">加入购物车</view>
+            <view bindtap="buyAction" class="bottom-btn buy-btn _hover-brightness-btn" data-mode="buy" hoverClass="_hover" style="background-color:{{commonStyles.secondaryColor}};color:{{commonStyles.themeColorFront}};">立即购买</view>
+        </view>
+        <ipx-bottom></ipx-bottom>
+    </view>
+</block>
+<commodity-buy bindconfirm="shopCartReload" bindupdate="commodityBuyUpdate" commodityData="{{commodityData}}" id="commodity-buy"></commodity-buy>
+<fade-view bottom id="shopcart-view" ipxStyle="background-color:#f8f8f8;">
+    <view class="shopcart-content">
+        <view class="shopcart-header">
+            <i class="iconfont icon-cart"></i>
+            <text>购物车({{shopcartData.itemsLength}})</text>
+        </view>
+        <shop-cart bindupdate="shopCartUpdate" id="shop-cart">
+            <view bindtap="cartToggle" class="shopcart-close" slot="empty-view-append">关闭</view>
+        </shop-cart>
+    </view>
+</fade-view>

@@ -1,0 +1,4 @@
+._ipx-bottom-placeholder {
+    height: 34px;
+    flex-shrink: 0;
+}

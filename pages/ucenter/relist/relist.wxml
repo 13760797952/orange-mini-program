@@ -1,0 +1,20 @@
+<view class="container" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-cont">
+        <view class="box-ul-relist" wx:if="{{reList!=undefined&&reList!=''}}">
+            <view class="box-li" wx:for="{{reList}}" wx:key="{{item.id}}">
+                <view class="box-top">
+                    <text class="left">{{item.name}}</text>
+                    <text class="right">{{item.tel}}</text>
+                </view>
+                <view class="box-word">
+                    <text>{{item.msg}}</text>
+                </view>
+                <view class="box-info">
+                    <text>支付金额：</text>￥ <text>{{item.money_format}}</text>
+                </view>
+                <view class="box-st">{{item.status_cn}}</view>
+            </view>
+        </view>
+        <empty msg="没有信息" wx:else></empty>
+    </view>
+</view>

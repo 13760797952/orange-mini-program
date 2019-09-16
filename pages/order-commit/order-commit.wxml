@@ -1,0 +1,36 @@
+<import src="../../templates/address-overview/address-overview.wxml"></import>
+<import src="../../templates/buy-item/buy-item.wxml"></import>
+<scroll-view scrollY class="main-view">
+    <view class="address-decoration"></view>
+    <view bindtap="targetActionRun" class="address-select" data-action=">address?callback=addressChange&title=请选择地址" hoverClass="address-select-hover">
+        <template is="address-overview" data="{{...address}}" wx:if="{{address}}"></template>
+        <view class="address-null" wx:else>请选择地址</view>
+        <i class="iconfont icon-next"></i>
+    </view>
+    <view class="common-info-section">
+        <view bindtap="targetActionRun" class="common-info-line" data-action=">coupons?callback=couponChange&consumption={{totalPrice}}&title=请选择优惠券">
+            <label>优惠券</label>
+            <text wx:if="{{coupon}}">{{coupon.fullName}}</text>
+            <text class="_placeholder" wx:else>未选择</text>
+            <i class="iconfont icon-next"></i>
+        </view>
+        <view class="common-info-line">
+            <label>商品合计</label>
+            <ui-price class="minor-price" value="{{totalPrice}}"></ui-price>
+        </view>
+        <view class="common-info-line" wx:if="{{offer>0}}">
+            <label>优惠</label>
+            <ui-price class="minor-price" value="{{-offer}}"></ui-price>
+        </view>
+    </view>
+    <view class="buy-list">
+        <template is="buy-item" data="{{...item}}" wx:for="{{list}}" wx:key="{{index}}"></template>
+    </view>
+</scroll-view>
+<view class="common-bottom-panel-wrap">
+    <view class="bottom-panel">
+        <ui-price class="pay-price" value="{{finalPrice}}"></ui-price>
+        <view bindtap="commit" class="_hover-brightness-btn pay-button {{address?'':'_disabled'}}" hoverClass="_hover" style="background-color: {{commonStyles.secondaryColor}};color:{{commonStyles.themeColorFront}};">立即下单</view>
+    </view>
+    <ipx-bottom></ipx-bottom>
+</view>

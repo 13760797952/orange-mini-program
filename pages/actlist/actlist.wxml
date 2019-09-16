@@ -1,0 +1,13 @@
+<view class="container" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="banner" style="margin-bottom:10px;" wx:if="{{news.banner.length}}">
+        <swiper autoplay="{{true}}" circular="{{true}}" class="box-tab-swiper" indicatorDots="{{true}}" style="width:100%;min-height: 80rpx;height: 300rpx;">
+            <swiper-item bindtap="bindLinkClick" data-url="{{item.page_url}}" wx:for="{{news.banner}}" wx:key="{{index}}">
+                <image src="{{item.thumb_url}}" style="width:100%;height:100%"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="box-news" hidden="{{loadingShow}}">
+        <sllist listData="{{news.list}}" styleType="{{news.term.term_style}}"></sllist>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

@@ -1,0 +1,10 @@
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <view class="coupon-list">
+        <coupon-item binditembtntap="itemTap" btnText="{{item.received?'已领取':item.over>0?'领取':'已领完'}}" class="coupon-item" data="{{item}}" data-index="{{index}}" wx:for="{{list}}" wx:key="{{index}}"></coupon-item>
+    </view>
+    <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+</block>
+<ipx-bottom></ipx-bottom>

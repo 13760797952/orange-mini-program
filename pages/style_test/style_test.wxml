@@ -1,0 +1,161 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page pageOne" wx:if="{{showResult==false}}">
+    <image src="{{imgUrl}}/bg_1_a16a3a2.jpg" width="100%" class="bg1"></image>
+    <form bindsubmit="getStyle">
+      <view class="actFlow">
+        <image src="{{imgUrl}}/bg_2_0dfbd6b.jpg" width="100%" class="bg2"></image>
+        <view class="actFlowBox">
+          <view class="ceshiA" style="display:{{ showCSIndex==1 ? 'block':'none' }}">
+            <view class="title">
+              <text>01/04</text>选择您的户型
+            </view>
+            <view class="problem">
+              <radio-group class="list house" name="house">
+                <label class="choice-item {{changed.house==index?'active':''}}" wx:for="{{choices.house}}" wx:key="house" data-name="house" data-value="{{index}}"  bindtap="ceshiNext">
+                  <image src="{{imgUrl}}/{{item.bfImg}}" class="before" width="100%" mode="aspectFit"></image>
+                  <image src="{{imgUrl}}/{{item.atImg}}" class="after" width="100%" mode="aspectFit"></image>
+                  <view class="radio"><radio value="{{item.text}}"/>{{item.text}}</view>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="ceshiB" style="display: {{ showCSIndex==2 ? 'block':'none' }}">
+            <view class="title">
+              <text>02/04</text>选择您的性别和年龄
+              <image src="{{imgUrl}}/prev_a_fed0042.png" bindtap="ceshiPrev"></image>
+            </view>
+            <view class="problem">
+              <radio-group class="list sex" name="sex">
+                <label class="choice-item {{changed.sex==index?'active':''}}" wx:for="{{choices.sex}}" wx:key="sex" data-name="sex" data-value="{{index}}"  bindtap="ceshiNext">
+                  <image src="{{imgUrl}}/{{item.bfImg}}" class="before" width="100%" mode="aspectFit"></image>
+                  <image src="{{imgUrl}}/{{item.atImg}}" class="after" width="100%" mode="aspectFit"></image>
+                  <view class="radio"><radio value="{{item.text}}"/>{{item.text}}</view>
+                </label>
+              </radio-group>
+              <radio-group class="list age" name="age">
+                <label class="choice-item {{changed.age==index?'active':''}}" wx:for="{{choices.age}}" wx:key="age" data-name="age" data-value="{{index}}"  bindtap="ceshiNext">
+                  <image src="{{imgUrl}}/{{item.bfImg}}" class="before" width="100%" mode="aspectFit"></image>
+                  <image src="{{imgUrl}}/{{item.atImg}}" class="after" width="100%" mode="aspectFit"></image>
+                  <view class="radio"><radio value="{{item.text}}"/></view>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="ceshiC" style="display: {{ showCSIndex==3 ? 'block':'none' }}">
+            <view class="title">
+              <text>03/04</text>您的做事风格，更接近以下哪种动物？
+              <image src="{{imgUrl}}/prev_a_fed0042.png" bindtap="ceshiPrev"></image>
+            </view>
+            <view class="problem">
+              <radio-group class="list animal" name="animal">
+                <label class="choice-item {{changed.animal==index?'active':''}}" wx:for="{{choices.animal}}" wx:key="animal" data-name="animal" data-value="{{index}}"  bindtap="ceshiNext">
+                  <image src="{{imgUrl}}/{{item.img}}" width="100%" mode="aspectFit"></image>
+                  <view class="radio"><radio value="{{item.text}}"/>{{item.text}}</view>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="ceshiD" style="display: {{ showCSIndex==4 ? 'block':'none' }}">
+            <view class="title">
+              <text>04/04</text>选择一种您最中意的装饰画
+              <image src="{{imgUrl}}/prev_a_fed0042.png" bindtap="ceshiPrev"></image>
+            </view>
+            <view class="problem">
+              <radio-group class="list draw" name="draw">
+                <label class="choice-item {{changed.draw==index?'active':''}}" wx:for="{{choices.draw}}" wx:key="draw" data-name="draw" data-value="{{index}}"  bindtap="ceshiNext">
+                  <image src="{{imgUrl}}/{{item.img}}" width="100%" mode="aspectFit"></image>
+                  <view class="radio"><radio value="{{item.text}}"/>{{item.text}}</view>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="order" style="display: {{ showCSIndex==5 ? 'block':'none' }}">
+            <view class="title">请填写完整信息 获得测试结果</view>
+            <view class="orderBox">
+              <view class="form-inp tel-vail">
+                <input class="inputText" type="tel" name="mobile" placeholder='请输入您的联系方式' bindinput="inputMobile"></input>
+                <button id="vailBtn" disabled="{{is_getCode?true:false}}" bindtap='getVailCode'>{{codeBtnText}}</button>
+              </view> 
+              <view class="form-inp">
+                <input class="inputText" type="tel" name="vailCode" placeholder='请输入验证码' bindinput="inputCode"></input>
+              </view>
+              <view><button form-type="submit" class="button orderBtn" hover-class="hover">马上获得装修风格</button></view>
+              <view class="tips">*测试结果将通过短信同步发送到你的手机</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+    <view class="company">Copyright©2018 橙家科技 版权所有粤ICP备17004066号</view>
+  </view>
+  <view class="page pageTwo" wx:else>
+    <!-- 动物画风 -->
+    <view class="animalType">
+      <image src="{{imgUrl}}/{{aniResult[0].img}}"></image>
+      <view class="type">
+        <view class="h2">
+          做事风格属于<text>{{aniResult[changed.animal].name}}型的您：</text>
+        </view>
+        <view class="p">{{aniResult[changed.animal].style}}</view>
+      </view>
+    </view>
+    <!-- 装修风格 -->
+    <view class="styleImg">
+      <view class="title">
+        <view class="p">根据您的选项 为您推荐以下装修风格</view>
+        <view class="h3">{{drawResult[changed.draw].style}}</view>
+      </view>
+      <swiper class="styleSwiper" 
+        indicator-dots="{{true}}" 
+        autoplay="{{true}}" 
+        interval="5000" 
+        duration="1000" 
+        circular="{{true}}">
+        <block wx:for="{{drawResult[changed.draw].img}}">
+          <swiper-item>
+            <image src="{{imgUrl}}/{{item}}" class="slide-image" width="100%" mode="aspectFit"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- zqbj -->
+    <view class="zqbj">
+      <image src="{{imgUrl}}/jzbj_1_ea1ea3c.jpg" class="jzbj1"></image>
+      <image src="{{imgUrl}}/jzbj_2_336c78c.jpg" class="jzbj2"></image>
+    </view>
+    <!-- sgjd -->
+    <view class="sgjd">
+      <view class="title">
+        <text>橙家装修仅需28天</text>
+        <view class="h3">上班不请假 仍可100%掌控施工进度</view>
+      </view>
+      <swiper class="sgjdSwiper" 
+        indicator-dots="{{true}}" 
+        autoplay="{{true}}" 
+        interval="5000" 
+        duration="1000" 
+        circular="{{true}}"  
+        bindchange="swiperChange">
+        <block wx:for="{{sgjd.img}}">
+          <swiper-item>
+            <image src="{{imgUrl}}/{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="text">
+        <block wx:for="{{sgjd.text}}">
+          <view style="display: {{sgjdIndex==index?'block':'none'}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="zlhb">
+      <image src="{{imgUrl}}/yzs_1_3387420.jpg" class="yzs1"></image>
+      <image src="{{imgUrl}}/yzs_2_948abfa.jpg" class="yzs2"></image>
+    </view>
+    <view class="company">
+      <navigator url="/pages/index/index">了解更多》</navigator>
+      <text>Copyright©2018 橙家科技 版权所有粤ICP备17004066号</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,97 @@
+page {
+    background: #eee;
+}
+
+.container {
+    background: none;
+}
+
+.box-top {
+    width: 100%;
+    height: 375rpx;
+    position: relative;
+}
+
+.box-top .box-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.box-top .box-bg image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-top .box-user {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.box-top .box-user .box-img {
+    margin: 80rpx auto 0;
+    width: 130rpx;
+    height: 130rpx;
+}
+
+.box-top .box-user .box-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-top .box-user .box-user-name {
+    margin-top: 28rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+.box-fun .box-li {
+    position: relative;
+    height: 98rpx;
+    background: #fff;
+    border-top: 1rpx solid #d7d7d7;
+    border-bottom: 1rpx solid #d7d7d7;
+    padding-left: 90rpx;
+    font-size: 0;
+}
+
+.box-fun .box-li i {
+    position: absolute;
+    left: 34rpx;
+    top: 26rpx;
+    width: 42rpx;
+    height: 42rpx;
+    color: #f1b640;
+    font-size: 36rpx;
+}
+
+.box-fun .box-li text {
+    line-height: 98rpx;
+    font-size: 30rpx;
+    color: #5f5f5f;
+}
+
+.box-fun .box-li em {
+    position: absolute;
+    right: 24rpx;
+    top: 26rpx;
+    width: 42rpx;
+    height: 42rpx;
+    color: #d7d7d7;
+    font-size: 36rpx;
+}
+
+.box-version {
+    color: #ccc;
+    font-size: 28rpx;
+    text-align: center;
+    margin-top: 60rpx;
+}

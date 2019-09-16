@@ -1,0 +1,302 @@
+.box-pic-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 80;
+}
+
+.box-tab-pic {
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.box-tab-pic .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-tab-pic .box-li .box-item {
+    width: 234rpx;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 106rpx;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 6rpx solid #fff;
+}
+
+.box-tab-pic .box-li.active .box-item {
+    color: #2fbd80;
+    border-color: #2fbd80;
+}
+
+.box-pic-multi {
+    position: relative;
+}
+
+.box-pic-multi .box-options {
+    background: #fff;
+    display: flex;
+    width: 100%;
+    border-top: 2rpx solid #f5f5f5;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.box-pic-multi .box-options .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-pic-multi .box-options .box-li .box-item {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 90rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.box-pic-multi .box-options .box-li .box-item .icon {
+    font-size: 20rpx;
+    margin-left: 4rpx;
+}
+
+.box-pic-multi .box-options-body {
+    background: #fff;
+    position: absolute;
+    top: 96rpx;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.box-pic-multi .box-options-body .box-ul {
+    width: 110%;
+}
+
+.box-pic-multi .box-options-body .box-li {
+    width: 170rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 20rpx 38rpx;
+    color: #404040;
+    border: 2rpx solid #eee;
+    float: left;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+}
+
+.box-pic-multi .box-options-body .box-li.active {
+    border-color: #2fbd80;
+    color: #2fbd80;
+}
+
+.box-pic-single {
+    position: relative;
+}
+
+.box-pic-single .box-options {
+    background: #fff;
+    display: flex;
+    width: 100%;
+    border-top: 2rpx solid #f5f5f5;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.box-pic-single .box-options .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-pic-single .box-options .box-li .box-item {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 90rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.box-pic-single .box-options .box-li .box-item .icon {
+    font-size: 20rpx;
+    margin-left: 4rpx;
+}
+
+.box-pic-single .box-options-body {
+    background: #fff;
+    position: absolute;
+    top: 96rpx;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.box-pic-single .box-options-body .box-ul {
+    width: 110%;
+}
+
+.box-pic-single .box-options-body .box-li {
+    width: 170rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 20rpx 38rpx;
+    color: #404040;
+    border: 2rpx solid #eee;
+    float: left;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+}
+
+.box-pic-single .box-options-body .box-li.active {
+    border-color: #2fbd80;
+    color: #2fbd80;
+}
+
+.box-pic .box-pic-list-multi {
+    overflow: hidden;
+    margin-top: 228rpx;
+}
+
+.box-pic .box-pic-list-multi .box-ul {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-multi .box-li {
+    font-size: 0;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+    width: 343rpx;
+    border-radius: 10rpx 10rpx 0 0;
+    border: 1rpx solid #f5f5f5;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fl {
+    width: 350rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fl .box-li {
+    float: left;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fr {
+    width: 350rpx;
+    float: right;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fr .box-li {
+    float: right;
+}
+
+.box-pic .box-pic-list-multi .box-li image {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-title {
+    font-size: 24rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 40rpx;
+    color: #535253;
+    padding: 10rpx 20rpx 0;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr {
+    font-size: 24rpx;
+    color: #535253;
+    padding: 10rpx 20rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr .ba-left {
+    float: left;
+    width: 150rpx;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr .ba-right {
+    float: right;
+    width: 150rpx;
+    text-align: right;
+}
+
+.box-pic .box-pic-list-single {
+    overflow: hidden;
+    margin-top: 228rpx;
+}
+
+.box-pic .box-pic-list-single .box-ul {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-single .box-li {
+    font-size: 0;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+    width: 343rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #f5f5f5;
+    position: relative;
+}
+
+.box-pic .box-pic-list-single .box-ul .fl {
+    width: 350rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-single .box-ul .fl .box-li {
+    float: left;
+}
+
+.box-pic .box-pic-list-single .box-ul .fr {
+    width: 350rpx;
+    float: right;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-single .box-ul .fr .box-li {
+    float: right;
+}
+
+.box-pic .box-pic-list-single .box-li image {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-single .box-li .box-attr {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 24rpx;
+    color: #fff;
+    padding: 10rpx 20rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-single .box-li .box-attr .ba-right {
+    float: right;
+    width: 150rpx;
+    text-align: right;
+}
+
+.box-shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 70;
+}

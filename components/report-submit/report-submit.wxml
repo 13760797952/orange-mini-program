@@ -1,0 +1,6 @@
+<view class="_report-submit">
+    <form bindsubmit="submit" reportSubmit="true">
+        <button formType="submit"></button>
+    </form>
+    <slot></slot>
+</view>

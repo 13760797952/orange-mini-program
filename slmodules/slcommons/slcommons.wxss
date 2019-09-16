@@ -1,0 +1,506 @@
+@import "../../wuBaseWxss/0.wxss";
+
+.transition-all {
+    transition: all ease-in-out .3s;
+}
+
+.none {
+    display: none;
+}
+
+.container {
+    background: #fff;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.box-app {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.box-cont {
+    padding: 0 20rpx;
+}
+
+.space-line {
+    height: 20rpx;
+}
+
+.box-header-padding {
+    height: 90rpx;
+}
+
+.box-footer-padding {
+    height: 90rpx;
+}
+
+.icon-fnav {
+    width: 44rpx;
+    height: 44rpx;
+    font-size: 44rpx;
+    margin-top: 6rpx;
+    display: inline-block;
+}
+
+.common {
+    transition: all 0.3s;
+}
+
+.contact {
+    position: fixed;
+    right: 28rpx;
+    bottom: 210rpx;
+    width: 90rpx;
+    line-height: 90rpx;
+    height: 90rpx;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+
+.contact button::after {
+    display: none;
+}
+
+.contact.phone {
+    z-index: 22;
+}
+
+.contact.x {
+    bottom: 300rpx;
+}
+
+.contact cover-view {
+    border: none!important;
+}
+
+.contact cover-image {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.pay-test {
+    position: fixed;
+    right: 28rpx;
+    bottom: 300rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.box-gbook {
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.box-gbook .title {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    color: #666;
+}
+
+.box-gbook .box-share {
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+}
+
+.box-gbook .box-share button {
+    width: 60rpx;
+    height: 60rpx;
+    background: rgba(0,0,0,0);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.box-gbook .box-share button:after {
+    border: 0;
+}
+
+.box-gbook .box-share button image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-gbook .box-line {
+    height: 1rpx;
+    background: #eee;
+}
+
+.box-gbook .box-btn {
+    padding: 20rpx 0;
+}
+
+.box-gbook .box-btn button {
+    width: 320rpx;
+    height: 78rpx;
+    line-height: 74rpx;
+    border-radius: 0;
+    border: 1px solid #fcc0b0;
+    background: rgba(0,0,0,0);
+    font-size: 32rpx;
+    color: #fcc0b0;
+}
+
+.box-gbook .box-btn button:after {
+    border: 0;
+}
+
+.box-server {
+    width: 100%;
+    height: 380rpx;
+    background: #fff;
+    position: relative;
+}
+
+.box-server .bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.box-server .top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.box-server .box-title {
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+}
+
+.box-server .box-title text {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #fff;
+    display: inline-block;
+    padding: 0 8rpx;
+}
+
+.box-server .box-left-line,.box-server .box-right-line {
+    display: inline-block;
+    width: 26rpx;
+    height: 2rpx;
+    background: #fe9988;
+    vertical-align: middle;
+}
+
+.box-server .box-body {
+    width: 624rpx;
+    margin: 20rpx auto 0;
+    overflow: hidden;
+}
+
+.box-server .box-body .box-ul {
+    width: 110%;
+}
+
+.box-server .box-body .box-li {
+    float: left;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.box-server .box-body .box-li button {
+    width: 300rpx;
+    color: #fff;
+    background: rgba(100,100,100,.8);
+}
+
+.box-server .box-body .box-li button.b-1 {
+    background: rgba(196,191,150,.8);
+}
+
+.box-server .box-body .box-li button.b-2 {
+    background: rgba(172,200,210,.8);
+}
+
+.box-server .box-body .box-li button.b-3 {
+    background: rgba(209,191,190,.8);
+}
+
+.box-server .box-body .box-li button.b-4 {
+    background: rgba(190,220,170,.8);
+}
+
+.box-v {
+    width: 100%;
+    min-height: 500rpx;
+    background: #fff;
+}
+
+.box-v .box-title {
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+}
+
+.box-v .box-title text {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #353535;
+    display: inline-block;
+    padding: 0 8rpx;
+}
+
+.box-v .box-left-line,.box-v .box-right-line {
+    display: inline-block;
+    width: 26rpx;
+    height: 2rpx;
+    background: #fe9988;
+    vertical-align: middle;
+}
+
+.box-v .box-body {
+    width: 100%;
+}
+
+.box-v .box-body .v-scroll {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20rpx;
+    white-space: nowrap;
+}
+
+.box-v .box-body .v-scroll .v-item {
+    margin-left: 20rpx;
+    width: 680rpx;
+    display: inline-block;
+}
+
+.box-v .box-body .v-scroll .v-item:last-child {
+    margin-right: 20rpx;
+}
+
+.box-v .box-body .v-scroll .box-img {
+    width: 100%;
+    height: 340rpx;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.box-v .box-body .v-scroll .box-img image {
+    width: 100%;
+}
+
+.box-v .box-body .v-scroll .box-text {
+    line-height: 50rpx;
+    color: #666;
+    font-size: 24rpx;
+}
+
+.box-auth .content {
+    width: 70vw;
+    position: fixed;
+    top: 25vh;
+    left: 15vw;
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 40rpx 80rpx 60rpx;
+    text-align: center;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.box-auth .content .version {
+    font-size: 24rpx;
+    margin-top: 16rpx;
+    color: #eee;
+}
+
+.box-auth image {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+}
+
+.box-auth .bodybg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 888;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+}
+
+.box-auth .box-cont {
+    padding: 0 64rpx;
+    text-align: center;
+}
+
+.box-auth .box-title {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #000;
+}
+
+.box-auth .icon-fnav {
+    width: 100rpx;
+    height: 100rpx;
+    font-size: 100rpx;
+    color: #0cbb08;
+}
+
+.box-auth .box-word {
+    font-size: 26rpx;
+    line-height: 60rpx;
+    color: #6f6f6f;
+    text-align: center;
+}
+
+.box-auth .box-panel {
+    width: 100%;
+    padding-top: 60rpx;
+}
+
+.box-auth .box-btn {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 30rpx;
+    font-size: 26rpx;
+    color: #fff;
+    background: #0cbb08;
+}
+
+.box-auth .box-btn::after {
+    border: 0;
+    border-radius: 0;
+}
+
+.box-auth-shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 100;
+}
+
+.box-copyright {
+    color: #ccc;
+    font-size: 28rpx;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30rpx;
+}
+
+.box-copyright .box-copyright-logo {
+    display: inline-block;
+    width: 34rpx;
+    height: 34rpx;
+    line-height: 38rpx;
+    vertical-align: -6rpx;
+    font-size: 0;
+    margin-right: 10rpx;
+}
+
+.box-copyright .box-copyright-logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-copyright .box-copyright-text {
+    display: inline-block;
+}
+
+.box-suspend {
+    position: fixed;
+    right: 5rpx;
+    bottom: 250rpx;
+    width: 150rpx;
+    height: 170rpx;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 90;
+}
+
+.box-suspend .box-img {
+    width: 100%;
+    height: 100%;
+}
+
+.box-suspend .box-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-suspend .box-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box-suspend .box-close .icon-close {
+    font-size: 24rpx;
+    width: 24rpx;
+    height: 24rpx;
+    margin-top: 0;
+    display: block;
+}
+
+.box-shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.box-adpop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500rpx;
+    height: 600rpx;
+    margin-left: -250rpx;
+    margin-top: -300rpx;
+    z-index: 101;
+}
+
+.box-adpop .box-img {
+    width: 100%;
+    height: 100%;
+}
+
+.box-adpop .box-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-adpop .box-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.noscroll {
+    height: 100%;
+    overflow: hidden;
+}

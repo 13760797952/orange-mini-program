@@ -1,0 +1,69 @@
+<!--pages/appointed/appointed.wxml-->
+<view class="container">
+  <view class="banner">
+    <image src="{{picUrl}}/banner.jpg"></image>
+  </view>
+  <view class="sec">
+    <view class="title">您的房屋装修报价如下</view>
+    <view class="table">
+      <view class="thead">
+        <view class="tr">
+          <view class="th">项目清单</view>
+          <view class="th">传统装修公司</view>
+          <view class="th">碧桂园橙家</view>
+        </view>
+      </view>
+      <view class="tbody">
+        <view class="tr">
+          <view class='td'>人工费</view>
+          <view class="td">{{others.rengong}}元</view>
+          <view class="td">{{our.rengong}}元</view>
+        </view>
+        <view class="tr">
+          <view class='td'>材料费</view>
+          <view class="td">{{others.cailiao}}元</view>
+          <view class="td">{{our.cailiao}}元</view>
+        </view>
+        <view class="tr">
+          <view class='td'>设计费</view>
+          <view class="td">{{others.sheji}}元</view>
+          <view class="td">
+            <text>0元</text>
+            <image src="{{picUrl}}/free.png" class="btn-jab freePic"></image>
+          </view>
+        </view>
+        <view class="tr">
+          <view class='td'>监理费</view>
+          <view class="td">{{others.jianli}}元</view>
+          <view class="td">
+            <text>0元</text>
+            <image src="{{picUrl}}/free.png" class="btn-jab freePic"></image>
+          </view>
+        </view>
+        <view class="tr">
+          <view class='td'>杂项费</view>
+          <view class="td">{{others.zaxiang}}元</view>
+          <view class="td">
+            <text>0元</text>
+            <image src="{{picUrl}}/free.png" class="btn-jab freePic"></image>
+          </view>
+        </view>
+        <view class="tr zongji">
+          <view class='td'>总计</view>
+          <view class="td">{{others.zongji}}元</view>
+          <view class="td right">{{our.zongji}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="tips">*如为旧房改造需增加119元每平米的打拆费用</view>
+    <view class="chajia">
+      <view class="f20 tc">找橙家装修立省</view>
+      <view class="f16 tc">￥
+        <text class="f24 font-bold them-color">{{chajia}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="sec_foot">
+    <image src="{{picUrl}}/foot.png"></image>
+  </view>
+</view>

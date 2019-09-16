@@ -1,0 +1,160 @@
+<view class="container" hidden="{{loadingShow}}">
+    <block wx:if="{{syscfg.defaults.banner_show==1}}">
+        <view class="selection" wx:if="{{!(mybanner==null)&&mybanner.length>0}}">
+            <swiper autoplay="{{true}}" class="box-swiper" duration="{{1000}}" indicatorDots="{{true}}" interval="{{3000}}" style="{{!(syscfg.defaults.banner_height==null)?'height:'+syscfg.defaults.banner_height:''}}">
+                <swiper-item bindtap="bindLinkClick" data-ctype="banner" data-url="{{item.page_url}}" wx:for="{{mybanner}}" wx:key="{{item.id}}">
+                    <image src="{{item.thumb_url}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+    </block>
+    <save-formid colNum="{{mynav.rownum}}" items="{{mynav.items}}" wx:if="{{mynav.enabled==1}}"></save-formid>
+    <block wx:if="{{syscfg.defaults.adgroup_show==1&&!(adgroup==null)&&adgroup.length>0}}">
+        <view class="space-line"></view>
+        <save-formid items="{{adgroup}}" picClass="{{adgroupStyle}}" styleNum="{{1}}"></save-formid>
+        <view class="space-line"></view>
+    </block>
+    <block wx:if="{{syscfg.defaults.adsp_show==1&&!(myadsp==null)&&myadsp.length>0}}">
+        <view class="box-adsp line-h0">
+            <view bindtap="bindLinkClick" data-url="{{item.page_url}}" wx:for="{{myadsp}}" wx:key="{{item.id}}">
+                <image mode="widthFix" src="{{item.thumb_url}}" title="系统广告"></image>
+            </view>
+        </view>
+        <view class="space-line"></view>
+    </block>
+    <view class="box-deser" wx:if="{{syscfg.defaults.titledf3_show==1}}">
+        <view class="box-cont">
+            <view class="box-title">
+                <view class="box-tl-left">{{syscfg.defaults.titledf3}}</view>
+                <view bindtap="clickSeekDesignerMore" class="box-tl-right">{{syscfg.defaults.titlemore}}<i class="icon iconfont icon-right"></i>
+                </view>
+            </view>
+            <view class="box-body">
+                <view class="box-tab-body">
+                    <scroll-view class="v-scroll" scrollX="true">
+                        <view class="v-item" wx:for="{{mySeekDesinger}}" wx:key="{{item.id}}">
+                            <navigator url="/pages/opus/opus?id={{item.id}}">
+                                <view class="box-img">
+                                    <image src="{{item.thumb_url}}"></image>
+                                </view>
+                                <view class="w-1">{{item.name}}</view>
+                                <view class="w-2">{{item.honour}}</view>
+                                <view class="w-btn">
+                                    <view class="w-btn-span" style="{{syscfg.color.btncolor.length>0?'background:'+syscfg.color.btncolor:''}}">查看作品</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-pcl" wx:if="{{syscfg.defaults.titledf1_show==1}}">
+        <view class="box-cont">
+            <view class="box-title">
+                <view class="box-tl-left">{{syscfg.defaults.titledf1}}</view>
+                <view bindtap="clickPclListMore" class="box-tl-right">{{syscfg.defaults.titlemore}}<i class="icon iconfont icon-right"></i>
+                </view>
+            </view>
+            <view class="box-body">
+                <view class="box-tab">
+                    <view bindtap="pclClick" class="box-li" data-id="{{item.id}}" data-index="{{index}}" data-type-id="{{item.type}}" style="{{tabPclId==index&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:for="{{myDefaultPcl}}" wx:key="{{item.id}}">
+                        <view style="{{tabPclId==index&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按{{item.name}}</view>
+                    </view>
+                    <view style="height:6rpx;width:234rpx;background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#111'}};transform:translateX({{234*tabPclId+'rpx'}}); transition: all 0.3s; "></view>
+                </view>
+                <view class="box-tab-body">
+                    <scroll-view class="v-scroll" scrollLeft="{{scrollLeft}}" scrollX="true">
+                        <view class="v-item" wx:for="{{myDefaultPclChild}}" wx:key="{{item.id}}">
+                            <view bindtap="goToPic" class="a" data-url="@pic?typeid={{item.type}}&pid={{item.parentid}}&optsid={{item.id}}">
+                                <view class="box-img">
+                                    <image src="{{item.thumb_url}}"></image>
+                                </view>
+                                <view class="w-1">{{item.name}}</view>
+                                <view class="w-2">{{item.case}} 套</view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-list" wx:if="{{syscfg.defaults.titledf2_show==1}}">
+        <view class="box-cont">
+            <view class="box-title">
+                <view class="box-tl-left">{{syscfg.defaults.titledf2}}</view>
+                <view bindtap="clickListMore" class="box-tl-right">{{syscfg.defaults.titlemore}}<i class="icon iconfont icon-right"></i>
+                </view>
+            </view>
+            <view class="box-body">
+                <view class="box-tab">
+                    <scroll-view scrollX="true">
+                        <view bindtap="navClick" class="box-li {{tabId==index?'on':''}}" data-cc="{{tabId}}--{{index}}" data-id="{{item.id}}" data-index="{{index}}" style="{{tabId==index&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:for="{{mylist}}" wx:key="{{item.id}}">
+                            <view style="{{tabId==index&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">{{item.name}}</view>
+                        </view>
+                    </scroll-view>
+                    <view style="height:6rpx;width:234rpx;background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#111'}};transform:translateX({{234*tabId+'rpx'}}); transition: all 0.3s; "></view>
+                </view>
+                <view class="box-tab-body">
+                    <view class="box-tab-item" hidden="{{index!==tabId}}" wx:for="{{myListChild}}" wx:key="{{index}}">
+                        <swiper indicatorDots class="box-tab-swiper">
+                            <swiper-item wx:for="{{item}}" wx:for-item="row" wx:key="{{index}}">
+                                <view class="box-ul">
+                                    <view class="box-li" wx:for="{{row}}" wx:for-item="r" wx:key="{{r.id}}">
+                                        <navigator openType="navigate" url="/pages/list/list?id={{r.id}}">
+                                            <image src="{{r.thumb_url}}"></image>
+                                            <view class="word">{{r.name}}</view>
+                                        </navigator>
+                                    </view>
+                                </view>
+                            </swiper-item>
+                        </swiper>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{syscfg.defaults.actnews1_show==1}}">
+        <view class="box-news" wx:for="{{mynewslist1}}" wx:for-item="ite" wx:key="{{ite.id}}">
+            <view class="box-cont">
+                <view class="box-list-title">
+                    <view class="box-left">{{ite.termname}}</view>
+                    <view bindtap="moreClick" class="box-right" data-clicktype="{{ite.click_type}}" data-itemid="{{ite.id}}">{{syscfg.defaults.titlemore}}<i class="icon iconfont icon-right"></i>
+                    </view>
+                </view>
+                <sllist listData="{{ite.list}}" styleType="{{ite.term_style}}"></sllist>
+            </view>
+        </view>
+    </block>
+    <view class="box-news" wx:if="{{syscfg.defaults.actnews2_show==1}}">
+        <view class="box-cont">
+            <view class="box-list-title">
+                <view class="box-left">{{syscfg.defaults.title_actnews2}}</view>
+                <view bindtap="moreClick2" class="box-right" data-itemid="1">{{syscfg.defaults.titlemore}}<i class="icon iconfont icon-right"></i>
+                </view>
+            </view>
+            <sllist createTimeKey="addtime" listData="{{mynewslist2.list}}" styleType="{{mynewslist2.term_style}}"></sllist>
+        </view>
+    </view>
+    <view class="nearby-district box-cont" wx:if="{{syscfg.defaults.site_show==='1'}}">
+        <view class="title-box">
+            <text>装修工地({{siteCount}}个)</text>
+            <view bindtap="bindLinkClick" class="more" data-url="@district?name=小区&cid=">{{syscfg.defaults.titlemore}}<text class="icon iconfont icon-right"></text>
+            </view>
+        </view>
+        <map bindmarkertap="mapMarkerTap" class="map" id="map" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" scale="14" wx:if="{{!hiddenMap}}"></map>
+        <view bindtap="bindLinkClick" class="list" data-url="@district?name={{it.title}}&cid={{it.id}}" wx:for="{{nearbyDistrict}}" wx:for-item="it" wx:key="{{index}}">
+            <view>
+                <view class="name">{{it.title}}</view>
+                <text class="add">{{it.address}}</text>
+            </view>
+            <view class="count">{{it.site_total}}个工地<text class="icon iconfont icon-right"></text>
+            </view>
+        </view>
+    </view>
+    <copyright></copyright>
+</view>
+<block wx:if="{{loadingShow}}">
+    <slloading></slloading>
+    <view class="msg" wx:if="{{appurlShow}}">{{appurl}}</view>
+</block>

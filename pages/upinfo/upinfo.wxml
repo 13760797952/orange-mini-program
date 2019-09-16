@@ -1,0 +1,102 @@
+<view class="container" hidden="{{!bacePrice.labour_cost_percent}}">
+    <view class="box-cont">
+        <view class="box-info">
+            <view class="box-title">
+                <view class="box-up">毛坯房装修预估价</view>
+                <view class="box-bottom" style="color:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">{{bookOne.money_format}} 万元</view>
+            </view>
+            <view class="box-bb">
+                <view class="box-t"></view>
+            </view>
+            <view class="box-word">
+                <view class="word">{{bacePrice.labour_cost_title}}： {{bacePrice.labour_cost_percent}} 元</view>
+                <view class="word">{{bacePrice.stuff_cost_title}}： {{bacePrice.stuff_cost_percent}} 元</view>
+                <view class="word">{{bacePrice.style_cost_title}}： {{bacePrice.style_cost_market}} 元 <view class="word-del">{{bacePrice.style_cost_original}} 元</view>
+                </view>
+                <view class="word">{{bacePrice.qt_cost_title}}： {{bacePrice.qt_cost_market}} 元 <view class="word-del">{{bacePrice.qt_cost_original}} 元</view>
+                </view>
+            </view>
+        </view>
+        <view class="box-tips">
+            <view class="item color-gold" style="color:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">* 稍后装修管家将回电您，免费提供装修咨询服务</view>
+            <view class="item">* 因材料品牌及工程量不同，具体报价以量房实测为准</view>
+        </view>
+    </view>
+    <view class="box-form">
+        <view class="box-title">
+            <view class="box-left-line" style="background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">
+                <view class="after" style="background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}"></view>
+            </view>
+            <text style="color:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">完善以下信息</text>
+            <view class="box-right-line" style="background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">
+                <view class="after" style="background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}"></view>
+            </view>
+        </view>
+        <view class="box-subtitle" style="color:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}">让我们更了解您的具体需求，优先为您服务</view>
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="box-item">
+                <view class="box-label">1、您家的装修类型是</view>
+                <view class="box-opts">
+                    <radio-group bindchange="rcbook1" class="radio-group">
+                        <label class="radio">
+                            <radio value="家装"></radio>家装
+					</label>
+                        <label class="radio">
+                            <radio value="公装"></radio>公装（办公室、餐厅等）
+					</label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="box-item">
+                <view class="box-label">2、您家的房屋状态是<view style="display: inline-block;font-size:24rpx;">（二手翻新会比毛坯房多部分分拆改费用）</view>
+                </view>
+                <view class="box-opts">
+                    <radio-group bindchange="rcbook2" class="radio-group">
+                        <label class="radio">
+                            <radio value="毛坯房"></radio>毛坯房
+					</label>
+                        <label class="radio">
+                            <radio value="旧房翻新"></radio>旧房翻新
+					</label>
+                        <label class="radio">
+                            <radio value="局部改造"></radio>局部改造
+					</label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="box-item">
+                <view class="box-label">3、您家准备什么时候开始装修</view>
+                <view class="box-opts">
+                    <radio-group bindchange="rcbook3" class="radio-group">
+                        <label class="radio">
+                            <radio value="半个月内"></radio>半个月内
+					</label>
+                        <label class="radio">
+                            <radio value="一个月内"></radio>一个月内
+					</label>
+                        <label class="radio">
+                            <radio value="两个月内"></radio>两个月内
+					</label>
+                        <label class="radio">
+                            <radio value="两个月以上"></radio>两个月以上
+					</label>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="box-item">
+                <view class="box-label">4、您家的楼盘</view>
+                <view class="box-tips">填写楼盘信息，将为您家附近的优质施工方</view>
+                <view class="box-opts">
+                    <view class="section">
+                        <input bindinput="rcbook4" maxlength="100" placeholder="请输入您家的楼盘、小区" style="border-color:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}" type="text"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="box-item">
+                <view class="box-btn box-sp">
+                    <button formType="submit" style="background:{{syscfg.color.maincolor.length?syscfg.color.maincolor:'#f69b32'}}" type="default">立即提交</button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

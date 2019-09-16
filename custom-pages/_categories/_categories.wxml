@@ -1,0 +1,19 @@
+<search-bar confirmAction=">commodities?title=商品搜索&keyword={value}"></search-bar>
+<view class="category-wrap">
+    <switch-tabs scroll vertical bindchange="tabChange" class="category-nav" current="{{currentID}}" items="{{categoryItems}}" wx:if="{{categoryItems.length}}"></switch-tabs>
+    <scroll-view scrollY class="category-view">
+        <status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+        <view class="category-content" wx:else>
+            <view class="category-topic" wx:if="{{currentData.topic.image}}}">
+                <simg bindtap="targetActionRun" data-action="{{currentData.topic.action}}" mode="aspectFit" src="{{currentData.topic.image}}"></simg>
+            </view>
+            <view class="category-slogan" wx:if="{{currentData.slogan}}">- {{currentData.slogan}} -</view>
+            <view class="category-list">
+                <view bindtap="categoryItemClick" class="category-item" data-id="{{item.id}}" wx:for="{{currentData.items}}" wx:key="{{index}}">
+                    <simg mode="aspectFit" src="{{item.image}}"></simg>
+                    <text>{{item.label}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,12 @@
+<view class="_switch-tabs-wrap {{vertical?'_switch-tabs-vertical':'_switch-tabs-horizontal'}}">
+    <scroll-view class="_switch-tabs" scrollIntoView="{{isFirst?'_switch-tabs-item_'+current:''}}" scrollX="{{!vertical}}" scrollY="{{vertical}}" wx:if="{{scroll}}">
+        <view class="_switch-tabs-items-box">
+            <view bindtap="targetDataSet" class="_switch-tabs-item {{current==item.id?'active':''}}" data-current="{{item.id}}" id="_switch-tabs-item_{{item.id}}" style="color:{{current==item.id?activeColor:''}}" wx:for="{{items}}" wx:key="{{index}}">{{item[nameKey]}}</view>
+            <view class="_switch-tabs-indicator" style="background-color:{{activeColor}}; {{indicatorGroup[current]}}"></view>
+        </view>
+    </scroll-view>
+    <view class="_switch-tabs-items-box" wx:else>
+        <view bindtap="targetDataSet" class="_switch-tabs-item {{current==item.id?'active':''}}" data-current="{{item.id}}" id="_switch-tabs-item_{{item.id}}" style="color:{{current==item.id?activeColor:''}}" wx:for="{{items}}" wx:key="{{index}}">{{item[nameKey]}}</view>
+        <view class="_switch-tabs-indicator" style="background-color:{{activeColor}}; {{indicatorGroup[current]}}"></view>
+    </view>
+</view>

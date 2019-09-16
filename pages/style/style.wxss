@@ -1,0 +1,58 @@
+@import "../../public/wxParse/wxParse.wxss";
+
+.container {
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.box-gb {
+    width: 100%;
+}
+
+.box-gb image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-btn button {
+    background: #428bca;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 20rpx;
+}
+
+.section {
+    margin-top: 20rpx;
+}
+
+.section input {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+    background: #fff;
+    border: 1rpx solid #ddd;
+    font-size: 30rpx;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.section textarea {
+    width: auto;
+    height: 140rpx;
+    line-height: 48rpx;
+    padding: 20rpx;
+    background: #fff;
+    border: 1rpx solid #ddd;
+    font-size: 30rpx;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.box-body {
+    margin-top: 20rpx;
+    color: #676767;
+}
+
+.box-body image {
+    max-width: 100%;
+}

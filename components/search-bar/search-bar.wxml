@@ -1,0 +1,17 @@
+<view class="_search-bar-wrap">
+    <view class="_search-history-box {{isFocus&&history.length?'_show':''}}">
+        <view bindtap="historyClick" data-value="{{item}}" hoverClass="_hover" wx:for="{{history}}" wx:key="{{index}}">{{item}}</view>
+        <view bindtap="clearHistory" class="_button" hoverClass="_hover">清除历史纪录</view>
+    </view>
+    <view class="_search-bar-box-wrap _{{bgClass}}" style="background-color: {{commonStyles.titlebar.backgroundColor}}">
+        <view bindtap="focus" class="_search-bar-box">
+            <input bindblur="blur" bindconfirm="inputConfirm" confirmType="search" focus="{{isFocus}}" value="{{value}}"></input>
+            <view class="_search-bar-placeholder {{expand?'_expand':''}}">
+                <view class="_content">
+                    <i class="iconfont icon-search"></i>
+                    <text>{{placeholder}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

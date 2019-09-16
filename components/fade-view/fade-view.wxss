@@ -1,0 +1,34 @@
+._fade-view-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color .2s ease-out;
+}
+
+._fade-view-content-wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s ease-out,opacity .2s ease;
+}
+
+._fade-view-wrap._show {
+    pointer-events: auto;
+    background-color: rgba(0,0,0,.5);
+}
+
+._fade-view-wrap._show ._fade-view-content-wrap {
+    transform: translate3D(0,0,0)!important;
+    opacity: 1!important;
+}
+
+._fade-view-wrap._show ._fade-view-content {
+    box-shadow: 0 0 20rpx rgba(0,0,0,.1);
+}
+
+._fade-view-content {
+    transform: translateZ(0);
+}

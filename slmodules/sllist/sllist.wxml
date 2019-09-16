@@ -1,0 +1,63 @@
+<view class="list0" wx:if="{{styleType=='0'}}">
+    <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:if="{{listData.length}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <view class="list-item">
+            <image src="{{item[imgUrlKey]}}"></image>
+            <view class="list-item-word">
+                <view class="list-item-title">{{item[titleKey]}}</view>
+                <view class="list-item-brief">{{item.subtitle}}</view>
+            </view>
+        </view>
+    </report-submit>
+</view>
+<view class="list1" wx:if="{{styleType=='1'}}">
+    <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:if="{{listData.length}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <view class="list-item">
+            <image src="{{item[imgUrlKey]}}"></image>
+            <view class="list-item-title">{{item[titleKey]}}</view>
+        </view>
+    </report-submit>
+</view>
+<view class="list2" wx:if="{{styleType=='2'}}">
+    <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:if="{{listData.length}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <view class="list-item">
+            <image src="{{item[imgUrlKey]}}"></image>
+            <view class="list-item-title">{{item[titleKey]}}</view>
+            <view class="m"></view>
+        </view>
+    </report-submit>
+</view>
+<view class="list3" wx:if="{{styleType=='3'}}">
+    <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:if="{{listData.length}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <view class="list-item">
+            <view class="list-item-title">{{item[titleKey]}}</view>
+            <view class="date-time">{{dateFr.formatTime( item[createTimeKey],[0,10] )}}</view>
+        </view>
+    </report-submit>
+</view>
+<view class="list4" wx:if="{{styleType=='4'}}">
+    <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:if="{{listData.length}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <view class="list-item">
+            <image src="{{item[imgUrlKey]}}"></image>
+            <view class="list-item-word">
+                <view class="list-item-title">{{item[titleKey]}}</view>
+                <view class="date-time">{{dateFr.formatTime( item[createTimeKey],[0,10] )}}</view>
+            </view>
+        </view>
+    </report-submit>
+</view>
+<view class="list5" wx:if="{{styleType=='5'}}">
+    <scroll-view scrollX class="scroll" wx:if="{{listData.length}}">
+        <report-submit bindtap="goToDetail" data-url="{{initUrl}}{{item.id}}" wx:for="{{listData}}" wx:key="{{item.id}}">
+            <view class="list-item">
+                <image src="{{item[imgUrlKey]}}"></image>
+                <view class="list-item-title">{{item[titleKey]}}</view>
+            </view>
+        </report-submit>
+    </scroll-view>
+</view>
+<wxs module="dateFr">
+var formatTime = (function(date, n) {
+    return (date.slice(n[(0)], n[(1)]))
+});
+module.exports.formatTime = formatTime;
+</wxs>

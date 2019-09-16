@@ -1,0 +1,88 @@
+<view class="decoration-company">
+    <view class="top">
+        <view class="flex s">
+            <navigator class="city" url="">珠海 <text class="iconfont icon-arrow"></text>
+            </navigator>
+            <navigator class="search flex" url="/pages/zxgsSearch/zxgsSearch">
+                <text class="iconfont icon-search"></text>
+                <text class="placeholder">请输入装修公司名称</text>
+            </navigator>
+        </view>
+        <view class="nav flex-main">
+            <view class="tab {{sxshow?'show':''}}">筛选</view>
+            <view bindtap="selectZh" class="flex zh tab {{!sxshow?'show':''}}">{{zhkey}}<text class="iconfont icon-caret-down"></text>
+            </view>
+            <view class="tab {{!sxshow?'show':''}}">信用</view>
+            <view class="tab {{!sxshow?'show':''}}">距离</view>
+            <view bindtap="selectSx">
+                <text class="iconfont icon-list"></text>
+            </view>
+            <view class="list a {{zhshow?'show':''}}">
+                <view bindtap="selectZhData" class="flex-main {{zhkey==='综合'?'on':''}}" data-key="综合">
+                    <text>综合</text>
+                    <text class="iconfont icon-duigou"></text>
+                </view>
+                <view bindtap="selectZhData" class="flex-main {{zhkey==='工地'?'on':''}}" data-key="工地">
+                    <text>工地</text>
+                    <text class="iconfont icon-duigou"></text>
+                </view>
+                <view bindtap="selectZhData" class="flex-main {{zhkey==='案例'?'on':''}}" data-key="案例">
+                    <text>案例</text>
+                    <text class="iconfont icon-duigou"></text>
+                </view>
+            </view>
+            <view class="list b {{sxshow?'show':''}}">
+                <view class="item">
+                    <view class="type">区域</view>
+                    <view class="sx-main">
+                        <text bindtap="searchSx" data-tid="">全部</text>
+                        <text bindtap="searchSx" data-tid="" wx:for="{{qyData}}" wx:key="{{index}}">{{item.name}}</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="type">类型</view>
+                    <view class="sx-main">
+                        <text bindtap="searchSx" data-tid="">全部</text>
+                        <text bindtap="searchSx" data-tid="" wx:for="{{tpData}}" wx:for-item="itt" wx:key="{{index}}">{{itt.name}}</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="type">风格</view>
+                    <view class="sx-main">
+                        <text bindtap="searchSx" data-tid="">全部</text>
+                        <text bindtap="searchSx" data-tid="" wx:for="{{styleData}}" wx:for-item="it" wx:key="{{index}}">{{it.name}}</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="type">预算</view>
+                    <view class="sx-main">
+                        <text bindtap="searchSx" data-tid="">全部</text>
+                        <text bindtap="searchSx" data-tid="" wx:for="{{ysData}}" wx:for-item="ie" wx:key="{{index}}">{{ie.name}}</text>
+                    </view>
+                </view>
+                <view class="sx-control">
+                    <text class="emp">清空</text>
+                    <text class="sub">确认</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="company-list">
+        <navigator class="company-item" url="/pages/company/company" wx:for="{{companyList}}" wx:for-item="tm" wx:key="{{index}}">
+            <view class="cname flex">
+                <image class="logo" src="{{tm.logo}}"></image>
+                <text class="name">{{tm.name}}</text>
+                <text class="yhj" wx:if="{{tm.isyhj===1}}">券</text>
+                <text class="cx" wx:if="{{tm.iszx===1}}">促</text>
+            </view>
+            <view class="al">
+                <text>案例： {{tm.al}}</text>
+                <text>工地： {{tm.gd}}</text>
+            </view>
+            <text class="ys" wx:if="{{tm.ys!==''}}">{{tm.ys}}</text>
+            <view class="imgs flex">
+                <image src="{{im}}" wx:for="{{tm.imgs}}" wx:for-item="im" wx:key="{{index}}"></image>
+            </view>
+        </navigator>
+    </view>
+</view>

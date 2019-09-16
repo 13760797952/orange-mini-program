@@ -1,0 +1,7 @@
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <view class="products-list">
+        <articles-list items="{{list}}" mode="{{listMode}}" type="product"></articles-list>
+    </view>
+    <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+</block>

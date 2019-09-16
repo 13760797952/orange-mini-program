@@ -1,0 +1,211 @@
+.list0 .list-item,.list4 .list-item {
+    position: relative;
+    border-bottom: 2rpx solid #f2f2f2;
+}
+
+report-submit:last-child .list-item {
+    border-bottom: none;
+}
+
+.list0 .list-item image,.list4 .list-item image {
+    width: 160rpx;
+    height: 130rpx;
+    position: absolute;
+    top: 30rpx;
+    left: 0;
+}
+
+.list4 .list-item image {
+    width: 200rpx;
+}
+
+.list0 .list-item .list-item-word,.list4 .list-item-word {
+    padding: 30rpx 0 0 185rpx;
+    height: 160rpx;
+}
+
+.list4 .list-item-word {
+    padding-left: 230rpx;
+}
+
+.list-item-title {
+    color: #555;
+    font-size: 32rpx;
+}
+
+.list0 .list-item .list-item-title {
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 20rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list0 .list-item .list-item-brief {
+    font-size: 28rpx;
+    color: #a1a1a1;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.list1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list1 report-submit,.list2 report-submit {
+    width: 48.5%;
+}
+
+.list1 .list-item {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20rpx 0;
+}
+
+.list-item image {
+    width: 100%;
+}
+
+.list1 .list-item image {
+    width: 100%;
+    height: 220rpx;
+    line-height: 0;
+    margin-bottom: 10rpx;
+}
+
+.list1 .list-item-title {
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 30rpx;
+}
+
+.list2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list2 .list-item {
+    position: relative;
+    line-height: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.list2 .list-item image {
+    height: 230rpx;
+}
+
+.list2 .list-item-title {
+    position: absolute;
+    bottom: 15rpx;
+    padding: 0 15rpx;
+    color: #fff;
+    font-size: 28rpx;
+    left: 0;
+    z-index: 15;
+    width: 100%;
+    overflow: hidden;
+    height: 30rpx;
+    line-height: 1;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.list2 .m {
+    width: 100%;
+    height: 60rpx;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    background: #000;
+    opacity: 0.3;
+}
+
+.list3 {
+    padding-top: 20rpx;
+}
+
+.list3 .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 30rpx;
+}
+
+.list3 .list-item-title {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.list3 .date-time {
+    color: #999;
+    font-size: 28rpx;
+    width: 215rpx;
+    text-align: right;
+}
+
+.list4 .date-time {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.list4 .list-item .list-item-title {
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.list5 {
+    padding-top: 20rpx;
+}
+
+.list5 report-submit {
+    width: 260rpx;
+    margin-right: 20rpx;
+    overflow: hidden;
+    display: inline-block;
+    height: 290rpx;
+}
+
+.list5 .list-item {
+    width: 100%;
+}
+
+.list5 .list-item image {
+    width: 100%;
+    height: 220rpx;
+    margin-bottom: 16rpx;
+}
+
+.list5 .list-item-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list5 .scroll {
+    height: 290rpx;
+    width: 100%;
+    white-space: nowrap;
+}

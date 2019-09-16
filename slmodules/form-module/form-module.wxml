@@ -1,0 +1,49 @@
+<form bindreset="formReset" bindsubmit="formSubmit" class="form-module">
+    <view class="form-item {{item.type==='textarea'?'v-top':''}}" wx:for="{{formData}}" wx:key="{{index}}">
+        <block wx:if="{{item.type==='input'}}">
+            <text class="label" wx:if="{{item.label}}">{{item.label}} :</text>
+            <input name="{{item.name}}" placeholder="{{item.placeholder}}"></input>
+        </block>
+        <block wx:elif="{{item.type==='checkbox'}}">
+            <input class="hide" name="{{item.name}}" type="text" value="{{checkVal}}"></input>
+            <text class="label">{{item.label}} :</text>
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{item.checks}}" wx:for-item="ite" wx:key="{{ite.id}}">
+                    <checkbox checked="{{ite.checked}}" value="{{ite.name}}"></checkbox>
+                        {{ite.value}}
+                    </label>
+            </checkbox-group>
+        </block>
+        <block wx:elif="{{item.type==='radio'}}">
+            <input class="hide" name="{{item.name}}" type="text" value="{{radioVal}}"></input>
+            <text class="label">{{item.label}} :</text>
+            <radio-group bindchange="radioChange" class="radio-group">
+                <label class="radio" wx:for="{{item.radios}}" wx:for-item="ite" wx:key="{{ite.id}}">
+                    <radio checked="{{ite.checked}}" value="{{ite.name}}"></radio>
+                        {{ite.value}}
+                    </label>
+            </radio-group>
+        </block>
+        <block wx:elif="{{item.type==='select'}}">
+            <text class="label">{{item.label}} :</text>
+            <picker bindchange="selectChange" name="{{item.name}}" range="{{item.selects}}" value="{{selectIndex}}">
+                    {{item.selects[selectIndex]}}
+                </picker>
+        </block>
+        <block wx:elif="{{item.type==='date'}}">
+            <text class="label">{{item.label}} :</text>
+            <picker bindchange="bindDateChange" end="{{item.endDate}}" mode="date" name="{{item.name}}" start="{{item.startDate}}" value="{{date}}">
+                <text wx:if="{{date}}">{{date}}</text>
+                <text class="placeholder" wx:else>请选择日期</text>
+            </picker>
+        </block>
+        <block wx:elif="{{item.type==='textarea'}}">
+            <text class="label" wx:if="{{item.label}}">{{item.label}} :</text>
+            <textarea name="{{item.name}}" placeholder="{{item.placeholder}}"></textarea>
+        </block>
+    </view>
+    <view class="btn-area">
+        <button class="submit" formType="submit">提交</button>
+        <button class="reset" formType="reset">重置</button>
+    </view>
+</form>

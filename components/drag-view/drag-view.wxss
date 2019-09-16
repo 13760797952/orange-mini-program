@@ -1,0 +1,22 @@
+._drag-view-area,._drag-view-view {
+    height: 100%;
+    width: 100%;
+}
+
+._drag-view-view {
+    display: flex;
+    position: static;
+    align-items: stretch;
+}
+
+._drag-view-content {
+    width: 100%;
+}
+
+._drag-view-content,._drag-view-expand {
+    flex-shrink: 0;
+}
+
+._drag-view-expand {
+    display: flex;
+}

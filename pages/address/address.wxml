@@ -1,0 +1,62 @@
+<import src="../../templates/address-overview/address-overview.wxml"></import>
+<message-popup></message-popup>
+<shortcut-bubble group="shop" wx:if="{{!callback}}"></shortcut-bubble>
+<scroll-view scrollY class="main-view">
+    <status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+    <block wx:else>
+        <view class="address-decoration"></view>
+        <view bindtap="selectItem" class="address-item-wrap" data-index="{{index}}" hoverClass="{{callback?'address-item-hover':''}}" wx:for="{{list}}" wx:key="{{item.id}}">
+            <drag-view class="address-item">
+                <view class="address-item-content" slot="content">
+                    <template is="address-overview" data="{{...item}}"></template>
+                </view>
+                <view class="address-item-expand" slot="expand">
+                    <view catchtap="setItemDefault" class="_set" data-id="{{item.id}}" data-index="{{index}}">{{item.isDefault?'取消':'设为'}}默认</view>
+                    <view catchtap="editItem" class="iconfont icon-edit _edit" data-index="{{index}}"></view>
+                    <view catchtap="removeItem" class="iconfont icon-remove _remove" data-id="{{item.id}}"></view>
+                </view>
+            </drag-view>
+        </view>
+    </block>
+</scroll-view>
+<view class="common-bottom-panel-wrap">
+    <view class="common-bottom-panel common-bottom-btns">
+        <view bindtap="editItem" hoverClass="_hover">
+            <i class="iconfont icon-add"></i>添加地址</view>
+        <view bindtap="chooseAddressByWechat" class="_wechat" hoverClass="_hover">
+            <i class="iconfont icon-wechat"></i>导入微信地址</view>
+    </view>
+    <ipx-bottom></ipx-bottom>
+</view>
+<fade-view top bindtapmask="tapMask" id="edit-view" tapMaskHide="{{false}}">
+    <view class="edit-view">
+        <form reportSubmit bindsubmit="editSubmit" class="common-form">
+            <label class="common-form-line">
+                <text>姓名</text>
+                <input bindinput="editChange" name="name" value="{{editData.name}}"></input>
+            </label>
+            <label class="common-form-line">
+                <text>手机号</text>
+                <input bindinput="editChange" name="phone" type="number" value="{{editData.phone}}"></input>
+            </label>
+            <label class="common-form-line">
+                <text>地区</text>
+                <picker bindchange="pickerChange" mode="region" name="region" value="{{editData.region}}">
+                    <view class="{{editData.region.length?'':'_placeholder'}}">{{editData.region.length?editData.region:'请选择地区'}}</view>
+                </picker>
+            </label>
+            <label class="common-form-line">
+                <text>详细地址</text>
+                <input bindinput="editChange" name="detail" value="{{editData.detail}}"></input>
+            </label>
+            <view class="common-form-line _hidden-border">
+                <text>设为默认</text>
+                <switch bindchange="editChange" checked="{{editData.isDefault}}" name="isDefault"></switch>
+            </view>
+            <view class="common-form-btns">
+                <button formType="submit">{{editData.id===undefined?'添加地址':'保存修改'}}</button>
+            </view>
+        </form>
+    </view>
+</fade-view>
+<auth-setting-pop id="auth-setting-pop"></auth-setting-pop>

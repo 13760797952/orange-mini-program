@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 页面嵌套小神推 -->
+  <form bindsubmit="pushFormSubmit"  report-submit='true'>
+    <view class="banner">
+      <image src="{{picUrl}}/banner.jpg"></image>
+    </view>
+    <view class="sec panel">
+      <view class="title">你家的装修预算</view>
+      <view class="price">
+        <image src="{{picUrl}}/sec1.png"></image>
+        <view class="inner_price">
+          <block wx:for="{{pricePics}}" wx:key="price">
+            <image class="{{index==showIndex ? 'show':''}}" src="{{picUrl}}/{{item}}"></image>
+          </block>
+        </view>
+      </view>
+      <view class="sec1">
+        <view>
+          人工费：<text>？元</text>
+        </view>
+        <view>
+          材料费：<text>？元</text>
+        </view>
+        <view>
+          设计费：<text>？元</text>
+        </view>
+        <view>
+          质检费：<text>？元</text>
+        </view>
+      </view>
+    </view>
+    <view class="sec_foot">
+      <image src="{{picUrl}}/foot.png"></image>
+    </view>
+    <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit" id="xstBtn"></button>
+  </form>
+  <!-- 报价表单 -->
+  <view class="sec_form">
+    <form bindsubmit="pushFormSubmit"  report-submit='true'>
+      <view class="form-field">
+        <radio-group class="radio-group" name="way">
+          <label class="radio">
+            <radio value="新房装修" checked="true"/>
+            <text>新房装修</text>
+          </label>
+          <label class="radio">
+            <radio value="旧房翻新"/>
+            <text>旧房翻新</text>
+          </label>
+        </radio-group>
+      </view>
+      <view class="form-field">
+        <input type="text" placeholder='请输入您房屋的面积' name="area"/>
+      </view>
+      <view class="form-field">
+        <input type="tel" placeholder='请输入您的手机号' name="phone"/>
+      </view>
+      <view class="form-field">
+        <button class="btn btn-jab"  plain="true"  formType="submit">立即计算</button>
+      </view>
+    </form>
+  </view>
+  <!-- 报价表单-->
+</view>

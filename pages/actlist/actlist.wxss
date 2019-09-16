@@ -1,0 +1,7 @@
+.container {
+    min-height: 83vh;
+}
+
+.box-news {
+    padding: 0 20rpx 20rpx;
+}

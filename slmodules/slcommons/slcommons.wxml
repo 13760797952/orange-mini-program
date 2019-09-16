@@ -1,0 +1,26 @@
+<view class="common {{stsModel?'x':''}}" style="{{backgroundColor?'background:'+backgroundColor:''}}">
+    <view class="box-suspend" wx:if="{{syscfg.suspend.suspend_show=='1'}}">
+        <view bindtap="bindLinkClick" class="box-img" data-url="{{syscfg.suspend.page_url}}">
+            <image class="img" src="{{syscfg.suspend.thumb_url}}"></image>
+        </view>
+        <view bindtap="suspendCloseClick" class="box-close">
+            <i class="icon iconfont icon-fnav icon-close"></i>
+        </view>
+    </view>
+    <cover-view class="contact {{stsModel?'x':''}}" wx:if="{{syscfg.config.consult_status=='1'&&contactShow}}">
+        <button openType="contact" style="background:none;">
+            <cover-image src="{{syscfg.config.consult_img_url?syscfg.config.consult_img_url:syscfg.config.consult_img_default}}"></cover-image>
+        </button>
+    </cover-view>
+    <block wx:if="{{myadpop.adpop_show==1}}">
+        <view class="box-shadow"></view>
+        <view class="box-adpop">
+            <view bindtap="bindLinkClick" class="box-img" data-url="{{myadpop.page_url}}">
+                <image src="{{myadpop.thumb_url}}"></image>
+            </view>
+            <view bindtap="adpopClose" class="box-close">
+                <i class="icon iconfont icon-fnav icon-close"></i>
+            </view>
+        </view>
+    </block>
+</view>

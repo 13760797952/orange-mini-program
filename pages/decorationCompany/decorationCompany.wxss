@@ -1,0 +1,249 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff');
+}
+
+.iconfont {
+    font-family: "iconfont"!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-list:before {
+    content: "\e602";
+}
+
+.icon-caret-down:before {
+    content: "\e611";
+}
+
+.icon-search:before {
+    content: "\e503";
+}
+
+.icon-arrow:before {
+    content: "\e761";
+}
+
+.icon-duigou:before {
+    content: "\e67b";
+}
+
+text,view {
+    font-size: 14px;
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.decoration-company .top {
+    position: fixed;
+    top: 0;
+    height: 95px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+}
+
+.decoration-company .top .s {
+    padding: 15px 20px;
+}
+
+.decoration-company .top .search {
+    padding-left: 10px;
+    margin-left: 10px;
+    color: #999;
+    position: relative;
+}
+
+.decoration-company .top .search::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 2px;
+    border-left: 1px solid #666;
+    left: 0;
+    top: 5px;
+}
+
+.decoration-company .top .search .iconfont {
+    color: #333;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.decoration-company .nav {
+    position: relative;
+    padding: 10px 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.decoration-company .nav .tab {
+    display: none;
+}
+
+.decoration-company .nav .tab.show {
+    display: inline-block;
+}
+
+.decoration-company .nav .zh .iconfont {
+    font-size: 17px;
+    margin-left: 3px;
+}
+
+.decoration-company .nav .list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: #fff;
+    max-height: 57vh;
+    overflow: auto;
+    padding-bottom: 20px;
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.inner-container::-webkit-scrollbar {
+    display: none;
+}
+
+.decoration-company .nav .list.show {
+    display: block;
+}
+
+.decoration-company .nav .list.a .iconfont {
+    display: none;
+    color: #2fbd80;
+    font-size: 12px;
+}
+
+.decoration-company .nav .list.a .on .iconfont {
+    display: inline-block;
+}
+
+.decoration-company .nav .list.a .on {
+    color: #2fbd80;
+}
+
+.decoration-company .nav .list.a>view {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.decoration-company .nav .list.b {
+    padding: 10px 20px 0;
+}
+
+.decoration-company .nav .list.b .sx-control {
+    position: fixed;
+    top: 72vh;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    left: 0;
+}
+
+.decoration-company .nav .list.b .sx-control text {
+    width: 46%;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+    color: #666;
+    margin: 0 2%;
+}
+
+.decoration-company .nav .list.b .sx-control text.sub {
+    background: #2fbd80;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.decoration-company .nav .list.b .sx-main {
+    padding: 10px 10px 0;
+}
+
+.decoration-company .nav .list.b .sx-main text {
+    margin-right: 20px;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.decoration-company .company-list {
+    margin-top: 110px;
+    padding: 0 15px;
+}
+
+.decoration-company .company-item {
+    margin-bottom: 30px;
+}
+
+.decoration-company .company-item .logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.company-item .yhj,.company-item .cx {
+    margin-left: 3px;
+    padding: 3px;
+    line-height: 1;
+    background: darkorange;
+    color: #fff;
+    border-radius: 1px;
+    font-size: 12px;
+}
+
+.company-item .yhj {
+    background: violet;
+}
+
+.decoration-company .company-item .imgs image {
+    width: 32.5%;
+    height: 30vw;
+    margin-right: 1.5%;
+    border-radius: 2px;
+}
+
+.company-item .ys {
+    display: inline-block;
+    border: darkgoldenrod solid 1px;
+    margin-bottom: 10px;
+    color: darkgoldenrod;
+    padding: 0 5px;
+    font-size: 10px;
+}
+
+.company-item .al {
+    margin: 5px 0;
+}
+
+.company-item .al text {
+    font-size: 12px;
+    color: #888;
+    margin-right: 10px;
+}
+
+.decoration-company .company-item .imgs image:last-child {
+    margin-right: 0;
+}

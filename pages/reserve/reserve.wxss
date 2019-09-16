@@ -1,0 +1,72 @@
+.container {
+    font-family: 'Microsoft yahei',sans-serif;
+    min-height: 83vh;
+}
+
+.box-gb {
+    width: 100%;
+}
+
+.box-gb image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-btn button {
+    background: #428bca;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    color: #fff;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.section {
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.section input {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 60rpx;
+    background: #fff;
+    border: 1rpx solid #dcdcdc;
+    padding: 0 16rpx 0 70rpx;
+    font-size: 30rpx;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.section textarea {
+    width: auto;
+    height: 140rpx;
+    line-height: 48rpx;
+    padding: 20rpx;
+    background: #fff;
+    border: 1rpx solid #dcdcdc;
+    font-size: 30rpx;
+    font-family: 'Microsoft yahei',sans-serif;
+}
+
+.section .money {
+    color: red;
+    border: none;
+    padding-left: 4rpx;
+}
+
+.section .sdate {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 70rpx;
+    font-size: 30rpx;
+    border: 1rpx solid #dcdcdc;
+}
+
+.section .icon-fnav {
+    position: absolute;
+    left: 16rpx;
+    top: 26rpx;
+    color: #999;
+}

@@ -1,0 +1,258 @@
+@import "../../wuBaseWxss/0.wxss";
+
+._shortcut-bubble-wrap {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    color: #fff;
+}
+
+._shortcut-bubble-wrap._light {
+    color: #666;
+}
+
+._shortcut-bubble {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 12rpx 6rpx rgba(0,0,0,.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+._shortcut-bubble>image {
+    position: absolute;
+    top: -1rpx;
+    left: -1rpx;
+    bottom: -1rpx;
+    right: -1rpx;
+    border-radius: inherit;
+    width: auto;
+    height: auto;
+}
+
+._shortcut-bubble>i {
+    display: block;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    font-size: 40rpx;
+    transition: transform .2s ease;
+}
+
+._expand ._shortcut-bubble>i {
+    transform: rotate(45deg);
+}
+
+._alone ._shortcut-bubble {
+    flex-direction: column;
+}
+
+._alone ._shortcut-bubble>i {
+    font-size: 42rpx;
+}
+
+._alone ._shortcut-bubble>i:only-child {
+    font-size: 50rpx;
+}
+
+._alone ._shortcut-bubble>text {
+    font-size: 20rpx;
+}
+
+._shortcut-bubble-count {
+    position: absolute;
+    left: 80%;
+    top: 4rpx;
+    display: inline-block;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    min-width: 30rpx;
+    margin-top: -15rpx;
+    border-radius: 15rpx;
+    box-sizing: border-box;
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: #ff3b30;
+}
+
+._shortcut-bubble-mask {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    transition: background-color .4s ease;
+}
+
+._shortcut-bubble-mask._show {
+    background-color: rgba(0,0,0,.5);
+}
+
+._shortcut-bubble-menu {
+    position: absolute;
+    transform: scale(0);
+    transition: transform .3s ease,opacity .2s ease;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-height: 55vh;
+}
+
+._shortcut-bubble-menu>view {
+    font-size: 30rpx;
+    padding: 0 30rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 10rpx 20rpx;
+    border-radius: 35rpx;
+    box-shadow: 0 0 12rpx 6rpx rgba(0,0,0,.1);
+    transition: transform .2s ease;
+}
+
+._shortcut-bubble-menu>view._hover {
+    transform: scale(1.2);
+}
+
+._shortcut-bubble-menu>view>i {
+    font-size: 1.4em;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+
+._expand ._shortcut-bubble-menu {
+    transform: scale(1);
+    opacity: 1;
+    transition-timing-function: cubic-bezier(0.18,0.89,0.32,1.28),ease;
+}
+
+._near-top ._shortcut-bubble-menu {
+    top: 0;
+}
+
+._near-bottom ._shortcut-bubble-menu {
+    bottom: 0;
+    flex-direction: column-reverse;
+}
+
+._near-left ._shortcut-bubble-menu {
+    left: 100%;
+}
+
+._near-right ._shortcut-bubble-menu {
+    right: 100%;
+    flex-wrap: wrap-reverse;
+}
+
+._shortcut-bubble-say {
+    background-color: #fff;
+    padding: 20rpx;
+    min-width: -webkit-max-content;
+    box-shadow: 0 4rpx 18rpx 4rpx rgba(0,0,0,.1);
+    border: 1rpx solid #ccc;
+    color: #666;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    position: absolute;
+    transition: transform .3s ease,opacity .2s ease;
+    transform: scale(0) translateZ(0);
+    opacity: 0;
+}
+
+._shortcut-bubble-say._show {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+    transition-timing-function: cubic-bezier(0.18,0.89,0.32,1.28),ease;
+}
+
+._near-top ._shortcut-bubble-say {
+    top: 50%;
+    margin-top: -34rpx;
+}
+
+._near-bottom ._shortcut-bubble-say {
+    bottom: 0;
+    margin-bottom: 14rpx;
+}
+
+._near-left ._shortcut-bubble-say {
+    left: 100%;
+    margin-left: 20rpx;
+}
+
+._near-right ._shortcut-bubble-say {
+    right: 100%;
+    margin-right: 20rpx;
+}
+
+._shortcut-bubble-arrow {
+    position: absolute;
+    height: 24rpx;
+}
+
+._shortcut-bubble-arrow:after,._shortcut-bubble-arrow:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 12rpx solid;
+}
+
+._shortcut-bubble-arrow:after {
+    right: 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+._shortcut-bubble-arrow:before {
+    right: 1rpx;
+    border-color: transparent #ccc transparent transparent;
+}
+
+._near-top ._shortcut-bubble-arrow {
+    top: 20rpx;
+}
+
+._near-bottom ._shortcut-bubble-arrow {
+    bottom: 20rpx;
+}
+
+._near-left ._shortcut-bubble-arrow {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+._near-right ._shortcut-bubble-arrow {
+    right: 0;
+    transform: translateX(100%) scale(-1);
+}
+
+._shortcut-bubble-say-content {
+    max-width: 420rpx;
+}
+
+._near-top._near-left ._shortcut-bubble-pendant {
+    transform-origin: top left;
+}
+
+._near-top._near-right ._shortcut-bubble-pendant {
+    transform-origin: top right;
+}
+
+._near-bottom._near-left ._shortcut-bubble-pendant {
+    transform-origin: bottom left;
+}
+
+._near-bottom._near-right ._shortcut-bubble-pendant {
+    transform-origin: bottom right;
+}

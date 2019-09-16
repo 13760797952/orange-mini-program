@@ -1,0 +1,66 @@
+@import "../../templates/address-overview/address-overview.wxss";
+
+@import "../../templates/buy-item/buy-item.wxss";
+
+page {
+    height: 100%;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.order-status {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    background-color: #62ccec;
+    transition: background-color .4s ease;
+}
+
+.order-status>i {
+    font-size: 100rpx;
+    margin-right: 20rpx;
+}
+
+.order-status ._status-text {
+    font-size: 32rpx;
+    font-weight: bold;
+}
+
+.buy-list {
+    background-color: #fff;
+}
+
+.order-address {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.pay-button {
+    margin-left: auto;
+    font-size: 28rpx;
+    line-height: 60rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+    color: #666;
+    border-radius: 6rpx;
+    box-shadow: 0 4rpx 10rpx 4rpx rgba(0,0,0,.06);
+    transition: box-shadow .4s ease;
+}
+
+.pay-button._hover {
+    box-shadow: 0 6rpx 16rpx 4rpx rgba(0,0,0,.1);
+}
+
+ui-price {
+    font-size: 34rpx;
+}
+
+.minor-price {
+    color: #666;
+    font-weight: normal;
+}
+
+.pay-price {
+    font-size: 36rpx;
+}

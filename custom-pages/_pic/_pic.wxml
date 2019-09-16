@@ -1,0 +1,153 @@
+<view class="container" style="background:#eee;min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-pic" hidden="{{picListMulti.psLeft.length===0&&notEmpty}}">
+        <view class="box-pic-header">
+            <view class="box-tab-pic">
+                <view class="box-li" style="width: {{syscfg.panorama.status_panorama_in_pic_show==='1'?25:33.33}}%">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-tp="0" style="{{picType==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">套图</view>
+                        <view style="height:6rpx;width:{{750/(syscfg.panorama.status_panorama_in_pic_show==='1'?4:3)}}rpx;background: {{syscfg.color.maincolor.length?syscfg.color.maincolor:'#000'}};transform:translateX({{750/(syscfg.panorama.status_panorama_in_pic_show==='1'?4:3)*picType+'rpx'}}); transition: all 0.3s;"></view>
+                    </view>
+                </view>
+                <view class="box-li" style="width: {{syscfg.panorama.status_panorama_in_pic_show==='1'?25:33.33}}%">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-tp="1" style="{{picType==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">单图</view>
+                    </view>
+                </view>
+                <view class="box-li" style="width: 33.33%" wx:if="{{syscfg.panorama.status_panorama_in_pic_show==='1'}}">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-tp="2" style="{{picType==2&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==2&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">全景图</view>
+                    </view>
+                </view>
+                <view class="box-li" style="width: {{syscfg.panorama.status_panorama_in_pic_show==='1'?25:33.33}}%">
+                    <navigator class="box-item transition-all" url="/pages/search/search">
+                        <view>
+                            <i class="icon-cx iconfont"></i> 搜索</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="box-pic-multi transition-all {{picType==0?'':'none'}}">
+                <view class="box-options">
+                    <view class="box-li">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="9999">{{picOrderMultiTitle}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==9999?'show':''}}" style="height:{{tabAttr.curBdIndex==9999?'160rpx':0}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="0" data-str="综合排序" style="{{picOrderMulti==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="1" data-str="按收藏量" style="{{picOrderMulti==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按收藏量</view>
+                                </view>
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="2" data-str="按浏览量" style="{{picOrderMulti==2&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==2&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按浏览量</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="box-li" wx:if="{{item.parentid==0}}" wx:for="{{picTagMulti}}" wx:key="{{item.id}}">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="{{index}}">{{item.name}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==index?'show':''}}" style="height:{{tabAttr.curBdIndex==index?multiHeights[item.id]+'rpx':0}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOtherMulti" class="box-li" data-id="0" data-parent-index="{{index}}" data-str="{{item.name}}" style="{{item.gl==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{item.gl==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOtherMulti" class="box-li" data-id="{{row.id}}" data-parent-index="{{index}}" data-str="{{row.name}}" style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:if="{{row.parentid==item.id}}" wx:for="{{picTagMulti}}" wx:for-index="rowidx" wx:for-item="row" wx:key="{{row.id}}">
+                                    <view style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">{{row.name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="box-pic-single transition-all {{picType==1?'':'none'}}">
+                <view class="box-options">
+                    <view class="box-li">
+                        <view bindtap="clickOrderPanel" class="box-item" data-height="{{200}}" data-index="9998">
+                            {{picOrderSingleTitle}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==9998?'show':''}}" style="height:{{tabAttr.curBdIndex==9998?'160rpx':0}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="0" data-str="综合排序" style="{{picOrderSingle==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="1" data-str="按收藏量" style="{{picOrderSingle==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按收藏量</view>
+                                </view>
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="2" data-str="按浏览量" style="{{picOrderSingle==2&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==2&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按浏览量</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="box-li" wx:if="{{item.parentid==0}}" wx:for="{{picTagSingle}}" wx:key="{{item.id}}">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="{{index}}">
+                                    {{item.name}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==index?'show':''}}" style="height:{{tabAttr.curBdIndex==index?singleHeights[item.id]+'rpx':0}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOtherSingle" class="box-li" data-id="0" data-parent-index="{{index}}" data-str="{{item.name}}" style="{{item.gl==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{item.gl==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOtherSingle" class="box-li" data-id="{{row.id}}" data-parent-index="{{index}}" data-str="{{row.name}}" style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:if="{{row.parentid==item.id}}" wx:for="{{picTagSingle}}" wx:for-index="rowidx" wx:for-item="row" wx:key="{{row.id}}">
+                                    <view style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">{{row.name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-multi transition-all {{picType==0?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <block wx:if="{{picListMulti.psLeft.length||picListMulti.psRight.length}}">
+
+                        <view class="fr">
+                            <view class="box-li" wx:for="{{picListMulti.psRight}}" wx:key="{{item.id}}">
+                                <navigator url="/pages/play/play?type=0&id={{item.id}}">
+                                    <image src="{{item.thumb_url}}" mode="aspectFill" ></image>
+                                    <view class="box-title">{{item.name}}</view>
+                                    <view class="box-attr">
+                                        <view class="ba-left">{{item.show_num}} 浏览</view>
+                                        <view class="ba-right">
+                                            <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                    </view>
+                                </navigator>
+                            </view>
+                        </view>
+                    </block>
+                    <empty msg="没有相关图片" wx:else></empty>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-single transition-all {{picType==1?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <block wx:if="{{picListSingle.psLeft.length||picListSingle.psRight.length}}">
+                        <view class="fr">
+                            <view class="box-li" wx:for="{{picListSingle.psRight}}" wx:key="{{item.id}}">
+                                <view bindtap="goToPlay" data-purl="/pages/play/play?type=1&id={{item.id}}">
+                                    <image src="{{item.thumb_url}}" mode="aspectFill"></image>
+                                    <view class="box-attr">
+                                        <view class="ba-right">
+                                            <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <empty msg="没有相关图片" wx:else></empty>
+                </view>
+            </view>
+        </view>
+        <view class="quanjing transition-all {{picType==2?'':'none'}}" wx:if="{{syscfg.panorama.status_panorama_in_pic_show==='1'}}">
+            <view class="products-list">
+                <articles-list items="{{list}}" mode="{{listMode}}" type="" url="panorama-detail"></articles-list>
+            </view>
+            <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+        </view>
+        <view bindtap="hideBoxShadow" catchtouchstart="notTouch" class="box-shadow {{tabAttr.curBdIndex>=0?'':'none'}}"></view>
+    </view>
+</view>
+<slloading wx:if="{{picListMulti.psLeft.length===0&&notEmpty}}"></slloading>

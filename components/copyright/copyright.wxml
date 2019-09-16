@@ -1,0 +1,9 @@
+<view class="_copyright-info-wrap" wx:if="{{copyright.enabled}}">
+    <view bindtap="targetActionRun" class="_copyright-info" data-action="{{copyright.action}}">
+        <view class="_owner-info">
+            <image mode="aspectFit" src="{{copyright.image}}" wx:if="{{copyright.image}}"></image>
+            <text>{{copyright.owner}}</text>
+        </view>
+        <rich-text class="_more" nodes="{{copyright.more}}" wx:if="{{copyright.more}}"></rich-text>
+    </view>
+</view>

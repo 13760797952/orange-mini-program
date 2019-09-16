@@ -1,0 +1,19 @@
+<view bindtap="targetActionRun" class="_articles-item" data-action=">{{url}}?type={{type}}&id={{item.id}}{{url==='panorama-detail'?'&title='+item.title:''}}" wx:for="{{items}}" wx:key="{{index}}">
+    <report-submit></report-submit>
+    <simg lazyLoad mode="{{imgMode||presetImgMode[mode]||'aspectFit'}}" src="{{item.image}}" style="{{!item.image?'min-height:200rpx':''}}" wx:if="{{mode!=='non-image'}}"></simg>
+    <view class="_info">
+        <view class="_title">{{item.title}}</view>
+        <view class="_subtitle">{{item.subTitle}}</view>
+        <div class="_extra">
+            <view class="flag">
+                <view class="view">
+                    <i class="iconfont icon-view"></i> {{item.view_count}}
+                </view>
+                <cover-view catchtap="favFn" data-aid="{{item.id}}" data-fav="{{item.fav}}" data-idx="{{index}}">
+                    <cover-view class="fav iconfont {{item.fav===0?'icon-favor':'icon-favorfill'}}"></cover-view> {{item.fav_count}}
+                </cover-view>
+            </view>
+            <view class="_time">{{item.time}}</view>
+        </div>
+    </view>
+</view>

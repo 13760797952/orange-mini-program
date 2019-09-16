@@ -1,0 +1,5 @@
+<view class="_loading-icon_wrap">
+    <view class="_loading-icon">
+        <i style="background-color: {{color||commonStyles.themeColor}}" wx:for="12345678" wx:key="{{index}}"></i>
+    </view>
+</view>

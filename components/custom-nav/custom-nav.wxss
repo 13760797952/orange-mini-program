@@ -1,0 +1,127 @@
+@import "../../wuBaseWxss/0.wxss";
+
+._custom-nav-placeholder {
+    height: 100rpx;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 9999;
+}
+
+._custom-nav-wrap {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+._custom-nav {
+    height: 100rpx;
+    display: flex;
+    border-top: 1rpx solid #e8e8e8;
+    box-sizing: border-box;
+    box-shadow: 0 -2rpx 6rpx rgba(0,0,0,.04);
+    white-space: nowrap;
+}
+
+._custom-nav-item,._custom-nav-item>view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+}
+
+._custom-nav-item {
+    transition: color .2s ease;
+}
+
+._custom-nav-item._has-menu>view:after {
+    content: '\e688';
+    position: absolute;
+    display: block;
+    color: rgba(0,0,0,.5);
+    top: 10rpx;
+    left: 50%;
+    padding-left: 24rpx;
+    font-size: 30rpx;
+    line-height: 1em;
+    font-family: 'iconfont';
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+._custom-nav-item._active._has-menu>view:after {
+    opacity: 1;
+}
+
+._custom-nav-item i {
+    font-size: 42rpx;
+}
+
+._custom-nav-item text {
+    font-size: 20rpx;
+}
+
+._custom-nav-menu-wrap {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-bottom: 100rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    animation: fade-in .4s 0s 1 ease;
+}
+
+._custom-nav-menu {
+    flex: 1;
+    background-image: linear-gradient(to bottom,rgba(44,44,44,0),rgba(44,44,44,.8));
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+}
+
+._custom-nav-menu-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    transition: transform .4s ease;
+    transform-origin: bottom center;
+    transform: scale(.8) translateZ(0);
+}
+
+._custom-nav-menu-item._hover {
+    transform: scale(1) translateZ(0);
+}
+
+._custom-nav-menu-item>i {
+    font-size: 80rpx;
+    pointer-events: none;
+}
+
+._custom-nav-menu-item>text {
+    font-size: 32rpx;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

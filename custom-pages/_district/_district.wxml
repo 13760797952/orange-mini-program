@@ -1,0 +1,61 @@
+<view class="district" hidden="{{loadShow}}" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view bindtap="navHide" class="bg {{tp!==''?'show':''}}"></view>
+    <scroll-view scrollX class="nav-scroll">
+        <view class="nav">
+            <text bindtap="activeNav" data-tp="px" style="{{px!=='综合排序'?'color:'+syscfg.color.maincolor:''}}">{{px}}<text class="icon iconfont icon-unfold"></text>
+            </text>
+            <text bindtap="activeNav" data-tp="xq" style="{{xq!=='小区'?'color:'+syscfg.color.maincolor:''}}">{{xq}}<text class="icon iconfont icon-unfold"></text>
+            </text>
+            <text bindtap="activeNav" data-tp="fg" style="{{fg!=='风格'?'color:'+syscfg.color.maincolor:''}}">{{fg}}<text class="icon iconfont icon-unfold"></text>
+            </text>
+            <text bindtap="activeNav" data-tp="zx" style="{{zx!=='阶段'?'color:'+syscfg.color.maincolor:''}}">{{zx}}<text class="icon iconfont icon-unfold"></text>
+            </text>
+            <text bindtap="activeNav" data-tp="fx" style="{{fx!=='房型'?'color:'+syscfg.color.maincolor:''}}">{{fx}}<text class="icon iconfont icon-unfold"></text>
+            </text>
+        </view>
+    </scroll-view>
+    <view class="content-main">
+        <view class="{{tp==='px'?'on':''}}" style="height:{{tp==='px'?'160':0}}rpx">
+            <view class="xq-item">
+                <text bindtap="pxTpClick" data-pid="" data-tp="" style="{{px==='综合排序'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">全部</text>
+                <text bindtap="pxTpClick" data-pid="fav" data-tp="按收藏量" style="{{pid==='fav'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">按收藏量</text>
+                <text bindtap="pxTpClick" data-pid="view" data-tp="按浏览量" style="{{pid==='view'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">按浏览量</text>
+            </view>
+        </view>
+        <view class="{{tp==='xq'?'on':''}}" style="height:{{tp==='xq'?heights.subdistrict:0}}rpx">
+            <view class="xq-item">
+                <text bindtap="xqTpClick" data-cid="" data-tp="" style="{{xq==='小区'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">全部</text>
+                <text bindtap="xqTpClick" data-cid="{{item.id}}" data-tp="{{item.title}}" style="{{cid===item.id?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}" wx:for="{{xqData}}" wx:key="{{index}}">{{item.title}}</text>
+            </view>
+        </view>
+        <view class="{{tp==='fg'?'on':''}}" style="height:{{tp==='fg'?heights.style:0}}rpx">
+            <view class="xq-item">
+                <text bindtap="fgTpClick" data-fid="" data-tp="" style="{{fg==='风格'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">全部</text>
+                <text bindtap="fgTpClick" data-fid="{{it.id}}" data-tp="{{it.title}}" style="{{fg===it.title?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}" wx:for="{{fgData}}" wx:for-item="it" wx:key="{{index}}">{{it.title}}</text>
+            </view>
+        </view>
+        <view class="{{tp==='zx'?'on':''}}" style="height:{{tp==='zx'?heights.progress:0}}rpx">
+            <view class="xq-item">
+                <text bindtap="zxTpClick" data-sid="" data-tp="" style="{{zx==='阶段'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">全部</text>
+                <text bindtap="zxTpClick" data-sid="{{it.id}}" data-tp="{{it.title}}" style="{{zx===it.title?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}" wx:for="{{zxjdData}}" wx:for-item="it" wx:key="{{index}}">{{it.title}}</text>
+            </view>
+        </view>
+        <view class="{{tp==='fx'?'on':''}}" style="height:{{tp==='fx'?heights.type:0}}rpx">
+            <view class="xq-item">
+                <text bindtap="fxTpClick" data-tp="" data-xid="" style="{{fx==='房型'?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}">全部</text>
+                <text bindtap="fxTpClick" data-tp="{{it.title}}" data-xid="{{it.id}}" style="{{fx===it.title?'border-color:'+syscfg.color.maincolor+';color:'+syscfg.color.maincolor:''}}" wx:for="{{fxData}}" wx:for-item="it" wx:key="{{index}}">{{it.title}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="box-cont">
+        <view class="main">
+            <district-list districtList="{{mainData}}"></district-list>
+            <view wx:if="{{mainData.length===0}}">
+                <empty msg="没有相关工地"></empty>
+            </view>
+            <view class="nomore" wx:if="{{isBoottom&&mainData.length!==0}}">-没有更多了-</view>
+        </view>
+    </view>
+</view>
+<slcommon bind:setSysInfo="setSysInfo" hasAuth="{{true}}" tabShow="{{true}}"></slcommon>
+<slloading wx:if="{{loadShow}}"></slloading>

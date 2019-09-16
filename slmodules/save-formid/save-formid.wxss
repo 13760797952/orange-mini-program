@@ -1,0 +1,227 @@
+@import "../../wuBaseWxss/0.wxss";
+
+input.hide {
+    height: 0;
+    width: 0;
+    line-height: 0;
+    border: none;
+    background: none;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+form.btn button {
+    background: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    line-height: 46rpx;
+    border-radius: 0;
+}
+
+form.btn button::after {
+    border: none;
+}
+
+.nav {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    padding-bottom: 10rpx;
+    text-align: center;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20rpx;
+    flex-wrap: wrap;
+}
+
+.nav .nav-item {
+    text-align: center;
+    overflow: hidden;
+    margin: 10rpx 0;
+}
+
+.nav .nav-item image {
+    display: inline-block;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.nav .nav-item text {
+    font-size: 24rpx;
+    color: #333;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nav .line-h {
+    position: absolute;
+    top: 50%;
+    left: 40rpx;
+    right: 40rpx;
+    height: 2rpx;
+    background: #f2f2f2;
+}
+
+.nav .line-v {
+    position: absolute;
+    top: 20rpx;
+    bottom: 20rpx;
+    left: 50%;
+    width: 2rpx;
+    background: #f2f2f2;
+}
+
+.box-group-ad {
+    width: 100%;
+    height: 375rpx;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.box-group-ad .box-item {
+    width: 100%;
+    height: 100%;
+}
+
+.box-group-ad navigator {
+    width: 100%;
+    height: 100%;
+}
+
+.box-group-ad image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-group-ad.pic-2 .box-item:first-child {
+    width: 375rpx;
+    height: 375rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.box-group-ad.pic-2 .box-item:nth-child(2) {
+    width: 375rpx;
+    height: 375rpx;
+    overflow: hidden;
+    float: right;
+}
+
+.box-group-ad.pic-3 {
+    position: relative;
+    background: #fff;
+}
+
+.box-group-ad.pic-3 .box-item:first-child {
+    width: 375rpx;
+    height: 375rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.box-group-ad.pic-3 .box-item:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 375rpx;
+    height: 188rpx;
+    overflow: hidden;
+}
+
+.box-group-ad.pic-3 .box-item:last-child {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 375rpx;
+    height: 187rpx;
+    overflow: hidden;
+}
+
+.guide-map {
+    display: flex;
+    flex-wrap: wrap;
+    color: #999;
+    text-align: center;
+    background-color: #fff;
+    padding: 30rpx 0;
+}
+
+.guide-map>view {
+    width: 20%;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.guide-map i {
+    display: block;
+    font-size: 50rpx;
+}
+
+.guide-map text {
+    font-size: 28rpx;
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #666;
+}
+
+.guide-map image {
+    width: 100%;
+    height: 100rpx;
+}
+
+.common-ad-one {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10rpx 0;
+    background-color: #fff;
+}
+
+.common-ad-one image {
+    display: block;
+    width: 100%;
+}
+
+.common-ad-group {
+    position: relative;
+    margin: 10rpx 0;
+    width: 100%;
+    height: 375rpx;
+    background-color: #fff;
+}
+
+.common-ad-group image,.common-ad-group button {
+    position: absolute;
+    display: block;
+    border-radius: 10rpx;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.common-ad-group form:nth-child(1) image,.common-ad-group form:nth-child(1) button {
+    top: 10rpx;
+    left: 10rpx;
+    width: 355rpx;
+    height: 355rpx;
+}
+
+.common-ad-group form:nth-child(2) image,.common-ad-group form:nth-child(2) button {
+    top: 10rpx;
+    right: 10rpx;
+    width: 365rpx;
+    height: 173rpx;
+}
+
+.common-ad-group form:nth-child(3) image,.common-ad-group form:nth-child(3) button,.common-ad-group form:nth-child(3) {
+    bottom: 10rpx;
+    right: 10rpx;
+    width: 365rpx;
+    height: 173rpx;
+}

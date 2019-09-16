@@ -1,0 +1,169 @@
+/**index.wxss**/
+page{
+  height: 100%;
+}
+.container{
+  position: relative;
+  height: 100%;
+  background: url(https://ox.o-home.com/attachment/images/9/2019/02/PF42k4hXPlPHbB7FxFvGOb778wzb8Z.jpg) no-repeat center bottom;
+  background-size: cover;
+}
+swiper{
+  height: 100%;
+}
+.tc{
+  text-align: center;
+}
+.page{
+  width: 100%;
+  height: 100%;
+  padding: 25rpx 42rpx;
+  box-sizing: border-box;
+}
+.page3{
+  padding-top: 15rpx;
+}
+image{
+  display: inline-block;
+}
+.logo{
+  width: 289rpx;
+  height: 88rpx;
+}
+.title-pic{
+  width: 100%;
+  height: 84rpx;
+  margin-top: 10rpx;
+}
+.page1 .title-pic{
+  margin-top: 20rpx;
+}
+.stitle-pic{
+  width: 100%;
+  height: 84rpx;
+  margin-top: 20rpx;
+}
+.step{
+  font-size: 42rpx;
+}
+.page1 .step{
+  margin-top: 45rpx;
+}
+.page2 .step{
+  margin-top: 22rpx;
+}
+.page3 .step{
+  margin-top: 10rpx;
+}
+.step .progress{
+  color: #f59a01;
+  display: inline-block;
+}
+.step .progress text{
+  font-size: 32rpx;
+}
+.step>text{
+  margin-left: 15rpx;
+  color: #fff;
+}
+.choice-section{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 42rpx;
+  box-sizing: border-box;
+}
+.page1 .choice-section{
+  top: 465rpx;
+}
+.page2 .choice-section{
+  top: 322rpx;
+}
+.page3 .choice-section{
+  top: 292rpx;
+}
+.choice-section radio-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.choice-section .radio{
+  width: 46%;
+  color: #fff;
+  position: relative;
+}
+.page1 .choice-section .radio{
+  margin: 21rpx 0;
+}
+.page2 .choice-section .radio{
+  margin: 15rpx 0;
+}
+.page3 .choice-section .radio{
+  margin: 10rpx 0;
+}
+.choice-section .radio image{
+  width: 100%;
+  height: 205rpx;
+}
+.page3 .choice-section .radio image{
+  height: 185rpx;
+}
+.radio .radio-text{
+  font-size: 28rpx;
+}
+.radio .radio-text .sname{
+  font-size: 24rpx;
+}
+radio .wx-radio-input{
+  border-radius: 50%;
+  height: 36rpx;
+  width: 36rpx;
+  margin-top: -4rpx;
+/* 自定义样式.... */
+}
+.page .button{
+  display: block;
+  width: 100%;
+  background-color: #f59a01;
+  box-shadow: 0 8rpx 0 #df6400;
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+.btn-group{
+  margin-top: 40rpx;
+}
+.form-section{
+  margin-top: 15rpx;
+}
+.form-section .form-title{
+  color: #fff;
+  font-size: 42rpx;
+}
+.form-section input{
+  width: 100%;
+  height: 85rpx;
+  border: 1px solid #f59a01;
+  margin-top: 14rpx;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  background: transparent;
+  border-radius: 5px;
+  color: #fff;
+  box-sizing: border-box;
+}
+.form-section input::placeholder{
+  font-size: 24rpx;
+}
+.form-section .button{
+  margin-top: 25rpx;
+}
+.page1 .choice-fill{
+  height: 294rpx;
+}
+.page2 .choice-fill{
+  height: 564rpx;
+}
+.page3 .choice-fill{
+  height: 518rpx;
+}

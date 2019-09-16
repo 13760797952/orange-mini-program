@@ -1,0 +1,80 @@
+<view class="container" style="background:#eee;min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-pic">
+        <view class="box-pic-header">
+            <view class="search-box flex-main">
+                <view class="flex">
+                    <i class="icon-cx iconfont"></i>
+                    <input bindchange="goToSearch" placeholder="搜索" type="text"></input>
+                </view>
+                <view bindtap="quxiao" class="quxiao">取消</view>
+            </view>
+            <view class="box-tab-pic">
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-pictype="0" style="{{picType==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">套图</view>
+                        <view style="height:6rpx;width:{{750/(syscfg.panorama.status_panorama_in_pic_show==='1'?3:2)}}rpx;background: {{syscfg.color.maincolor.length?syscfg.color.maincolor:'#000'}};transform:translateX({{750/(syscfg.panorama.status_panorama_in_pic_show==='1'?3:2)*(picType==4?2:picType)+'rpx'}}); transition: all 0.3s;"></view>
+                    </view>
+                </view>
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-pictype="1" style="{{picType==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">单图</view>
+                    </view>
+                </view>
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" data-pictype="4" style="{{picType==4&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==4&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">全景图</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-multi transition-all {{picType==0?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <block wx:if="{{picListMulti.psLeft.length||picListMulti.psRight.length}}">
+                        <view class="fr">
+                            <view class="box-li" wx:for="{{picListMulti.psRight}}" wx:key="{{item.id}}">
+                                <navigator url="/pages/play/play?type=0&id={{item.id}}">
+                                    <image mode="aspectFill" src="{{item.thumb_url}}"></image>
+                                    <view class="box-title">{{item.name}}</view>
+                                    <view class="box-attr">
+                                        <view class="ba-left">{{item.show_num}} 浏览</view>
+                                        <view class="ba-right">
+                                            <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                    </view>
+                                </navigator>
+                            </view>
+                        </view>
+                    </block>
+                    <empty msg="没有相关图片" wx:else></empty>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-single transition-all {{picType==1?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <block wx:if="{{picListSingle.psLeft.length||picListSingle.psRight.length}}">
+                        <view class="fr">
+                            <view class="box-li" wx:for="{{picListSingle.psRight}}" wx:key="{{item.id}}">
+                                <view bindtap="goToPlay" data-purl="/pages/play/play?type=1&id={{item.id}}">
+                                    <image  mode="aspectFill" src="{{item.thumb_url}}"></image>
+                                    <view class="box-attr">
+                                        <view class="ba-right">
+                                            <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <empty msg="没有相关图片" wx:else></empty>
+                </view>
+            </view>
+        </view>
+        <view class="quanjing transition-all {{picType==4?'':'none'}}" wx:if="{{syscfg.panorama.status_panorama_in_pic_show==='1'}}">
+            <view class="products-list">
+                <articles-list items="{{list}}" mode="{{listMode}}" type="" url="panorama-detail"></articles-list>
+                <empty msg="没有相关图片" wx:if="{{!list.length}}"></empty>
+            </view>
+        </view>
+        <view bindtap="hideBoxShadow" class="box-shadow {{tabAttr.curBdIndex>=0?'':'none'}}"></view>
+    </view>
+</view>

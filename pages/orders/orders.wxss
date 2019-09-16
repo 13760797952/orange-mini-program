@@ -1,0 +1,111 @@
+@import "../../templates/buy-item/buy-item.wxss";
+
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+}
+
+.main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.empty-icon {
+    margin-top: -.5em;
+    font-size: 400rpx;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-icon>image {
+    width: .68em;
+    height: .68em;
+}
+
+.orders-item {
+    background-color: #fff;
+    margin: 20rpx;
+    border-top: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 4rpx 16rpx 4rpx rgba(0,0,0,.04);
+    transition: box-shadow .2s ease;
+}
+
+.orders-item._hover {
+    box-shadow: 0 6rpx 20rpx 4rpx rgba(0,0,0,.06);
+}
+
+.orders-item>._top,.orders-item>._bottom {
+    display: flex;
+    padding: 14rpx 20rpx;
+    align-items: center;
+}
+
+.orders-item ._mid {
+    background-color: rgba(0,0,0,.01);
+    border-top: 1rpx solid rgba(0,0,0,.02);
+    border-bottom: 1rpx solid rgba(0,0,0,.02);
+}
+
+.orders-item ._left {
+    margin-right: auto;
+}
+
+.orders-item ._right {
+    margin-left: auto;
+}
+
+.orders-item ._sn {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.orders-item ._state {
+    font-size: 32rpx;
+    margin-left: auto;
+    color: #666;
+}
+
+.orders-item ._tip {
+    color: #666;
+    padding: 0 20rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background-color: rgba(0,0,0,.005);
+}
+
+.orders-item ._button {
+    padding: 0 30rpx;
+    line-height: 60rpx;
+    border-radius: 6rpx;
+    border: 1rpx solid rgba(0,0,0,.04);
+    color: #fff;
+    filter: brightness(100%);
+    transition: filter .2s ease;
+}
+
+.orders-item ._button._hover {
+    filter: brightness(110%);
+}
+
+.buy-item:not(:last-child) {
+    border-bottom: 1rpx solid #fafafa;
+}
+
+.orders-item .pay-price {
+    font-size: 36rpx;
+}

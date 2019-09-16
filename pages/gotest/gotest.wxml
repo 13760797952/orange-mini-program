@@ -1,0 +1,2 @@
+<!--pages/gotest/gotest.wxml-->
+<web-view src="https://www.o-home.com/wap/page/double_person2?nickName={{nickName}}"></web-view>

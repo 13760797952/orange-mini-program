@@ -1,0 +1,8 @@
+<scroll-view scrollX class="_commodities-list-scroll _{{mode}}" wx:if="{{mode==='scroll-free'||mode==='scroll-order'}}">
+    <view class="_commodities-list">
+        <include src="./commodites-item.wxml"></include>
+    </view>
+</scroll-view>
+<view class="_commodities-list _{{mode||'column-one'}}" wx:else>
+    <include src="./commodites-item.wxml"></include>
+</view>

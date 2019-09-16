@@ -1,0 +1,13 @@
+@import "../../public/wxParse/wxParse.wxss";
+
+.act-body {
+    padding-bottom: 20rpx;
+}
+
+.act-body image {
+    max-width: 100%;
+}
+
+.box-adact image {
+    width: 100%;
+}

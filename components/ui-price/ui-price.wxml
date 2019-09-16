@@ -1,0 +1,5 @@
+<text class="_price">
+    <text class="_price-symbol">¥</text>
+    <text class="_price-int">{{int}}.</text>
+    <text class="_price-dec">{{dec}}</text>
+</text>

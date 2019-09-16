@@ -1,0 +1,14 @@
+._report-submit {
+    position: relative;
+}
+
+._report-submit>form,._report-submit>form button {
+    position: absolute;
+    background: transparent;
+    border-radius: inherit;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

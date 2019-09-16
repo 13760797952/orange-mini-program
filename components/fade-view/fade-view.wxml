@@ -1,0 +1,8 @@
+<view bindtap="tapMask" catchtouchmove="stopPropagation" class="_fade-view-wrap  {{show?'_show':''}}" hidden="{{!isReady}}">
+    <view catchtap="stopPropagation" class="_fade-view-content-wrap" style="{{contentWrapStyle}}">
+        <view class="_fade-view-content" style="{{contentStyle}}">
+            <slot></slot>
+        </view>
+        <ipx-bottom style="{{ipxStyle}}"></ipx-bottom>
+    </view>
+</view>
