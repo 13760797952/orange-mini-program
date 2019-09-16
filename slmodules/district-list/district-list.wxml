@@ -1,0 +1,17 @@
+<navigator class="list-item" url="/pages/districtDetail/districtDetail?id={{itm.id}}" wx:for="{{districtList}}" wx:for-item="itm" wx:key="{{index}}">
+    <view class="top">
+        <view>
+            <text class="title">{{itm.title}}</text>
+            <text class="jd">{{itm.site_progress_cn}}</text>
+        </view>
+        <view class="ll flex-main">
+            <view class="lg">
+                <i class="iconfont icon-view"></i> {{itm.view_count}}</view>
+            <view>
+                <i class="iconfont icon-favorfill"></i> {{itm.fav_count}}</view>
+        </view>
+    </view>
+    <view class="img">
+        <image src="{{ite}}" mode="aspectFill" wx:for="{{itm.dy_thumbs_url}}" wx:for-item="ite" wx:key="{{index}}"></image>
+    </view>
+</navigator>

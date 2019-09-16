@@ -1,0 +1,4 @@
+<view bindtap="targetActionRun" class="_ui-video" data-action=">video-player?src={{src}}" hoverClass="_hover">
+    <i class="iconfont icon-player"></i>
+    <image mode="aspectFill" src="{{poster}}"></image>
+</view>

@@ -1,0 +1,9 @@
+<shop id="shop" style="display:{{page!=='shop'?'none':''}}" wx:if="{{pageAlive.shop}}"></shop>
+<categories catchtouchmove="stopPropagation" id="categories" style="display:{{page!=='categories'?'none':''}}" wx:if="{{pageAlive.categories}}"></categories>
+<shopcart catchtouchmove="stopPropagation" id="shopcart" style="display:{{page!=='shopcart'?'none':''}}" wx:if="{{pageAlive.shopcart}}"></shopcart>
+<me id="me" style="display:{{page!=='me'?'none':''}}" wx:if="{{pageAlive.me}}"></me>
+<index id="index" style="display:{{page!=='index'?'none':''}}" wx:if="{{pageAlive.index}}"></index>
+<pic id="pic" style="display:{{page!=='pic'?'none':''}}" wx:if="{{pageAlive.pic}}"></pic>
+<product id="product" style="display:{{page!=='product'?'none':''}}" wx:if="{{pageAlive.product}}"></product>
+<panorama id="panorama" style="display:{{page!=='panorama'?'none':''}}" wx:if="{{pageAlive.panorama}}"></panorama>
+<district id="district" style="display:{{page!=='district'?'none':''}}" wx:if="{{pageAlive.district}}"></district>

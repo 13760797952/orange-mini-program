@@ -1,0 +1,49 @@
+<import src="/templates/public"></import>
+<view class="container">
+    <view class="box-top">
+        <view class="box-bg">
+            <image src="{{syscfg.imggeurluc}}"></image>
+        </view>
+        <view class="box-user">
+            <view class="box-img">
+                <image src="{{user.avatar}}"></image>
+            </view>
+            <view class="box-user-name">{{user.nicename}}</view>
+        </view>
+    </view>
+    <view class="space-line"></view>
+    <view class="box-fun">
+        <navigator url="/pages/ucenter/fav/fav">
+            <view class="box-li">
+                <i class="icon iconfont icon-favorfill"></i>
+                <text>我的收藏</text>
+                <em class="icon iconfont icon-right"></em>
+            </view>
+        </navigator>
+        <block wx:if="{{syscfg.reserve.reserve_show==1}}">
+            <view class="space-line"></view>
+            <navigator url="/pages/ucenter/relist/relist">
+                <view class="box-li">
+                    <i class="icon iconfont icon-reserve"></i>
+                    <text>我的预约</text>
+                    <em class="icon iconfont icon-right"></em>
+                </view>
+            </navigator>
+        </block>
+        <view class="box-version">Version {{syscfg.info.version}}</view>
+    </view>
+    <block wx:if="{{myadpop.adpop_show==1}}">
+        <view class="box-shadow"></view>
+        <view class="box-adpop">
+            <view bindtap="bindLinkClick" class="box-img" data-url="{{myadpop.page_url}}">
+                <image src="{{myadpop.imageurl}}"></image>
+            </view>
+            <view bindtap="adpopClose" class="box-close">
+                <i class="icon iconfont icon-fnav icon-close"></i>
+            </view>
+        </view>
+    </block>
+    <view class="space-line"></view>
+    <template is="copyright" data="{{syscfg:syscfg}}"></template>
+    <template is="footernav" data="{{syscfg:syscfg}}"></template>
+</view>

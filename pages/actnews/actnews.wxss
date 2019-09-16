@@ -1,0 +1,21 @@
+@import "../../public/wxParse/wxParse.wxss";
+
+.act-title {
+    padding: 38rpx 30rpx 0;
+    font-size: 36rpx;
+    color: #3c3c3c;
+    line-height: 46rpx;
+    text-align: justify;
+}
+
+.act-author {
+    padding: 18rpx 30rpx 20rpx;
+    overflow: hidden;
+    color: #999;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.act-body {
+    padding-bottom: 30rpx;
+}

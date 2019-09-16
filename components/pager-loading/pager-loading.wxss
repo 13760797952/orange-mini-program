@@ -1,0 +1,28 @@
+._pager-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20rpx 0;
+    height: 60rpx;
+}
+
+._pager-loading loading-icon {
+    font-size: 60rpx;
+}
+
+._pager-loading text {
+    color: #999;
+    font-weight: 300;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+._pager-loading text:before,._pager-loading text:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1rpx;
+    border-bottom: 1rpx solid #999;
+    width: 38rpx;
+    margin: 0 10rpx;
+}

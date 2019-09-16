@@ -1,0 +1,50 @@
+<view class="container" hidden="{{loadingShow}}">
+    <view class="box-pic">
+        <view class="box-pic-header">
+            <view class="box-tab-pic">
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" style="color:{{picType==0&&syscfg.color.maincolor.length?syscfg.color.maincolor:''}}">套图
+                        <view style="height:6rpx;width:234rpx;background: {{syscfg.color.maincolor.length?syscfg.color.maincolor:''}};transform:translateX({{375*picType+'rpx'}}); transition: all 0.3s;"></view>
+                    </view>
+                </view>
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" style="color:{{picType==1&&syscfg.color.maincolor.length?syscfg.color.maincolor:''}}">单图</view>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-multi transition-all {{picType==0?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <view class="box-li" wx:for="{{picListMulti}}" wx:key="{{item.id}}">
+                        <navigator url="/pages/play/play?type=0&id={{item.id}}">
+                            <image mode="widthFix" src="{{item.thumb_url}}"></image>
+                            <view class="box-title">{{item.name}}</view>
+                            <view class="box-attr">
+                                <view class="ba-left">{{item.show_num}} 浏览</view>
+                                <view class="ba-right">
+                                    <i class="icon iconfont icon-favorfill"></i> {{item.fav_num}}</view>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+                <empty msg="没有相关图片" wx:if="{{picListMulti.length===0}}"></empty>
+            </view>
+        </view>
+        <view class="box-pic-list-single transition-all {{picType==1?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <view class="box-li" wx:for="{{picListSingle}}" wx:key="{{item.id}}">
+                        <navigator url="/pages/play/play?type=1&id={{item.id}}">
+                            <image mode="widthFix" src="{{item.thumb_url}}"></image>
+                            <view class="box-attr">
+                                <view class="ba-right">
+                                    <i class="icon iconfont icon-favorfill"></i> {{item.fav_num}}</view>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+                <empty msg="没有相关图片" wx:if="{{picListSingle.length===0}}"></empty>
+            </view>
+        </view>
+    </view>
+</view>

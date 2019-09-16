@@ -1,0 +1,20 @@
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<scroll-view enableBackToTop scrollY bindscrolltolower="nextPage" class="main-view">
+    <status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+    <view class="favorites-list" wx:else>
+        <view bindtap="targetActionRun" class="favorites-item common-commodity" data-action=">commodity?id={{item.id}}" hoverClass="_hover" wx:for="{{list}}" wx:key="{{index}}">
+            <simg lazyLoad mode="aspectFit" src="{{item.image}}"></simg>
+            <view class="_info">
+                <text class="_title">{{item.title}}</text>
+                <text class="_description">{{item.description}}</text>
+                <view class="_extra">
+                    <ui-price value="{{item.price}}"></ui-price>
+                    <view catchtap="removeItem" class="_button" data-index="{{index}}" hoverClass="_hover">取消收藏</view>
+                </view>
+            </view>
+        </view>
+        <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+        <ipx-bottom></ipx-bottom>
+    </view>
+</scroll-view>

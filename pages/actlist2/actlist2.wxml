@@ -1,0 +1,23 @@
+<view class="container" hidden="{{loadingShow}}" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="banner" style="margin-bottom:10px;">
+        <swiper autoplay="{{true}}" circular="{{true}}" class="box-tab-swiper" indicatorDots="{{true}}" style="width:100%;min-height: 80rpx;height: 300rpx;">
+            <swiper-item bindtap="bindLinkClick" data-url="{{item.page_url}}" wx:for="{{banner}}" wx:key="{{index}}">
+                <image src="{{item.thumb_url}}" style="width:100%;height:100%"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="box-nav">
+        <switch-tabs scroll bindchange="navClick" current="{{navCurrId}}" items="{{mynav}}" nameKey="termname" wx:if="{{mynav.length}}"></switch-tabs>
+    </view>
+    <view class="space-line"></view>
+    <view class="box-list">
+        <view class="box-cont list-data">
+            <swiper bindchange="listChange" class="box-tab-swiper" currentItemId="{{navCurrId}}" duration="300" style="width:100%;height:{{swiperHeight}}px">
+                <swiper-item itemId="{{mynav[index].id}}" wx:for="{{list}}" wx:for-item="itm" wx:key="{{index}}">
+                    <sllist class="list-data-{{mynav[index].id}}" createTimeKey="addtime" listData="{{itm}}" styleType="{{mynav[index].term_style}}"></sllist>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

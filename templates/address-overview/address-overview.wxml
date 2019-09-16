@@ -1,0 +1,17 @@
+<template name="address-overview">
+    <view class="address-overview">
+        <view class="_left">
+            <text class="_name">{{name}}</text>
+            <text class="_default" wx:if="{{isDefault}}">默认</text>
+        </view>
+        <view class="_right">
+            <text class="_phone">{{phone}}</text>
+            <text class="_address">{{tools.arrJoin(region)}}{{detail}}</text>
+        </view>
+    </view>
+</template>
+<wxs module="tools">
+module.exports.arrJoin = (function(arr) {
+    return (arr && arr.length ? arr.join('') : '')
+});
+</wxs>

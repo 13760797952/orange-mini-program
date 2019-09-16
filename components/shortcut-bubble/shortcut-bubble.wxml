@@ -1,0 +1,22 @@
+<block wx:if="{{enabled}}">
+    <view class="_shortcut-bubble-wrap _{{bgClass}} {{alone?'_alone':''}} {{expand?'_expand':''}} {{nearTop?'_near-top':'_near-bottom'}}  {{nearLeft?'_near-left':'_near-right'}}" style="{{transition?'transition:transform .4s ease':''}};transform: translate3D({{x}}px,{{y}}px,0)">
+        <view bindtouchcancel="touchEnd" catchtouchend="touchEnd" catchtouchmove="touchMove" catchtouchstart="touchStart" class="_shortcut-bubble" style="background-color:{{shortcutMenu.color||commonStyles.themeColor}}">
+            <image mode="aspectFill" src="{{items[0].aloneImage}}" wx:if="{{alone&&items[0].aloneImage}}"></image>
+            <block wx:else>
+                <i class="iconfont icon-{{alone?items[0].icon:'expand'}}"></i>
+                <text wx:if="{{alone&&items[0].label.length<3}}">{{items[0].label}}</text>
+            </block>
+        </view>
+        <view class="_shortcut-bubble-count" wx:if="{{hasMessageItem&&msgCount}}">{{msgCount}}</view>
+        <view bindtap="close" class="_shortcut-bubble-menu _shortcut-bubble-pendant">
+            <view bindtap="targetActionRun" data-action="{{item.action}}" hoverClass="_hover" style="background-color:{{shortcutMenu.color||commonStyles.themeColor}}" wx:for="{{items}}" wx:key="{{index}}">
+                <i class="iconfont icon-{{item.icon}}"></i>{{item.label}} <text wx:if="{{item.messageItem&&msgCount}}">({{msgCount}})</text>
+            </view>
+        </view>
+        <view class="_shortcut-bubble-say _shortcut-bubble-pendant {{isReady&&sayShow?'_show':''}}">
+            <view class="_shortcut-bubble-arrow"></view>
+            <view class="_shortcut-bubble-say-content">{{sayContent}}</view>
+        </view>
+    </view>
+    <view bindtouchstart="close" bindtransitionend="maskTransitionEnd" class="_shortcut-bubble-mask {{expand?'_show':''}}" hidden="{{!maskShow}}"></view>
+</block>

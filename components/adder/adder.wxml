@@ -1,0 +1,5 @@
+<view class="_adder-wrap">
+    <view bindtap="sub" class="_adder-btn _adder-minus {{value<=min?'_disable':''}}" hoverClass="_adder-btn-hover">-</view>
+    <input bindblur="inputBlur" bindinput="inputChange" class="_adder-input {{value<=min&&value>=max?'_disable':''}}" type="number" value="{{value}}"></input>
+    <view bindtap="add" class="_adder-btn _adder-plus {{value>=max?'_disable':''}}" hoverClass="_adder-btn-hover">+</view>
+</view>

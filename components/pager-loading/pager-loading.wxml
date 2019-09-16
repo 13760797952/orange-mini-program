@@ -1,0 +1,10 @@
+<view class="_pager-loading">
+    <slot name="loadingBefore" wx:if="{{state==='loading'}}"></slot>
+    <loading-icon color="#999" wx:if="{{state==='loading'}}"></loading-icon>
+    <block wx:elif="config[state]">
+        <slot name="completedBefore" wx:if="{{state==='completed'}}"></slot>
+        <slot name="errorBefore" wx:if="{{state==='error'}}"></slot>
+        <i class="iconfont icon-{{config[state].icon}}" wx:if="{{config[state].icon}}"></i>
+        <text wx:if="{{config[state].text}}">{{config[state].text}}</text>
+    </block>
+</view>

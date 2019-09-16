@@ -1,0 +1,28 @@
+<import src="/templates/public"></import>
+<import src="../../public/wxParse/wxParse.wxml"></import>
+<view class="container">
+    <view class="box-gb">
+        <image bindload="imgLoadOver" mode="widthFix" src="{{pageConfig.thumb_post_url}}"></image>
+    </view>
+    <view class="box-cont">
+        <form bindsubmit="formSubmit" reportSubmit="true" wx:if="{{inputStatus=='1'}}">
+            <view class="section">
+                <input maxlength="50" name="user" placeholder="您的姓名" value="{{senduser}}"></input>
+            </view>
+            <view class="section">
+                <input maxlength="30" name="tel" placeholder="您的电话" type="number" value="{{sendtel}}"></input>
+            </view>
+            <view class="box-btn">
+                <button formType="submit" style="{{syscfg.color.maincolor.length>0?'background:'+syscfg.color.maincolor:''}}" type="default">提交</button>
+            </view>
+        </form>
+    </view>
+    <view class="box-body">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+    <block wx:if="{{syscfg.menus.enabled==1}}">
+        <view class="box-footer-padding"></view>
+        <template is="footernav" data="{{syscfg:syscfg}}"></template>
+    </block>
+    <template is="contact" data wx:if="{{syscfg.showcont==1}}"></template>
+</view>

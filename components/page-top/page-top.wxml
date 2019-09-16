@@ -1,0 +1,8 @@
+<view class="page-top" style="height: {{topHeight}}px; line-height:{{topHeight+topHeight*(ipx?0.46:0.26)}}px;background: {{topcolor}};color: {{topfontcolor}};">
+    <i bindtap="back" class="iconfont icon-prev" wx:if="{{!tabs}}"></i>
+    <i bindtap="goHome" class="iconfont icon-home" wx:if="{{!ishome}}"></i>
+    <text class="title">
+        <text class="tit">{{pageTitle}}</text>
+    </text>
+</view>
+<view style="height:{{topHeight}}px"></view>

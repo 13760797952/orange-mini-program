@@ -1,0 +1,2 @@
+<!--pages/ohome/ohome.wxml-->
+<web-view src="https://www.o-home.com"></web-view>

@@ -1,0 +1,6 @@
+<shop-cart showBackHomeBtn class="main-view" id="shopcart">
+    <view class="cart-hot" slot="empty-view-append" wx:if="{{hotItems.length}}">
+        <view class="cart-hot-title">热门选购</view>
+        <commodities-list items="{{hotItems}}" mode="scroll-order"></commodities-list>
+    </view>
+</shop-cart>

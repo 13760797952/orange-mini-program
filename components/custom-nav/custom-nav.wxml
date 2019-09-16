@@ -1,0 +1,21 @@
+<view class="_custom-nav-placeholder">
+    <view bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" class="_custom-nav-wrap" style="background-color: {{customNav.bgColor||commonStyles.nav.bgColor}}">
+        <view class="_custom-nav-menu-wrap" wx:if="{{menuShow}}">
+            <view class="_custom-nav-menu">
+                <view bindtap="targetActionRun" class="_custom-nav-menu-item {{menuHoverItemIndex===index?'_hover':''}}" data-action="{{item.action}}" id="_custom-nav-menu-item_{{index}}" wx:for="{{menuItems}}" wx:key="{{index}}">
+                    <i class="iconfont icon-{{item.icon}}"></i>
+                    <text>{{item.label}}</text>
+                </view>
+            </view>
+            <ipx-bottom></ipx-bottom>
+        </view>
+        <view class="_custom-nav">
+            <report-submit bindtap="click" bindtouchstart="onTouchStart" class="_custom-nav-item {{item.isActive?'_active':''}} {{item.items.length?'_has-menu':''}}" data-index="{{index}}" style="color: {{item.isActive?customNav.activeColor||commonStyles.nav.activeColor||commonStyles.activeColor:customNav.color||commonStyles.nav.color||commonStyles.themeColor}}" wx:for="{{items}}" wx:key="{{index}}">
+                <i class="iconfont icon-{{item.icon}}"></i>
+                <text>{{item.label}}</text>
+            </report-submit>
+        </view>
+        <ipx-bottom></ipx-bottom>
+    </view>
+</view>
+<ipx-bottom></ipx-bottom>

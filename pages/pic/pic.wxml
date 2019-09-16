@@ -1,0 +1,164 @@
+<import src="/templates/public"></import>
+<view class="container">
+    <view class="box-pic">
+        <view class="box-pic-header">
+            <view class="box-tab-pic">
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" style="{{picType==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">套图</view>
+                    </view>
+                </view>
+                <view class="box-li">
+                    <view bindtap="clickPicType" class="box-item transition-all" style="{{picType==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                        <view style="{{picType==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">单图</view>
+                    </view>
+                </view>
+            </view>
+            <view class="box-pic-multi transition-all {{picType==0?'':'none'}}">
+                <view class="box-options">
+                    <view class="box-li">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="9999">{{picOrderMultiTitle}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==9999?'':'none'}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="0" data-str="综合排序" style="{{picOrderMulti==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="1" data-str="按收藏数" style="{{picOrderMulti==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按收藏数排序</view>
+                                </view>
+                                <view bindtap="clickOptionOrderMulti" class="box-li" data-id="2" data-str="按浏览数" style="{{picOrderMulti==2&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderMulti==2&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按浏览数排序</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="box-li" wx:if="{{item.parentid==0}}" wx:for="{{picTagMulti}}" wx:key="{{item.id}}">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="{{index}}">{{item.name}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==index?'':'none'}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOtherMulti" class="box-li" data-id="0" data-parent-index="{{index}}" data-str="{{item.name}}" style="{{item.gl==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{item.gl==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOtherMulti" class="box-li" data-id="{{row.id}}" data-parent-index="{{index}}" data-str="{{row.name}}" style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:if="{{row.parentid==item.id}}" wx:for="{{picTagMulti}}" wx:for-index="rowidx" wx:for-item="row" wx:key="{{row.id}}">
+                                    <view style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">{{row.name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="box-pic-single transition-all {{picType==1?'':'none'}}">
+                <view class="box-options">
+                    <view class="box-li">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="9998">{{picOrderSingleTitle}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==9998?'':'none'}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="0" data-str="综合排序" style="{{picOrderSingle==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="1" data-str="按收藏数" style="{{picOrderSingle==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==1&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按收藏数排序</view>
+                                </view>
+                                <view bindtap="clickOptionOrderSingle" class="box-li" data-id="2" data-str="按浏览数" style="{{picOrderSingle==1&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{picOrderSingle==2&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">按浏览数排序</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="box-li" wx:if="{{item.parentid==0}}" wx:for="{{picTagSingle}}" wx:key="{{item.id}}">
+                        <view bindtap="clickOrderPanel" class="box-item" data-index="{{index}}">{{item.name}}<i class="icon iconfont icon-unfold"></i>
+                        </view>
+                        <view class="box-options-body {{tabAttr.curBdIndex==index?'':'none'}}">
+                            <view class="box-ul">
+                                <view bindtap="clickOptionOtherSingle" class="box-li" data-id="0" data-parent-index="{{index}}" data-str="{{item.name}}" style="{{item.gl==0&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}">
+                                    <view style="{{item.gl==0&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">不限</view>
+                                </view>
+                                <view bindtap="clickOptionOtherSingle" class="box-li" data-id="{{row.id}}" data-parent-index="{{index}}" data-str="{{row.name}}" style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'border-color:'+syscfg.color.maincolor:''}}" wx:if="{{row.parentid==item.id}}" wx:for="{{picTagSingle}}" wx:for-index="rowidx" wx:for-item="row" wx:key="{{row.id}}">
+                                    <view style="{{item.gl==row.id&&syscfg.color.maincolor.length>0?'color:'+syscfg.color.maincolor:''}}">{{row.name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-multi transition-all {{picType==0?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <view class="fl">
+                        <view class="box-li" wx:for="{{picListMulti.psLeft}}" wx:key="{{item.id}}">
+                            <navigator url="/pages/play/play?type=0&id={{item.id}}">
+                                <image mode="widthFix" src="{{item.imageurl}}"></image>
+                                <view class="box-title">{{item.name}}</view>
+                                <view class="box-attr">
+                                    <view class="ba-left">{{item.show_num}} 浏览</view>
+                                    <view class="ba-right">
+                                        <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                    <view class="fr">
+                        <view class="box-li" wx:for="{{picListMulti.psRight}}" wx:key="{{item.id}}">
+                            <navigator url="/pages/play/play?type=0&id={{item.id}}">
+                                <image mode="widthFix" src="{{item.imageurl}}"></image>
+                                <view class="box-title">{{item.name}}</view>
+                                <view class="box-attr">
+                                    <view class="ba-left">{{item.show_num}} 浏览</view>
+                                    <view class="ba-right">
+                                        <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-pic-list-single transition-all {{picType==1?'':'none'}}">
+            <view class="box-cont">
+                <view class="box-ul">
+                    <view class="fl">
+                        <view class="box-li" wx:for="{{picListSingle.psLeft}}" wx:key="{{item.id}}">
+                            <navigator url="/pages/play/play?type=1&id={{item.id}}">
+                                <image mode="widthFix" src="{{item.imageurl}}"></image>
+                                <view class="box-attr">
+                                    <view class="ba-right">
+                                        <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                    <view class="fr">
+                        <view class="box-li" wx:for="{{picListSingle.psRight}}" wx:key="{{item.id}}">
+                            <navigator url="/pages/play/play?type=1&id={{item.id}}">
+                                <image mode="widthFix" src="{{item.imageurl}}"></image>
+                                <view class="box-attr">
+                                    <view class="ba-right">
+                                        <i class="icon iconfont {{item.fav==0?'icon-favor':'icon-favorfill'}}"></i> {{item.fav_num}}</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="box-shadow {{tabAttr.curBdIndex>=0?'':'none'}}"></view>
+    </view>
+    <block wx:if="{{myadpop.adpop_show==1}}">
+        <view class="box-shadow"></view>
+        <view class="box-adpop">
+            <view bindtap="bindLinkClick" class="box-img" data-url="{{myadpop.page_url}}">
+                <image src="{{myadpop.imageurl}}"></image>
+            </view>
+            <view bindtap="adpopClose" class="box-close">
+                <i class="icon iconfont icon-fnav icon-close"></i>
+            </view>
+        </view>
+    </block>
+    <view class="space-line"></view>
+    <template is="copyright" data="{{syscfg:syscfg}}"></template>
+    <template is="footernav" data="{{syscfg:syscfg}}"></template>
+</view>

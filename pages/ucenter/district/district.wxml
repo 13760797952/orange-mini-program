@@ -1,0 +1,6 @@
+<view class="district-fav" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <district-list districtList="{{districtList}}"></district-list>
+    <view class="not-find" wx:if="{{districtList.length===0}}">
+        <empty msg="没有相关工地"></empty>
+    </view>
+</view>

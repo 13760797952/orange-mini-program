@@ -1,0 +1,10 @@
+<view bindtap="targetActionRun" class="_commodities-item common-commodity" data-action=">commodity?id={{item.id}}" hoverClass="_hover" wx:for="{{items}}" wx:key="{{index}}">
+    <simg lazyLoad mode="aspectFit" src="{{item.image}}"></simg>
+    <view class="_info">
+        <text class="_title">{{item.title}}</text>
+        <text class="_description">{{item.description}}</text>
+        <view class="_extra">
+            <ui-price value="{{item.price}}"></ui-price>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+page {
+    height: 100%;
+}
+
+.coupon-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.coupon-item {
+    padding-top: 30rpx;
+}
+
+.coupon-item:last-of-type {
+    padding-bottom: 30rpx;
+}

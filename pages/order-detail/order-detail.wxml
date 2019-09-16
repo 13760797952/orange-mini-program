@@ -1,0 +1,42 @@
+<import src="../../templates/address-overview/address-overview.wxml"></import>
+<import src="../../templates/buy-item/buy-item.wxml"></import>
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <view class="order-status" style="background-color: {{statusMap[order.status].color}}" wx:if="{{statusMap[order.status]}}">
+        <i class="iconfont icon-{{statusMap[order.status].icon}}"></i>
+        <text class="_status-text">{{statusMap[order.status].title}}</text>
+        <view bindtap="pay" class="pay-button" hoverClass="_hover" wx:if="{{order.status===1}}">立即支付</view>
+    </view>
+    <view class="common-info-section">
+        <view class="common-info-line">
+            <label>订单号</label>
+            <text>{{order.orderSN}}</text>
+        </view>
+        <view class="common-info-line">
+            <label>创建时间</label>
+            <text>{{order.createTime}}</text>
+        </view>
+        <view class="common-info-line">
+            <label>商品合计</label>
+            <ui-price class="minor-price" value="{{order.totalPrice}}"></ui-price>
+        </view>
+        <view class="common-info-line" wx:if="{{order.coupon}}">
+            <label>使用优惠券</label>{{order.coupon.fullName}}</view>
+        <view class="common-info-line" wx:if="{{order.offer>0}}">
+            <label>优惠金额</label>
+            <ui-price class="minor-price" value="{{-order.offerStr}}"></ui-price>
+        </view>
+        <view class="common-info-line">
+            <label>支付额</label>
+            <ui-price class="pay-price" value="{{order.finalPrice}}"></ui-price>
+        </view>
+    </view>
+    <view class="order-address">
+        <template is="address-overview" data="{{...order.address}}" wx:if="{{order.address}}"></template>
+    </view>
+    <view class="buy-list">
+        <template is="buy-item" data="{{...item,tapGo:true}}" wx:for="{{order.buyList}}" wx:key="{{index}}"></template>
+    </view>
+</block>

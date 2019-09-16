@@ -1,0 +1,89 @@
+<view class="container" wx:if="{{syscfg.color}}">
+    <view class="box-multi {{picType==0?'':'none'}}">
+        <view class="box-pic-show">
+            <swiper bindchange="spChange" class="box-swiper" duration="{{500}}" indicatorActiveColor="#ffffff" indicatorColor="#999999" indicatorDots="{{true}}">
+                <swiper-item wx:for="{{picMulti.smeta}}" wx:key="{{item.id}}">
+                    <image bindtap="saveImg" bindtouchend="timeend" bindtouchstart="timestart" data-imgurl="{{item.attr_url}}" mode="aspectFit" src="{{item.attr_url}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="box-info {{stsModel?'x':''}}">
+            <view class="box-cont">
+                <view class="title">{{currTitle}}</view>
+                <view class="box-arrt">
+                    <view class="ba-left">{{picMulti.show_num}} 浏览</view>
+                    <view class="ba-center">{{currPageNum}} / {{picMulti.smeta.length}}</view>
+                    <view bindtap="favClick" class="ba-right">
+                        <i class="icon iconfont {{favStatus==0?'icon-favor':'icon-favorfill'}}"></i>
+                    {{picMulti.fav_num}}</view>
+                </view>
+                <view class="box-btn">
+                    <navigator openType="redirect" url="/pages/calc/calc">
+                        <button style="background:{{syscfg.color.btncolor.length?syscfg.color.btncolor:'#2fbd80'}}">获取装修报价</button>
+                    </navigator>
+                    <button bindtap="fenXiangIsShow" style="background:{{syscfg.color.btn2color.length?syscfg.color.btn2color:'#2fbd80'}}">分享好友</button>
+                    <view hidden="{{!fenXiangShow}}">
+                        <view bindtap="fenXiangIsHide" class="share-bg"></view>
+                        <view class="share-box">
+                            <view class="content">
+                                <view>
+                                    <button openType="share">
+                                        <image src="/public/images/share_wx.png"></image>
+                                        <view class="text">微信好友</view>
+                                    </button>
+                                </view>
+                                <view bindtap="buildPosterSaveAlbum">
+                                    <image mode="aspectFit" src="/public/images/share_hb.png"></image>
+                                    <view>分享海报</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="box-single {{picType==1?'':'none'}}">
+        <view class="box-pic-show">
+            <image bindtap="saveImg" bindtouchend="timeend" bindtouchmove="touchmove" bindtouchstart="timestart" class="{{isLeft?'left':''}} {{isShow?'show':''}} {{isRight?'right':''}}" data-imgurl="{{picSingle.thumb_url}}" mode="aspectFit" src="{{picSingle.thumb_url}}"></image>
+        </view>
+        <view class="box-info {{stsModel?'x':''}}">
+            <view class="box-cont">
+                <view class="title">{{picSingle.name}}</view>
+                <view class="box-arrt">
+                    <view class="ba-left">{{picSingle.show_num}} 浏览</view>
+                    <view bindtap="favClick" class="ba-right">
+                        <i class="icon iconfont {{favStatus==0?'icon-favor':'icon-favorfill'}}"></i> {{picSingle.fav_num}}</view>
+                </view>
+                <view class="box-btn">
+                    <navigator openType="redirect" url="/pages/calc/calc">
+                        <button style="background:{{syscfg.color.btncolor.length?syscfg.color.btncolor:'#2fbd80'}}">获取装修报价</button>
+                    </navigator>
+                    <button bindtap="fenXiangIsShow" style="background:{{syscfg.color.btn2color.length?syscfg.color.btn2color:'#2fbd80'}}">分享好友</button>
+                    <view hidden="{{!fenXiangShow}}">
+                        <view bindtap="fenXiangIsHide" class="share-bg"></view>
+                        <view class="share-box">
+                            <view class="content">
+                                <view>
+                                    <button openType="share">
+                                        <image src="/public/images/share_wx.png"></image>
+                                        <view class="text">微信好友</view>
+                                    </button>
+                                </view>
+                                <view bindtap="buildPosterSaveAlbum">
+                                    <image mode="aspectFit" src="/public/images/share_hb.png"></image>
+                                    <view>分享海报</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="canvas-box" hidden="{{!canvasShow}}">
+        <canvas canvasId="firstCanvas" class="firstCanvas" style="height:{{canvasH}}px"></canvas>
+        <button bindtap="SaveAlbum" hidden="{{openSettingBtnHidden}}" style="width: 90%;background:{{syscfg.color.btncolor.length?syscfg.color.btncolor:'#2fbd80'}}">保存海报</button>
+        <button bindopensetting="handleSetting" class="openSetting" hidden="{{!openSettingBtnHidden}}" openType="openSetting" type="primary">去授权</button>
+    </view>
+</view>

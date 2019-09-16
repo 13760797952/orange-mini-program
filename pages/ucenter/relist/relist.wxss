@@ -1,0 +1,49 @@
+.box-cont {
+    padding: 0 30rpx;
+}
+
+.container {
+    min-height: 83vh;
+}
+
+.box-ul-relist {
+    background: #fff;
+    padding-top: 20rpx;
+}
+
+.box-ul-relist .box-li {
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    padding: 0 0 20rpx 0;
+    position: relative;
+    border-bottom: 2rpx solid #eee;
+}
+
+.box-ul-relist .box-li .box-top {
+    width: 560rpx;
+    min-height: 40rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-ul-relist .box-li .box-top .left {
+    min-width: 120rpx;
+    display: inline-block;
+}
+
+.box-ul-relist .box-li .box-top .right {
+    display: inline-block;
+}
+
+.box-ul-relist .box-li .box-word {
+    width: 560rpx;
+    min-height: 40rpx;
+    word-wrap: break-word;
+}
+
+.box-ul-relist .box-li .box-st {
+    position: absolute;
+    top: 40rpx;
+    right: 20rpx;
+}

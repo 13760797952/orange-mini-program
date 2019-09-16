@@ -1,0 +1,188 @@
+.float-sp {
+    float: left;
+    width: 100%;
+}
+
+.container {
+    font-family: 'Microsoft yahei',sans-serif;
+    background: #f5f5f5;
+    overflow: hidden;
+    min-height: 83vh;
+}
+
+.box-bg {
+    float: left;
+    width: 100%;
+    height: 190rpx;
+    background: #2fbd80;
+}
+
+.box-opus {
+    float: left;
+    width: 100%;
+    margin-top: -190rpx;
+    overflow: hidden;
+}
+
+.bo-header {
+    overflow: hidden;
+    padding-bottom: 30rpx;
+}
+
+.bo-header .bo-div-1 {
+    min-height: 260rpx;
+    width: 690rpx;
+    margin-top: 90rpx;
+    margin-left: 30rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-shadow: 0 0 6px 1px #eee;
+    padding-bottom: 40rpx;
+}
+
+.bo-header .bo-div-1 .bo-user {
+    position: absolute;
+    top: 18rpx;
+    left: 50%;
+    margin-left: -65rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border: 10rpx solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.bo-header .bo-div-1 .bo-user image {
+    width: 100%;
+    height: 100%;
+}
+
+.bo-header .bo-div-1 .bo-word {
+    overflow: hidden;
+}
+
+.bo-header .bo-div-1 .bo-word .bo-n {
+    font-size: 40rpx;
+    color: #141414;
+    margin-top: 90rpx;
+    text-align: center;
+}
+
+.bo-header .bo-div-1 .bo-word .bo-h {
+    font-size: 24rpx;
+    color: #6f6f6f;
+    margin-top: 16rpx;
+    text-align: center;
+}
+
+.bo-header .bo-div-1 .bo-word .bo-intro {
+    font-size: 28rpx;
+    line-height: 42rpx;
+    color: #828282;
+    margin-top: 30rpx;
+    padding: 0 40rpx;
+}
+
+.bo-header .bo-div-2 {
+    height: 160rpx;
+    width: 660rpx;
+    margin-left: 45rpx;
+    border-radius: 0 0 10rpx 10rpx;
+    background: #fefefe;
+    box-shadow: 0 2px 4px 1px #eee;
+    margin-top: 6rpx;
+}
+
+.bo-header .bo-div-2 .bo-btn-panel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 40rpx;
+}
+
+.bo-header .bo-div-2 .bo-btn-panel .btn-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.bo-header .bo-div-2 .bo-btn-panel .btn-li .bo-btn {
+    width: 220rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background: #2fbd80;
+    font-size: 28rpx;
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 40rpx;
+}
+
+.bo-header .bo-div-2 .bo-btn-panel .btn-li .bo-btn .icon {
+    margin-right: 10rpx;
+}
+
+.bo-cont {
+    margin-top: 40rpx;
+    padding: 0 30rpx;
+}
+
+.bo-body .bo-title {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.bo-body .bo-list {
+    padding-top: 30rpx;
+}
+
+.bo-body .bo-list .bo-li {
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 0 0 6px 1px #eee;
+    background: #fff;
+    font-size: 0;
+    margin-bottom: 30rpx;
+}
+
+.bo-body .bo-list .bo-li image {
+    width: 100%;
+    height: 460rpx;
+}
+
+.bo-body .bo-list .bo-li .bo-list-title {
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 28rpx 30rpx 10rpx;
+    font-size: 30rpx;
+    color: #323232;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bo-body .bo-list .bo-li .bo-list-attr {
+    font-size: 26rpx;
+    color: #898989;
+    padding: 2rpx 30rpx 30rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.bo-body .bo-list .bo-li .bo-list-attr .ba-left {
+    float: left;
+    width: 450rpx;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.bo-body .bo-list .bo-li .bo-list-attr .ba-right {
+    float: right;
+    width: 170rpx;
+    text-align: right;
+}
+
+.bo-body .bo-list .bo-li .bo-list-attr .ba-right .icon {
+    font-size: 32rpx;
+}

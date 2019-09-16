@@ -1,0 +1,55 @@
+._adder-wrap {
+    display: flex;
+    width: 240rpx;
+    text-align: center;
+}
+
+._adder-input {
+    width: 75rpx;
+    font-size: 28rpx;
+}
+
+._adder-btn,._adder-input {
+    display: block;
+    min-height: 0;
+    height: 54rpx;
+    border: 2rpx solid #999;
+    line-height: 50rpx;
+    box-sizing: border-box;
+    color: #666;
+    transition-property: color,border-color,background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+._adder-btn {
+    flex: 1;
+    font-size: 40rpx;
+    color: #999;
+}
+
+._adder-minus {
+    border-right: none;
+    border-radius: 10rpx 0 0 10rpx;
+}
+
+._adder-plus {
+    border-left: none;
+    border-radius: 0 10rpx 10rpx 0;
+}
+
+._adder-btn._disable {
+    pointer-events: none;
+    border-color: #eee;
+    color: #eee;
+}
+
+._adder-input._disable {
+    pointer-events: none;
+    border-color: #eee;
+    color: #aaa;
+}
+
+._adder-btn-hover {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,14 @@
+<view class="container" hidden="{{loadingShow}}" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-nav">
+        <switch-tabs scroll bindchange="navClick" current="{{navCurrId}}" items="{{mynav}}" wx:if="{{mynav.length}}"></switch-tabs>
+    </view>
+    <view class="box-header-padding"></view>
+    <view class="space-line"></view>
+    <view class="box-list">
+        <view class="box-cont">
+            <sllist createTimeKey="addtime" initUrl="/pages/article/article?type=act&id=" listData="{{list}}" wx:if="{{list.length>0}}"></sllist>
+            <empty msg="没有相关信息" wx:if="{{list.length===0}}"></empty>
+        </view>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

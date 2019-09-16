@@ -1,0 +1,46 @@
+.address-overview {
+    flex: 1;
+    display: flex;
+    padding: 20rpx;
+    line-height: 1.4;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.address-overview>._left,.address-overview>._right {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-overview>._left {
+    margin-right: 20rpx;
+    width: 110rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.address-overview ._name,.address-overview ._phone {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+}
+
+.address-overview ._address {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.address-overview ._default {
+    font-size: 28rpx;
+    padding: 0 10rpx;
+    color: #cc353b;
+    border: 1rpx solid #cc353b;
+    border-radius: 6rpx;
+}
+
+.address-decoration {
+    height: 10rpx;
+    background-image: repeating-linear-gradient(-45deg,#fff,#fff 10rpx,#81a2d5 10rpx,#81a2d5 20rpx,#fff 20rpx,#fff 30rpx,#cf7f82 30rpx,#cf7f82 40rpx);
+}

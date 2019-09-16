@@ -1,0 +1,25 @@
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<block wx:else>
+    <search-bar confirmAction=">commodities?title=商品搜索&keyword={value}"></search-bar>
+    <swiper autoplay="true" class="banner" indicatorActiveColor="rgba(255, 255, 255, .9)" indicatorColor="rgba(255, 255, 255, .5)" indicatorDots="true" style="height: {{banner.height}}rpx" wx:if="{{banner.enabled}}">
+        <swiper-item wx:for="{{banner.items}}" wx:key="{{index}}">
+            <image bindtap="targetActionRun" data-action="{{item.action}}" mode="aspectFill" src="{{item.image}}"></image>
+        </swiper-item>
+    </swiper>
+    <save-formid guide="{{guide}}" styleNum="{{2}}"></save-formid>
+    <save-formid items="{{adOne.items}}" styleNum="{{3}}" wx:if="{{adOne.enabled}}"></save-formid>
+    <save-formid items="{{adGroup.items}}" styleNum="{{4}}" wx:if="{{adGroup.enabled}}"></save-formid>
+    <view class="section" wx:if="{{popular.enabled&&popular.items.length}}">
+        <view class="_title">{{popular.title}}</view>
+        <commodities-list class="popular-list" items="{{popular.items}}" mode="column-one"></commodities-list>
+        <view bindtap="targetActionRun" class="_more" data-action=">commodities?title={{popular.title}}&tag=hot&hideSearch=true">更多<i class="iconfont icon-next"></i>
+        </view>
+    </view>
+    <view class="section" wx:if="{{new.enabled&&new.items.length}}">
+        <view class="_title">{{new.title}}</view>
+        <commodities-list class="new-list" items="{{new.items}}" mode="column-two"></commodities-list>
+        <view bindtap="targetActionRun" class="_more" data-action=">commodities?title={{new.title}}&tag=new&hideSearch=true">更多<i class="iconfont icon-next"></i>
+        </view>
+    </view>
+    <copyright></copyright>
+</block>

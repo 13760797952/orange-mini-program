@@ -1,0 +1,4 @@
+<shortcut-bubble group="{{shortcutGroup}}"></shortcut-bubble>
+<include src="../pageGroup.wxml"></include>
+<ipx-bottom></ipx-bottom>
+<slcommon contactShow="{{shortcutGroup!=='shop'}}"></slcommon>

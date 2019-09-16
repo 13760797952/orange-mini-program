@@ -1,0 +1,10 @@
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<search-bar bindblur="searchBlur" bindconfirm="searchConfirm" value="{{keyword}}" wx:if="{{!hideSearch}}"></search-bar>
+<switch-tabs scroll bindchange="tabChange" current="{{subID}}" items="{{tabItems}}" wx:if="{{categoryID&&tabItems.length}}"></switch-tabs>
+<status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+<scroll-view enableBackToTop scrollY bindscrolltolower="nextPage" class="commodities-view" wx:else>
+    <commodities-list items="{{commoditiesItems}}" mode="column-two"></commodities-list>
+    <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+    <ipx-bottom></ipx-bottom>
+</scroll-view>

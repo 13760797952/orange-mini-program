@@ -1,0 +1,138 @@
+<view class="company">
+    <view class="swiper">
+        <swiper autoplay="{{autoplay}}" bindchange="swiperChange" circular="{{true}}" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item class="item" wx:for="{{imgUrls}}">
+                <image class="slide-image" src="{{item}}" style="width:100%;height:150px;"></image>
+            </swiper-item>
+        </swiper>
+        <view class="count">{{current+1}} / {{imgUrls.length}}</view>
+    </view>
+    <view class="content-box">
+        <view class="company-main">
+            <view class="flex">
+                <image class="logo" src="{{companyInfo.logo}}"></image>
+                <view>
+                    <view class="title">上海宏斌装饰<text class="rz" wx:if="{{companyInfo.isrz===1}}">
+                            <text class="v">v</text>认证</text>
+                    </view>
+                    <view class="anli">
+                        <text>案例 : {{companyInfo.al}}</text>
+                        <text>工地 : {{companyInfo.gd}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="add flex-main">
+                <view>
+                    <text class="iconfont icon-address"></text> {{companyInfo.add}}</view>
+                <text bindtap="calling" class="iconfont icon-phonenew" data-phone="{{companyInfo.phone}}"></text>
+            </view>
+            <view class="tsfw flex-main">
+                <view>特色服务 <text wx:for="{{companyInfo.tsfw}}" wx:key="{{index}}">{{item}} · </text>
+                </view>
+                <text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+            </view>
+        </view>
+        <view class="company-item a">
+            <view class="title">
+                <text>装修案例</text>
+                <navigator class="more" url="/pages/pic/pic">
+                    共{{companyInfo.allist.length}}个<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </navigator>
+            </view>
+            <view class="content">
+                <navigator class="item" url="/pages/actnews/actnews" wx:for="{{companyInfo.allist}}" wx:for-item="ite" wx:key="{{index}}">
+                    <view>
+                        <image src="{{ite.img}}"></image>
+                    </view>
+                    <view class="tit">{{ite.name}}</view>
+                    <view class="info">
+                        {{ite.size}}㎡ / {{ite.type}} / {{ite.qb}}
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="company-item b">
+            <view class="title">
+                <text>设计团队</text>
+                <navigator class="more" url="/pages/stylelist/stylelist">
+                    共{{companyInfo.sjtd.length}}人<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </navigator>
+            </view>
+            <view class="content">
+                <navigator class="item" url="/pages/opus/opus" wx:for="{{companyInfo.sjtd}}" wx:for-item="it" wx:key="{{index}}">
+                    <view>
+                        <image src="{{it.img}}"></image>
+                    </view>
+                    <view class="zw">{{it.zw}}</view>
+                    <view class="jy">{{it.jy}}年经验</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="company-item c">
+            <view class="title">
+                <text>工艺展示</text>
+                <text class="more">更多<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </text>
+            </view>
+            <view class="content">
+                <navigator class="item" url="" wx:for="{{companyInfo.gyzs}}" wx:for-item="te" wx:key="{{index}}">
+                    <image class="img" src="{{te.img}}"></image>
+                    <view>
+                        <view>{{te.name}}</view>
+                        <view class="jj">{{te.jj}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="company-item d">
+            <view class="title">
+                <text>装修工地({{companyInfo.zxgd.length}}个)</text>
+                <text class="more">更多<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </text>
+            </view>
+            <view class="content">
+                <navigator class="item" url="" wx:for="{{companyInfo.zxgd}}" wx:for-item="tm" wx:key="{{index}}">
+                    <view>
+                        <view class="name">{{tm.name}}</view>
+                        <view class="add">{{tm.add}}</view>
+                    </view>
+                    <view class="count">{{tm.count}}个工地<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="company-item b">
+            <view class="title">
+                <text>施工团队</text>
+                <text class="more">共{{companyInfo.sgtd.length}}人<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </text>
+            </view>
+            <view class="content">
+                <navigator class="item" url="" wx:for="{{companyInfo.sgtd}}" wx:for-item="mt" wx:key="{{index}}">
+                    <view class="img">
+                        <image src="{{mt.img}}"></image>
+                    </view>
+                    <view class="zw">{{mt.zw}}</view>
+                    <view class="jy">{{mt.jy}}年经验</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="company-item f">
+            <view class="title">
+                <text>商家信息</text>
+                <text class="more">更多<text class="iconfont icon-yousanjiao-copy-copy-copy"></text>
+                </text>
+            </view>
+            <view class="info">
+                <view>承接类型 : <text>{{companyInfo.sjxx.cjlx===''?'暂未设置承接类型':companyInfo.sjxx.cjlx}}</text>
+                </view>
+                <view>承接价位 : <text>{{companyInfo.sjxx.cjjw===''?'暂未设置承接价位':companyInfo.sjxx.cjjw}}</text>
+                </view>
+                <view>服务区域 : <text>{{companyInfo.sjxx.fwqy===''?'暂未设置服务区域':companyInfo.sjxx.fwqy}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<slcommon bind:setSysInfo="setSysInfo" hasAuth="{{true}}" tabShow="{{true}}"></slcommon>
+<slloading wx:if="{{!article.nodes}}"></slloading>

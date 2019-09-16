@@ -1,0 +1,11 @@
+<view class="_status-view" hidden="{{!state}}">
+    <loading-icon color="{{config.loading?config.loading.color:''}}" wx:if="{{state==='loading'}}"></loading-icon>
+    <block wx:elif="{{config[state]}}">
+        <slot name="emptyBefore" wx:if="{{state==='empty'}}"></slot>
+        <slot name="errorBefore" wx:if="{{state==='error'}}"></slot>
+        <i class="iconfont icon-{{config[state].icon}}" wx:if="{{config[state].icon}}"></i>
+        <text bindlongpress="{{state==='error'?'targetActionRun':''}}" data-action=":copyText" data-action-value="{{config[state].text}}">{{config[state].text}}</text>
+        <report-submit bindtap="btnTap" class="_status-view-button" data-action="{{config[state].btnAction}}" style="border-color:{{commonStyles.themeColor}};color:{{commonStyles.themeColor}}" wx:if="{{config[state].btnText}}">{{config[state].btnText}}</report-submit>
+        <view class="_status-view-version" wx:if="{{state==='error'}}">ver {{version}}</view>
+    </block>
+</view>

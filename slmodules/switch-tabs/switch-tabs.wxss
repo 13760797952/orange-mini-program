@@ -1,0 +1,103 @@
+._switch-tabs-wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-color: #efefef;
+    border-style: solid;
+    border-width: 0;
+    position: relative;
+}
+
+._switch-tabs-indicator {
+    position: absolute;
+    width: 0rpx;
+    height: 6rpx;
+    transition: all .2s ease-out;
+}
+
+._switch-tabs-vertical ._switch-tabs-indicator {
+    top: 0;
+    right: 0;
+}
+
+._switch-tabs-horizontal ._switch-tabs-indicator {
+    left: 0;
+    bottom: 0;
+}
+
+._switch-tabs-vertical {
+    width: 160rpx;
+    border-right-width: 1rpx;
+    padding: 20rpx 0;
+}
+
+._switch-tabs-horizontal {
+    height: 84rpx;
+    border-bottom-width: 1rpx;
+    padding: 0;
+}
+
+._switch-tabs {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+._switch-tabs-items-box {
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+._switch-tabs-vertical ._switch-tabs-items-box {
+    width: 160rpx;
+}
+
+._switch-tabs-horizontal ._switch-tabs-items-box {
+    height: 84rpx;
+}
+
+._switch-tabs-vertical>view._switch-tabs {
+    width: 100%;
+    flex-direction: column;
+}
+
+._switch-tabs-vertical>scroll-view._switch-tabs {
+    width: calc(100% + 12rpx);
+}
+
+._switch-tabs-vertical ._switch-tabs-item {
+    line-height: 60rpx;
+    margin: 20rpx 0;
+    margin-right: 12rpx;
+}
+
+._switch-tabs-horizontal>view._switch-tabs {
+    height: 100%;
+}
+
+._switch-tabs-horizontal>scroll-view._switch-tabs {
+    height: calc(100% + 12rpx);
+}
+
+._switch-tabs-horizontal ._switch-tabs-item {
+    display: inline-block;
+    line-height: 80rpx;
+    margin: 0;
+    padding: 0 30rpx;
+}
+
+._switch-tabs-item {
+    font-size: 30rpx;
+    text-align: center;
+    color: #333;
+    white-space: nowrap;
+    flex: 1;
+    transition: color .4s ease;
+}
+
+scroll-view._switch-tabs ._switch-tabs-items-box {
+    display: block;
+}

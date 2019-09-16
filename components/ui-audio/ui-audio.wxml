@@ -1,0 +1,19 @@
+<view bindtap="toggle" class="_ui-audio-wrap">
+    <view class="_ui-audio-progress">
+        <view class="_railway"></view>
+        <view class="_car" style="transform: scaleX({{currentTime/duration}}) translateZ(0);"></view>
+        <view class="_handle"></view>
+    </view>
+    <view class="_ui-audio" style="color:{{color}};">
+        <block wx:if="{{error}}">
+            <i class="iconfont icon-error"></i>
+            <text class="_error">{{error}}</text>
+        </block>
+        <block wx:else>
+            <loading-icon color="{{color}}" wx:if="{{loading}}"></loading-icon>
+            <i class="iconfont icon-{{paused?'play':'pause'}}" wx:else></i>
+            <text class="_title">{{title}}</text>
+            <text class="_time">{{currentTimeStr}} / {{durationStr}}</text>
+        </block>
+    </view>
+</view>

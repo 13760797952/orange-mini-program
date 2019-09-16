@@ -1,0 +1,18 @@
+<template name="buy-item">
+    <view bindtap="{{tapGo?'targetActionRun':''}}" class="buy-item" data-action=">commodity?id={{id}}">
+        <simg mode="aspectFit" src="{{image}}"></simg>
+        <view class="_info">
+            <view class="_row">
+                <text class="_title">{{title}}</text>
+                <text class="_number">数量: {{number}}</text>
+            </view>
+            <view class="_row _description" wx:if="{{!selectedOptionsLabel||!selectedOptionsLabel.length}}">{{description}}</view>
+            <view class="_row _bottom-row">
+                <view class="_options" wx:if="{{selectedOptionsLabel&&selectedOptionsLabel.length}}">
+                    <text wx:for="{{selectedOptionsLabel}}" wx:key="{{index}}">{{item}}</text>
+                </view>
+                <ui-price value="{{price}}"></ui-price>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,1 @@
+<view class="_ipx-bottom-placeholder" wx:if="{{show}}"></view>

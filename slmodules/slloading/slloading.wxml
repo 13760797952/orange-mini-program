@@ -1,0 +1,6 @@
+<view class="loading _loading-icon_wrap">
+    <view class="loading-main _loading-icon">
+        <i style="background:{{loadingColor}}" wx:for="12345678" wx:key="{{index}}"></i>
+    </view>
+</view>
+<view catchtouchstart="notTouch" class="loading-bg"></view>

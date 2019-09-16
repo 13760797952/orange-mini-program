@@ -1,0 +1,8 @@
+<view class="_html-content">
+    <block wx:for="{{nodes}}" wx:key="{{index}}">
+        <rich-text nodes="{{item}}" wx:if="{{item.length}}"></rich-text>
+        <simg bindtap="previewImages" data-src="{{item.attrs.src}}" mode="widthFix" src="{{item.attrs.src}}" style="{{item.attrs.style}}; width: 100%" wx:elif="{{item.name==='image'}}"></simg>
+        <ui-audio src="{{item.attrs.src}}" wx:elif="{{item.name==='audio'}}"></ui-audio>
+        <ui-video poster="{{item.attrs.poster}}" src="{{item.attrs.src}}" wx:elif="{{item.name==='video'}}"></ui-video>
+    </block>
+</view>

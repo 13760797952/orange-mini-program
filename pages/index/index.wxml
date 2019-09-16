@@ -1,0 +1,16 @@
+<slloading wx:if="{{loading}}"></slloading>
+<block wx:else>
+    <view catchtouchstart="notTouch" class="auth-bg"></view>
+    <button bindgetuserinfo="bindGetUserInfoClick" class="auth-hint" openType="getUserInfo">
+        <view class="head">需要您的授权</view>
+        <view class="content">
+            <view class="top">
+                <view>为了提供更好的服务</view>
+                <view>请在稍后的提示框中点击“允许”</view>
+            </view>
+            <image mode="widthFix" src="/public/images/auth.png"></image>
+            <view class="yoxi">我知道了</view>
+        </view>
+        <view class="version">ver {{syscfg.info.version}}</view>
+    </button>
+</block>

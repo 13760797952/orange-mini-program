@@ -1,0 +1,223 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    picUrl: '//static.o-home.com/v3/views/wap/page/baojiamf8/img',
+    waylist: [
+      {
+        img: "001_187c5ac.jpg",
+        text: "新房装修"
+      }, {
+        img: "002_90b44e3.jpg",
+        text: "旧房翻新"
+      }
+    ],
+    typelist: [
+      {
+        img: "01_d48b66d.jpg",
+        text: "一室",
+        stext: "(60m²以下)",
+        value: 60
+      }, {
+        img: "02_911927f.jpg",
+        text: "二室",
+        stext: "(60-80m²)",
+        value: 80
+      }, {
+        img: "03_047a3f4.jpg",
+        text: "三室",
+        stext: "(80-100m²)",
+        value: 100
+      }, {
+        img: "04_40b33a7.jpg",
+        text: "四室",
+        stext: "(100m²以上)",
+        value: 120
+      }
+    ],
+    stylelist: [
+      {
+        img: "05_d7ce921.jpg",
+        text: "北欧风格"
+      }, {
+        img: "06_4faa771.jpg",
+        text: "现代简约"
+      }, {
+        img: "07_c227b60.jpg",
+        text: "中式风格"
+      }, {
+        img: "08_404e0ea.jpg",
+        text: "美式风格"
+      },
+    ],
+    currentData: 0,
+    need: 0,
+    housetype: 0,
+    style: 0
+  },
+  onLoad: function (options) {
+    
+  },
+  nextPage: function (e){
+    const that = this;
+    var n = parseInt(e.target.dataset.current);
+    if (that.data.currentData === e.target.dataset.current) {
+      return false;
+    } else {
+      n++;
+      that.setData({
+        currentData: n
+      })
+    }
+  },
+  bindchange: function (e) {
+    const that = this;
+    that.setData({
+      currentData: e.detail.current
+    })
+  },
+  pushFormSubmit: function (e) {
+    var type = e.detail.target.dataset.btntype;
+    if(type=="radio"){
+      var name = e.detail.target.dataset.name;
+      var index = e.detail.target.dataset.index;
+      if(name=="need"){
+        this.setData({
+          need: index
+        })
+      } else if (name == "housetype") {
+        this.setData({
+          housetype: index
+        })
+      } else if (name == "style") {
+        this.setData({
+          style: index
+        })
+      }
+    }
+    if (type !="appoint"){
+      return false;
+    }
+    var values = e.detail.value;
+    console.log(values)
+    var that = this;
+    var wayIndex = this.data.need;
+    var housetypeIndex = this.data.housetype;
+    var styleIndex = this.data.style;
+    var phone = values.phone;
+    if (phone=="") {
+      wx.showModal({
+        title: '提示',
+        content: '请输入您的手机号码！',
+        showCancel: false
+      })
+      return;
+    }
+    if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(phone)) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号码！',
+        showCancel: false
+      })
+      return;
+    }
+    var data = {
+      //用户名必填
+      Nickname: "",
+      //电话号码
+      Phone_Number: phone,
+      //地区
+      Location: '',
+      //标记
+      Data_Type: 'XCXBJ2',
+      //来源
+      comefrom: 'WX',
+      //为1的话可以不用用户名
+      mark: 1,
+      //1为抢单,0为派单
+      is_rob: 0,
+      //面积
+      mianji: that.data.typelist[housetypeIndex].value,
+      //是否发短信1为发送
+      send: 0,
+      //备注
+      remark: "小程序报价页2：" + that.data.waylist[wayIndex].text + "；" + that.data.typelist[housetypeIndex].text+"；"+that.data.stylelist[styleIndex].text,
+      //员工编号
+      // salesCode: salesCode,
+      // storeCode: storeCode,
+      //智能客服类型
+      KefuType: 1
+    };
+    var swoopNum = that.GetStorageSync("swoopNum");
+    if(swoopNum>4){
+      wx.showModal({
+        title: '提示',
+        content: "今天的名额已经用完啦！",
+        showCancel: false
+      });
+      return false;
+    }
+    wx.request({
+      url: 'https://www.o-home.com/wap/swoop/saveSwoop',//相应的域名链接
+      data: data,
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.error || !res.data.code) {
+          wx.showModal({
+            title: '提示',
+            content: res.data.message,
+            showCancel: false
+          })
+        } else {
+          if (!swoopNum) {
+            that.SetStorageSync("swoopNum", 1);
+          } else {
+            that.SetStorageSync("swoopNum", parseInt(swoopNum) + 1);
+          }
+          wx.navigateTo({
+            url: '/pages/appointed/appointed?area=' + that.data.typelist[housetypeIndex].value,
+          })
+        }
+      }
+    })
+  },
+  SetStorageSync: function (key, value) {
+    wx.setStorageSync(key, value)
+    var timestamp = new Date().getTime()
+    // 设置24小时后过期
+    var remove_time = 3600000 * 24 + timestamp
+    wx.setStorageSync(key + 'remove', remove_time)
+  },
+  GetStorageSync: function (key, value) {
+    var remove_time = wx.getStorageSync(key + 'remove')
+    var timestamp = new Date().getTime()
+    var res = ''
+    if (timestamp > remove_time) {
+      // 过期
+      wx.removeStorageSync(key)
+    } else {
+      res = wx.getStorageSync(key)
+    }
+    return res
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '',
+      path: '',
+      success: function (res) {
+        // 转发成功
+        console.log('转发成功')
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log('转发失败')
+      }
+    }
+  },
+})

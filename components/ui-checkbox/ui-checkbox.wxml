@@ -1,0 +1,4 @@
+<view bindtap="click" class="_ui-checkbox-wrap">
+    <view class="_ui-checkbox {{value?'._checked':''}}" style="background-color:{{value?commonStyles.secondaryColor:''}}"></view>
+    <slot></slot>
+</view>

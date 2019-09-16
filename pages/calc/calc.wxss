@@ -1,0 +1,186 @@
+.box-gb {
+    width: 100%;
+    font-size: 0;
+}
+
+.box-gb image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-calc .box-body .box-input view {
+    line-height: 100rpx;
+}
+
+.box-calc {
+    border: 2rpx solid #e3e3e3;
+    border-radius: 20rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    margin-bottom: 20rpx;
+}
+
+.box-calc .box-title {
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+}
+
+.box-calc .box-title text {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #e3e3e3;
+    display: inline-block;
+    padding: 0 8rpx;
+}
+
+.box-calc .box-left-line,.box-calc .box-right-line {
+    display: inline-block;
+    width: 100rpx;
+    height: 2rpx;
+    background: #e3e3e3;
+    vertical-align: middle;
+}
+
+.box-calc .box-body {
+    padding: 0 40rpx 40rpx 40rpx;
+}
+
+.box-calc .box-body .box-margin {
+    background: #d0d2cd;
+    border-radius: 10rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-calc .box-body .box-padding {
+    background: #272816;
+    margin: 10rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+
+.box-calc .box-body .box-show {
+    height: 124rpx;
+    margin: 5rpx;
+    background: #d2d3cb;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    padding-right: 50rpx;
+    text-align: right;
+    line-height: 120rpx;
+    vertical-align: middle;
+}
+
+.box-calc .box-body .box-show .box-li {
+    display: inline-block;
+    width: 48rpx;
+    height: 96rpx;
+    margin-right: 6rpx;
+    vertical-align: middle;
+}
+
+.box-calc .box-body .box-show .box-li image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-calc .box-body .box-yuan {
+    position: absolute;
+    right: 24rpx;
+    bottom: 30rpx;
+    font-size: 30rpx;
+    color: #6e6e6c;
+}
+
+.box-calc .box-body .box-fay {
+    height: 120rpx;
+    border: 2rpx solid #e6e6e6;
+}
+
+.box-calc .box-body .box-fay .box-ul {
+    text-align: center;
+    font-size: 0;
+}
+
+.box-calc .box-body .box-fay .box-li {
+    display: inline-block;
+    width: 230rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #5d5d5d;
+}
+
+.box-calc .box-body .box-input {
+    height: 96rpx;
+    border: 2rpx solid #e6e6e6;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    background: #e8e8e8;
+    position: relative;
+}
+
+.box-calc .box-body .box-select-city {
+    line-height: 96rpx;
+    color: #333;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+}
+
+.box-calc .box-body .box-input input {
+    height: 100%;
+    padding: 0 20rpx;
+    font-size: 32rpx;
+}
+
+.box-calc .box-body .box-input.mj {
+    padding-right: 60rpx;
+}
+
+.box-calc .box-body .box-input.mj span {
+    position: absolute;
+    right: 30rpx;
+    top: 20rpx;
+    font-size: 40rpx;
+    color: #2d2d2d;
+}
+
+.box-calc .box-body .box-house-type {
+    line-height: 96rpx;
+    color: #333;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+}
+
+.box-calc .box-body .box-btn {
+    height: 96rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.box-calc .box-body .box-btn button {
+    background: #428bca;
+    color: #fff;
+}
+
+.box-calc .box-body .box-tips {
+    font-size: 24rpx;
+    color: #707070;
+    margin-top: 20rpx;
+}
+
+.box-calc .box-body .box-input .btn-get-phone-number {
+    position: absolute;
+    top: 8rpx;
+    right: 8rpx;
+    font-size: 32rpx;
+    color: #0cbb08;
+    background: transparent;
+    z-index: 10;
+}
+
+.box-calc .box-body .box-input .btn-get-phone-number:after {
+    border: 0;
+}

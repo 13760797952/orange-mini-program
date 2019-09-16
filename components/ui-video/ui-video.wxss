@@ -1,0 +1,36 @@
+._ui-video {
+    height: 0;
+    width: auto;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+._ui-video>image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transition: transform .2s ease;
+    transform: translateZ(0);
+}
+
+._ui-video>i {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    margin: -50rpx 0 0 -50rpx;
+    line-height: 1;
+    font-size: 100rpx;
+    color: #fff;
+    text-shadow: 0 4rpx 10rpx rgba(0,0,0,.2);
+    z-index: 1;
+    transition: transform .2s ease;
+    transform: translateZ(0);
+}
+
+._ui-video._hover>image,._ui-video._hover>i {
+    transform: scale(1.1) translateZ(0);
+}

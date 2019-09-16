@@ -1,0 +1,16 @@
+<template name="user-comment">
+    <view class="user-comment">
+        <view class="_top">
+            <image lazyLoad class="_avatar" mode="aspectFit" src="{{avatar}}"></image>
+            <view class="_info">
+                <text class="_name">{{name}}</text>
+                <text class="_time">{{time}}</text>
+            </view>
+        </view>
+        <view class="_content">{{content}}</view>
+        <view class="_options">{{optionText}}</view>
+        <view class="_images" wx:if="{{images&&images.length}}">
+            <image lazyLoad src="{{item}}" wx:for="{{images}}" wx:key="{{index}}"></image>
+        </view>
+    </view>
+</template>

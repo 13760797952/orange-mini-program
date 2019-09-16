@@ -1,0 +1,51 @@
+<template name="copyright">
+    <view bindtap="bindCopyrightClick" class="box-copyright" wx:if="{{syscfg.cpright.enabled_wxapp==1}}">
+        <view class="box-copyright-logo" wx:if="{{syscfg.cpright.logourl!=''}}">
+            <image mode="aspectFit" src="{{syscfg.cpright.logourl}}"></image>
+        </view>
+        <view class="box-copyright-text">{{syscfg.cpright.copyright_wxapp_l1}}</view>
+        <view wx:if="{{syscfg.cpright.copyright_wxapp_l2!=''}}">{{syscfg.cpright.copyright_wxapp_l2}}</view>
+    </view>
+</template>
+<template name="sysauth">
+    <view class="box-auth">
+        <view class="box-cont">
+            <i class="icon iconfont icon-tips icon-fnav"></i>
+            <view class="box-word">为了更好的体验，此应用需要获取你的昵称、头像等基本信息授权</view>
+            <view class="box-panel">
+                <button bindgetuserinfo="bindGetUserInfoClick" class="box-btn box-ok" openType="getUserInfo">确定授权</button>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="contact"></template>
+<template name="footernav">
+    <block wx:if="{{syscfg.menus.enabled==1}}">
+        <view class="box-footer-padding"></view>
+        <view class="box-fnav" style="{{syscfg.color.bottomcolor.length>0?'background:'+syscfg.color.bottomcolor:''}}">
+            <view class="box-ul">
+                <view bindtap="bindLinkClick" class="box-li" data-appid="{{item.appid}}" data-cc="{{syscfg.info.footerNavHover}}---{{index}}" data-ctype="footerNav" data-index="{{index}}" data-page="{{item.page_page}}" data-url="{{item.page_url}}" wx:for="{{syscfg.menus.items}}" wx:key="{{index}}">
+                    <block wx:if="{{syscfg.info.footerNavHover==index}}">
+                        <i class="icon iconfont {{item.icon}} icon-fnav" style="{{syscfg.color.bottomfonthovercolor.length>0?'color:'+syscfg.color.bottomfonthovercolor:''}}"></i>
+                        <text style="{{syscfg.color.bottomfonthovercolor.length>0?'color:'+syscfg.color.bottomfonthovercolor:''}}">{{item.title}}</text>
+                    </block>
+                    <block wx:else>
+                        <i class="icon iconfont {{item.icon}} icon-fnav" style="{{syscfg.color.bottomfontcolor.length>0?'color:'+syscfg.color.bottomfontcolor:''}}"></i>
+                        <text style="{{syscfg.color.bottomfontcolor.length>0?'color:'+syscfg.color.bottomfontcolor:''}}">{{item.title}}</text>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="box-suspend" wx:if="{{syscfg.suspend.suspend_show=='1'}}">
+        <view bindtap="bindLinkClick" class="box-img" data-url="{{syscfg.suspend.page_url}}">
+            <image class="img" src="{{syscfg.suspend.imageurl}}"></image>
+        </view>
+        <view bindtap="suspendCloseClick" class="box-close">
+            <i class="icon iconfont icon-fnav icon-close"></i>
+        </view>
+    </view>
+    <button class="contact" openType="contact" wx:if="{{syscfg.showcont==1}}">
+        <image src="/public/images/contact.png"></image>
+    </button>
+</template>

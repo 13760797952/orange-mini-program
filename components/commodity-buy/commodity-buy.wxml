@@ -1,0 +1,44 @@
+<fade-view bottom id="_commodity-buy-view" ipxStyle="background-color:#fff;">
+    <view class="_commodity-buy-wrap">
+        <view class="_commodity-buy-top">
+            <simg class="_commodity-buy-image" mode="aspectFit" src="{{buyData.image}}"></simg>
+            <view class="_commodity-buy-info">
+                <text class="_title">{{buyData.title}}</text>
+                <text class="_description">{{buyData.description}}</text>
+                <view class="_extra">
+                    <ui-price value="{{buyData.priceStr}}"></ui-price>
+                    <text class="_stock" wx:if="{{buyData.stock!==undefined}}">库存：{{buyData.stock}}{{commodityData.unit}}</text>
+                </view>
+            </view>
+        </view>
+        <scroll-view class="_commodity-buy-scroll">
+            <view class="_commodity-buy-options">
+                <view class="_option" wx:for="{{commodityData.options}}" wx:for-index="optionIndex" wx:for-item="option" wx:key="{{optionIndex}}">
+                    <view class="_label">{{option.label}}</view>
+                    <view class="_list">
+                        <view bindtap="clickItem" class="_item" data-item-id="{{item.id}}" data-option-index="{{optionIndex}}" style="{{buyData.selectedOptions[optionIndex]==item.id?activeStyle(commonStyles):''}}" wx:for="{{option.items}}" wx:for-index="itemIndex" wx:key="{{itemIndex}}">
+                            <image class="_item-image" mode="aspectFit" src="{{item.image}}" wx:if="{{item.image}}"></image>
+                            <text class="_item-label">{{item.label}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="_commodity-buy-number">
+                <view class="_label">购买数量</view>
+                <adder bindchange="numberChange" max="{{buyData.stock}}" min="1" value="{{buyData.number}}"></adder>
+            </view>
+        </scroll-view>
+        <view class="_commodity-buy-bottom">
+            <view class="_commodity-buy-btns {{buyData.checkSelected?'':'_disabled'}}">
+                <view bindtap="confirmByAction" data-action="custom" style="background-color: {{commonStyles.themeColor}};color:{{commonStyles.themeColorFront}};" wx:if="{{mode==='custom'}}">{{btnText}}</view>
+                <view bindtap="confirmByAction" data-action="add" hoverClass="_hover" style="background-color: {{commonStyles.themeColor}};color:{{commonStyles.themeColorFront}};" wx:if="{{mode==='all'||mode==='add'}}">加入购物车</view>
+                <view bindtap="confirmByAction" class="_buy" data-action="buy" hoverClass="_hover" style="background-color:{{commonStyles.secondaryColor}};color:{{commonStyles.themeColorFront}};" wx:if="{{mode==='all'||mode==='buy'}}">立即购买</view>
+            </view>
+        </view>
+    </view>
+</fade-view>
+<wxs module="activeStyle">
+module.exports = (function(commonStyles) {
+    return ('background-color: #fff; color: ' + commonStyles.themeColor + '; border-color:' + commonStyles.themeColor)
+});
+</wxs>

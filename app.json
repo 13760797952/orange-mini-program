@@ -1,0 +1,75 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/list/list",
+        "pages/play/play",
+        "pages/upinfo/upinfo",
+        "pages/guestbook/guestbook",
+        "pages/web/web",
+        "pages/stylist/stylist",
+        "pages/opus/opus",
+        "pages/calc/calc",
+        "pages/reserve/reserve",
+        "pages/actlist/actlist",
+        "pages/actlist2/actlist2",
+        "pages/ucenter/fav/fav",
+        "pages/ucenter/relist/relist",
+        "pages/style/style",
+        "pages/districtDetail/districtDetail",
+        "pages/decorationCompany/decorationCompany",
+        "pages/company/company",
+        "pages/search/search",
+        "pages/article/article",
+        "pages/ucenter/district/district",
+        "pages/address/address",
+        "pages/commodities/commodities",
+        "pages/commodity/commodity",
+        "pages/coupons/coupons",
+        "pages/coupons-supply/coupons-supply",
+        "pages/favorites/favorites",
+        "pages/order-commit/order-commit",
+        "pages/order-detail/order-detail",
+        "pages/orders/orders",
+        "custom-pages/main/main",
+        "pages/empty/empty",
+        "pages/panorama-detail/panorama-detail",
+        "pages/product-article/product-article",
+        "pages/ucenter/panorama/panorama",
+        "pages/decoTest/decoTest",
+        "pages/baojiamf/baojiamf",
+        "pages/daikuan/daikuan",
+        "pages/gotest/gotest",
+        "pages/huodong/huodong",
+        "pages/ohome/ohome",
+        "pages/ohome_index/ohome_index",
+        "pages/style_test/style_test",
+        "pages/styletest/styletest",
+        "pages/tbt_baojia/tbt_baojia",
+        "pages/yingzhuang/yingzhuang",
+        "pages/appointed/appointed",
+        "pages/ucenter/product/product"
+    ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示",
+        "provider": "string"
+      }
+    },
+    "window": {
+      "backgroundTextStyle": "dark",
+      "navigationBarBackgroundColor": "white",
+      "navigationBarTitleText": "橙家",
+      "navigationBarTextStyle": "black",
+      "enablePullDownRefresh": false
+    },
+    "tabBar": {
+      "list": [
+        {
+          "pagePath": "pages/empty/empty"
+        },
+        {
+          "pagePath": "custom-pages/main/main"
+        }
+      ]
+    }
+  }

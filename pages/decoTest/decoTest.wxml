@@ -1,0 +1,111 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page home-page" wx:if="{{currentPage==1}}">
+    <view class="parts">
+      <image src="{{imgUrl}}home01_011e4e3.png" class="shafa"></image>
+      <image src="{{imgUrl}}home02_0047d69.png" class="deng"></image>
+      <image src="{{imgUrl}}home03_9412044.png" class="shuazi"></image>
+      <image src="{{imgUrl}}home04_efc255f.png" class="qizi"></image>
+      <image src="{{imgUrl}}home05_27311a8.png" class="baozhen"></image>
+    </view>
+    <view class="center">
+      <image class="logo" src="{{imgUrl}}logo_7ae374c.png"></image>
+      <image class="home-text" src="{{imgUrl}}home-title_8241b5c.png"></image>
+      <view class="btn-group">
+        <view class="button" id="testBtn" data-page="2" bindtap='showPage'>马上测试</view>
+        <button class="button" id="shareBtn" open-type="share">发送给盆友</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="page main-page" wx:if="{{currentPage==2}}" animation="{{rotate3dA}}">
+    <block wx:for="{{questions}}" wx:key="questions">
+      <view class="question-item" wx:if="{{currentQs==index}}" animation="{{animationLsi}}">
+        <view class="qs-box">
+          <view class="qs-pic" style="background: url('{{imgUrl}}{{item.qspic}}') 0% 0% / cover;">
+            <image src="{{imgUrl}}{{item.speakpic}}" class="speak speak-{{item.name}}"></image>
+          </view>
+          <view class="qs-text qs-{{item.name}}">{{item.question}}</view>
+        </view>
+        <view class="choices" wx:if="{{item.name=='style'}}">
+          <view class="radio-list">
+            <view class="h3">*风格</view>
+            <view class="radio-group radio-inline">
+              <block wx:for-item="styleRadio" wx:for-index="rIndex" wx:for="{{item.radioList.style}}" wx:key="styleRadio">
+                <label class="ch-btn choice-{{item.name}} {{changedList.style==rIndex?'active':''}}" data-name="style" data-value="{{rIndex}}" bindtap="radioChange">
+                  <text></text>
+                  <image src="{{imgUrl}}{{styleRadio}}" width="100%" mode="aspectFit"></image>
+                </label>
+              </block>
+            </view>
+          </view>
+          <view class="radio-list">
+            <view class="h3">*色系</view>
+            <view class="radio-group radio-inline">
+              <block wx:for-item="dibanRadio" wx:for-index="rIndex" wx:for="{{item.radioList.diban}}" wx:key="dibanRadio">
+                <label class="ch-btn choice-{{item.name}} {{changedList.diban==rIndex?'active':''}}" data-name="diban" data-value="{{rIndex}}" bindtap="radioChange">
+                  <text></text>
+                  <image src="{{newImgUrl}}{{dibanRadio}}" width="100%" mode="aspectFit"></image>
+                </label>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="choices" wx:else>
+          <block wx:for-item="radio" wx:for-index="rIndex" wx:for="{{item.radioList}}" wx:key="radio">
+            <button class="ch-btn choice-{{item.name}} {{changedList[item.name]==radio.gear?'active':''}}" open-type="getUserInfo"
+  bindgetuserinfo="showResult" data-name="{{item.name}}" data-value="{{radio.gear}}" wx:if="{{index==5}}">{{radio.answer}}</button>
+            <label class="ch-btn choice-{{item.name}} {{changedList[item.name]==radio.gear?'active':''}}" data-name="{{item.name}}" data-value="{{radio.gear}}" bindtap="{{item.name=='together'?'showResult':'radioChange'}}" wx:else>
+              <text>{{radio.answer}}</text> 
+            </label>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="page result-page" wx:if="{{currentPage==3}}">
+
+      <view class="res-wrapper">
+        <canvas class='radarCanvas' style="width:{{wxSys.screenWidth}}px;height:{{wxSys.screenWidth*1.88}}px;" canvas-id='radarCanvas'></canvas>
+        <image src="{{radarImg}}" style="display:block;width:{{wxSys.screenWidth}}px;height:{{wxSys.screenWidth*1.88}}px;"></image>
+        <button class="res-btn btn1" bindtap="powerDrawer" data-statu="open"></button>
+        <button class="res-btn btn2" bindtap="share"></button>
+      </view>
+  </view>
+  <view class="loading-page {{isLoading?'show':'hide'}}">
+    <view class="trans-circle">
+      <image src="{{imgUrl}}{{loadPic[loadNum]}}" class="trans-pic"></image>
+      <view>正在努力测算中</view>
+      <text>请等待</text>
+      <text class="qtext"><text>•••</text></text>
+    </view>
+    <image class="logo" src="{{imgUrl}}logo_7ae374c.png"></image>
+  </view>
+
+  <!-- 弹窗 -->
+  <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+  <!--content-->
+  <!--使用animation属性指定需要执行的动画-->
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="drawer_content" wx:if="{{isAppointed}}">
+      <view class="drawer_title">获取成功！</view>
+      <image class="modal-pic2" src="{{newImgUrl}}modal-pic3.png"></image>
+          <view class="form_group">
+            <text class="tips-text">您已获得全屋设计礼包一份， \n 百度网盘连接: \n https://pan.baidu.com/s/1coDfSlSCcHmn6DlcUK2gqw</text>
+          </view>
+        <view class="tc"><button class="btn_ok" bindtap="copyLink">复制链接</button></view>
+    </view>
+    <view class="drawer_content" wx:else>
+      <view class="drawer_title">高清效果图免费下载</view>
+      <image class="modal-pic" src="{{newImgUrl}}modal-pic2.png"></image>
+      <form bindsubmit="appoint">
+          <view class="form_group">
+            <input type='text' class='tel-input' name="phoneNumber" placeholder='请输入您的手机，获取下载资格' placeholder-class="placeholderStyle" value='{{phoneNumber}}'/>
+          </view>
+        <view class="tc"><button form-type="submit" class="btn_ok">下载</button></view>
+      </form>
+    </view>
+    <view class="btn_close" bindtap="powerDrawer" data-statu="close"></view>
+  </view>
+</view>

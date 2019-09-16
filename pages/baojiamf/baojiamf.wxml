@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 页面嵌套小神推 -->
+  <swiper current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
+    <swiper-item class="page page1">
+      <form bindsubmit="pushFormSubmit"  report-submit='true'>
+        <view class="tc"><image class="logo" src="{{picUrl}}/logo_5246811.png"></image></view>
+        <image class="title-pic" src="{{picUrl}}/title_9648175.png" width="100%" mode="aspectFit"></image>
+        <image class="stitle-pic" src="{{picUrl}}/title-small_78bf1a5.png" width="100%"  mode="aspectFit"></image>
+        <view class="step tc">
+          <view class="progress">1/<text>3</text></view>
+          <text>我需要...</text>
+        </view>
+        <view class="choice-fill"></view>
+        <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
+        <view class="choice-section">
+          <radio-group class="radio-group" name="need">
+            <label class="radio" wx:for="{{waylist}}" wx:key="waylist">
+              <image src="{{picUrl}}/{{item.img}}" mode="aspectFit"></image>
+              <view class="tc radio-text">
+                <radio value="{{index}}" checked="{{need==index?true:false}}" />{{item.text}}
+              </view>
+              <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit" data-name="need" data-index="{{index}}" data-btntype="radio"></button>
+            </label>
+          </radio-group>
+        </view>
+        <view class="btn-group">
+          <button plain="true" formType="submit" class="button" data-current = "0" bindtap='nextPage'>下一步，走起来~</button>
+        </view>
+      </form>
+    </swiper-item>
+    <swiper-item class="page page2">
+      <form bindsubmit="pushFormSubmit"  report-submit='true'>
+        <view class="tc"><image class="logo" src="{{picUrl}}/logo_5246811.png"></image></view>
+        <image src="{{picUrl}}/title_9648175.png" width="100%" mode="aspectFit" class="title-pic"></image>
+        <view class="step tc">
+          <view class="progress">2/<text>3</text></view>
+          <text>我家户型是...</text>
+        </view>
+        <view class="choice-fill"></view>
+        <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
+        <view class="choice-section">
+          <radio-group class="radio-group" name="housetype">
+            <label class="radio" wx:for="{{typelist}}" wx:key="typelist">
+              <image src="{{picUrl}}/{{item.img}}" mode="aspectFit"></image>
+              <view class="tc radio-text">
+                <radio value="{{index}}" checked="{{housetype==index?true:false}}" />{{item.text}}
+                <text class="sname">{{item.stext}}</text>
+              </view>
+              <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit" data-name="housetype" data-index="{{index}}" data-btntype="radio"></button>
+            </label>
+          </radio-group>
+        </view>
+        <view class="btn-group">
+          <button plain="true" formType="submit" class="button" data-current = "1" bindtap='nextPage'>下一步，走起来~</button>
+        </view>
+      </form>
+    </swiper-item>
+    <swiper-item class="page page3">
+      <form bindsubmit="pushFormSubmit"  report-submit='true'>
+        <view class="tc"><image class="logo" src="{{picUrl}}/logo_5246811.png"></image></view>
+        <image src="{{picUrl}}/title_9648175.png" width="100%" mode="aspectFit" class="title-pic"></image>
+        <view class="step tc">
+          <view class="progress">3/<text>3</text></view>
+          <text>我最喜欢的风格是...</text>
+        </view>
+        <view class="choice-fill"></view>
+        <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
+        <view class="choice-section">
+          <radio-group class="radio-group" name="style">
+            <label class="radio" wx:for="{{stylelist}}" wx:key="stylelist">
+              <image src="{{picUrl}}/{{item.img}}" mode="aspectFit"></image>
+              <view class="tc radio-text">
+                <radio value="{{index}}" checked="{{style==index?true:false}}" />{{item.text}}
+              </view>
+              <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit" data-name="style" data-index="{{index}}" data-btntype="radio"></button>
+            </label>
+          </radio-group>
+        </view>
+        <view class="form-section">
+          <view class="form-title tc">看报价+方案，留个电话号码呗</view>
+          <input type="tel" placeholder='输入手机号,装修效果图将发送到您手机' name="phone"></input>
+          <button plain="true"  formType="submit" class="button" data-btntype="appoint">3秒获得结果</button>
+        </view>
+      </form>
+    </swiper-item>
+  </swiper>
+      <template is="footernav" data="{{syscfg:syscfg}}"></template>
+</view>

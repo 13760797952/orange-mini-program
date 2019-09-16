@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-nav {
+    height: 90rpx;
+    white-space: nowrap;
+    background: #fff;
+    z-index: 99;
+    padding: 0 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.box-nav .li {
+    min-width: 80rpx;
+    padding: 0 15rpx;
+    font-size: 30rpx;
+    color: #666;
+    line-height: 84rpx;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 6rpx solid #fff;
+}
+
+.box-nav .li.active {
+    color: #2fbd80;
+    border-bottom: 6rpx solid #2fbd80;
+}
+
+.box-list {
+    flex: 1;
+}
+
+.box-list .box-item {
+    position: relative;
+    height: 130rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #eee;
+    padding: 30rpx 0 30rpx 190rpx;
+}
+
+.box-list .box-item .box-img {
+    position: absolute;
+    top: 30rpx;
+    left: 0;
+    width: 160rpx;
+    height: 130rpx;
+}
+
+.box-list .box-item .box-img image {
+    max-width: 100%;
+    height: 100%;
+}
+
+.box-list .box-item .box-title {
+    font-size: 32rpx;
+    color: #000;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+}
+
+.box-list .box-item .box-word {
+    font-size: 28rpx;
+    color: #888;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

@@ -1,0 +1,6 @@
+<cover-view bindtap="hide" bindtransitionend="onTransitionEnd" class="_auth-setting-pop-wrap {{readyHide?'_ready-hide':''}}" wx:if="{{show}}">
+    <cover-view catchtap="stopPropagation" class="_auth-setting-pop">
+        <cover-view class="_content">暂无 {{permissionName}} 权限，请前往设置开启</cover-view>
+        <button bindtap="hide" class="_auth-setting-pop-button _clear-button-style" openType="openSetting" style="background-color:{{commonStyles.themeColor}};color:{{commonStyles.themeColorFront}};">前往设置</button>
+    </cover-view>
+</cover-view>

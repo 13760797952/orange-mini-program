@@ -1,0 +1,30 @@
+._copyright-info-wrap {
+    padding: 40rpx 0;
+}
+
+._copyright-info {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+}
+
+._owner-info {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+._owner-info>image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 6rpx;
+}
+
+._copyright-info>._more {
+    margin-top: 6rpx;
+    line-height: 1.4;
+}

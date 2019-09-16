@@ -1,0 +1,6 @@
+<import src="/templates/public"></import>
+<view class="container">
+    <template is="sysauth" data="{{syscfg:syscfg}}"></template>
+    <template is="copyright" data="{{syscfg:syscfg}}"></template>
+    <template is="footernav" data="{{syscfg:syscfg}}"></template>
+</view>

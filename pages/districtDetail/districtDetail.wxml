@@ -1,0 +1,72 @@
+<view class="district-detail {{loadingShow?'hide':''}}" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <scroll-view scrollWithAnimation scrollY scrollIntoView="lc_{{activeIndex}}" style="height:100vh;width:100%;">
+        <view class="banner" style="{{!districtData.thumb_url?'background-color:#eee':''}}">
+            <image class="banner-img" mode="widthFix" src="{{districtData.thumb_url?districtData.thumb_url:'/public/images/image-empty.svg'}}"></image>
+            <view class="info-box">
+                <view class="cname">{{districtData.title}}</view>
+                    <navigator openType="redirect" url="/pages/guestbook/guestbook">
+                        <button style="background:{{syscfg.color.btncolor.length?syscfg.color.btncolor:'#2fbd80'}};width:350rpx">预约参观工地</button>
+                    </navigator>
+                <view class="info">
+                    <text>{{districtData.budget_format}}万</text>
+                    <text>{{districtData.area}}㎡</text>
+                    <text wx:for="{{listStyle}}" wx:key="{{item.id}}">{{item.title}}</text>
+                </view>
+            </view>
+            <view class="find-fav">
+                <view class="find">
+                    <i class="iconfont icon-view"></i> {{districtData.view_count}}</view>
+                <i bindtap="shoucang" class="iconfont shoucang icon-{{districtData.isfav==='0'?'favor':'favorfill'}}"> {{districtData.fav_count}}</i>
+            </view>
+            <view class="banner-bg"></view>
+            <view bindtap="addressMap" class="address" data-address="{{districtData.address}}" data-latitude="{{districtData.coordinate_format.qq.lat}}" data-longitude="{{districtData.coordinate_format.qq.lng}}" data-name="{{districtData.title}}">
+                <i class="iconfont icon-position"></i> {{districtData.address}}</view>
+        </view>
+        <view class="content-main">
+            <view class="sglc">
+                <view class="title">施工流程</view>
+                <view class="lc">
+                    <view class="line-bg" style="left:{{marginLeft}}px;right:{{marginRight}}px">
+                        <view class="line" style="border-top:1rpx solid {{syscfg.color.maincolor}};width:{{100/(list_progress.length-1)*progress_check}}%"></view>
+                    </view>
+                    <view bindtap="mavClick" class="item" data-id="{{item.id}}" wx:for="{{list_progress}}" wx:key="{{item.id}}">
+                        <view class="item-icon" style="{{index<=progress_check?'border-color:'+syscfg.color.maincolor:''}};{{item.checked==='1'?'background:'+syscfg.color.maincolor:''}}"></view>
+                        <view class="item-text {{index===0?'text-f':''}}{{index===list_progress.length-1?'text-l':''}}" style="{{index<=progress_check?'color:'+syscfg.color.maincolor:''}}">{{item.title}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="lc-main">
+            <view class="item" id="lc_{{item.id_progress}}" wx:for="{{districtData.dy_list}}" wx:key="{{item.id}}">
+                <view class="left">
+                    <view class="icon">
+                        <image mode="aspectFit" src="{{syscfg.cpright.logo_url}}"></image>
+                    </view>
+                </view>
+                <view class="info">
+                    <view class="top">
+                        <view class="title">{{item.title}}<text class="jd">{{item.id_title}}</text>
+                        </view>
+                        <view class="intro">{{item.intro}}</view>
+                    </view>
+                    <view class="imgs">
+                        <image bindtap="previewImage" data-imgs="{{item.thumbs_url}}" data-src="{{ite}}" src="{{ite}}" wx:if="{{index<9}}" wx:for="{{item.thumbs_url}}" wx:for-item="ite" wx:key="{{index}}"></image>
+                        <view bindtap="previewImage" class="more-icon" data-imgs="{{item.thumbs_url}}" data-src="{{item.thumbs_url[0]}}" wx:if="{{item.thumbs_url.length>9}}">
+                            <text class="more">+</text>
+                            <text class="num">{{item.thumbs_url.length}}</text>
+                        </view>
+                        <view bindtap="previewImage" class="more-bg" data-imgs="{{item.thumbs_url}}" data-src="{{item.thumbs_url[0]}}" wx:if="{{item.thumbs_url.length>9}}"></view>
+                    </view>
+                    <view class="time">{{dateFr.formatTime(item.create_time)}}</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>
+<wxs module="dateFr">
+var formatTime = (function(date) {
+    return (date.slice(0, 10))
+});
+module.exports.formatTime = formatTime;
+</wxs>

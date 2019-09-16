@@ -1,0 +1,55 @@
+@import "../../public/wxParse/wxParse.wxss";
+
+.act-body {
+    padding-bottom: 20rpx;
+}
+
+.box-cont {
+    padding: 0 20rpx;
+}
+
+.act-body.status {
+    padding-bottom: 180rpx;
+}
+
+.act-body.x.status {
+    padding-bottom: 248rpx;
+}
+
+.act-body image {
+    max-width: 100%;
+}
+
+.box-adact image {
+    width: 100%;
+}
+
+.act-title {
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 30rpx;
+}
+
+.fixed-btn {
+    position: fixed;
+    bottom: 30rpx;
+    left: 20rpx;
+    width: 710rpx;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fixed-btn navigator,.fixed-btn>button {
+    width: 48%;
+    margin: 0;
+}
+
+.fixed-btn.x {
+    bottom: 98rpx;
+}
+
+.banner-img {
+    margin-top: 20rpx;
+}

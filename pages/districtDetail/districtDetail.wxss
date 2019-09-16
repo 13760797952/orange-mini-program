@@ -1,0 +1,303 @@
+.district-detail.hide {
+    opacity: 0;
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.content-main {
+    padding: 0 30rpx;
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40rpx;
+}
+
+.banner .info-box {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -60rpx;
+    left: 0;
+    z-index: 10;
+    color: #fff;
+}
+
+.banner .info-box .cname {
+    font-size: 44rpx;
+    margin-bottom: 30rpx;
+}
+
+.banner .info-box .info>text {
+    display: inline-block;
+    padding: 0 16rpx;
+    font-size: 26rpx;
+    margin: 0 10rpx;
+    border-radius: 6rpx;
+    background: #666;
+    line-height: 46rpx;
+}
+
+.find-fav {
+    position: absolute;
+    top: 30rpx;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 30rpx;
+    z-index: 8;
+}
+
+.banner .find-fav .find {
+    font-size: 28rpx;
+    margin-right: 20rpx;
+    display: inline-block;
+    color: #fff;
+    line-height: 42rpx;
+    padding: 0 10rpx;
+    background: #666;
+    border-radius: 4rpx;
+}
+
+.banner .find .iconfont {
+    font-size: 28rpx;
+}
+
+.banner .shoucang {
+    font-size: 28rpx;
+    line-height: 42rpx;
+    padding: 8rpx 20rpx;
+    color: #fff;
+    background: #666;
+    border-radius: 4rpx;
+}
+
+.banner .shoucang.icon-shoucang1 {
+    color: #777;
+}
+
+.banner .shoucang.icon-shoucang {
+    color: #ac1919;
+}
+
+.sglc .title {
+    margin-bottom: 30rpx;
+    font-size: 36rpx;
+}
+
+.sglc .lc {
+    font-size: 30rpx;
+    color: #999;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sglc .lc .line-bg {
+    position: absolute;
+    z-index: 8;
+    height: 2rpx;
+    border-top: 2rpx solid #eee;
+    top: 10rpx;
+}
+
+.sglc .lc .line-bg .line {
+    position: absolute;
+    z-index: 10;
+    height: 2rpx;
+}
+
+.sglc .lc .item {
+    position: relative;
+    text-align: center;
+}
+
+.sglc .lc .item .item-icon {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    border: 2rpx solid #999;
+    position: absolute;
+    background: #fff;
+    z-index: 10;
+    left: 50%;
+    margin-left: -8rpx;
+    top: 0;
+}
+
+.sglc .lc .item-text {
+    font-size: 30rpx;
+    color: #999;
+    padding-top: 50rpx;
+}
+
+.lc-main {
+    padding: 80rpx 0 40rpx;
+}
+
+.lc-main .item {
+    display: flex;
+    position: relative;
+    padding: 0 20rpx 30rpx;
+    border-bottom: 2rpx solid #eee;
+    margin-bottom: 30rpx;
+}
+
+.lc-main .item:last-child {
+    border-bottom: none;
+}
+
+.lc-main .item .left {
+    margin-right: 30rpx;
+}
+
+.lc-main .item .left .icon {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+    line-height: 80rpx;
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.lc-main .item .info {
+    width: 100%;
+}
+
+.lc-main .item .info .time {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.lc-main .item .info .top {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 20rpx;
+}
+
+.lc-main .item .info .top .title {
+    font-size: 38rpx;
+    color: #000;
+    margin-bottom: 10rpx;
+    display: flex;
+    line-height: 1.5;
+    align-items: flex-start;
+}
+
+.lc-main .item .info .top .jd {
+    border: 2rpx solid orangered;
+    padding: 0 10rpx;
+    display: inline-block;
+    margin-left: 10rpx;
+    font-size: 20rpx;
+    color: coral;
+    border-radius: 4rpx;
+    min-width: 40rpx;
+    text-align: center;
+    margin-top: 14rpx;
+}
+
+.lc-main .item .imgs {
+    line-height: 0;
+    position: relative;
+}
+
+.banner {
+    position: relative;
+    line-height: 0;
+}
+
+.banner>view {
+    line-height: 1.5;
+}
+
+.banner .banner-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: #000;
+    left: 0;
+    top: 0;
+}
+
+.banner .address {
+    position: absolute;
+    width: 100%;
+    bottom: 30rpx;
+    color: #fff;
+    left: 30rpx;
+    font-size: 28rpx;
+}
+
+.banner .address i {
+    margin-right: 4rpx;
+}
+
+.imgs .more-icon {
+    position: absolute;
+    right: 82rpx;
+    bottom: 100rpx;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.imgs .more-icon text.more {
+    font-size: 78rpx;
+}
+
+.imgs .more-icon text.num {
+    margin-top: 14rpx;
+    display: inline-block;
+    font-size: 46rpx;
+}
+
+.imgs .more-bg {
+    width: 24vw;
+    height: 24vw;
+    bottom: 8rpx;
+    right: 46rpx;
+    background: #000;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.lc-main .item image {
+    width: 24vw;
+    height: 24vw;
+    margin-right: 1.13vw;
+    margin-bottom: 1vw;
+    line-height: 0;
+}
+
+.lc-main .item .icon image {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0;
+}
+
+.lc-main .item image:nth-child(3n) {
+    margin-right: 0;
+}

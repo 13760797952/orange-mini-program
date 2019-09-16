@@ -1,0 +1,18 @@
+<message-popup></message-popup>
+<shortcut-bubble group="shop" wx:if="{{!callback}}"></shortcut-bubble>
+<switch-tabs bindchange="tabChange" current="{{type}}" items="{{tabItems}}" wx:if="{{!callback}}"></switch-tabs>
+<scroll-view enableBackToTop scrollY bindscrolltolower="nextPage" class="main-view">
+    <status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}"></status-view>
+    <block wx:else>
+        <view class="coupon-list">
+            <coupon-item binditembtntap="itemBtnTap" binditemtap="itemTap" btnText="{{item.failed||(callback?'使用':item.available?'去使用':'未生效')}}" class="coupon-item {{item.failed?'_failed':''}}" data="{{item}}" style="order:{{item.failed?1:0}}" wx:for="{{list}}" wx:key="{{index}}"></coupon-item>
+        </view>
+        <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+    </block>
+</scroll-view>
+<view class="common-bottom-panel-wrap" wx:if="{{callback}}">
+    <view class="common-bottom-panel common-bottom-btns">
+        <view bindtap="callBackNull" hoverClass="_hover">不使用优惠券</view>
+    </view>
+    <ipx-bottom></ipx-bottom>
+</view>

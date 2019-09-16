@@ -1,0 +1,130 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+._search-bar-wrap {
+    width: 100%;
+    position: relative;
+}
+
+._search-bar-box-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rpx 40rpx 18rpx;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+._search-bar-box {
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+._light>._search-bar-box {
+    background-color: rgba(0,0,0,.06);
+}
+
+._search-bar-box>input {
+    height: 100%;
+    line-height: inherit;
+    padding: 0 10rpx 0 60rpx;
+    font-size: 26rpx;
+    color: #666;
+    pointer-events: none;
+}
+
+._search-bar-placeholder {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateX(50%) translateZ(0);
+    transition: transform .2s ease-out;
+}
+
+._search-bar-placeholder ._content {
+    display: inline-block;
+    padding: 0 14rpx;
+    transform: translateX(-50%) translateZ(0);
+    transition: transform .2s ease-out;
+}
+
+._search-bar-placeholder i {
+    color: #909090;
+    margin-right: 6rpx;
+    font-size: 40rpx;
+}
+
+._search-bar-placeholder text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 28rpx;
+    color: #a5a5a5;
+    transition: opacity .2s ease-out;
+}
+
+._search-bar-placeholder._expand {
+    transform: translateX(0);
+}
+
+._search-bar-placeholder._expand ._content {
+    transform: translateX(0);
+}
+
+._search-bar-placeholder._expand text {
+    opacity: 0;
+}
+
+._search-history-box {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 100%;
+    background-color: #fff;
+    box-shadow: 0 4rpx 10rpx rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform .2s ease,opacity .2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+._search-history-box._show {
+    transform: translateZ(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+._search-history-box>view {
+    font-size: 28rpx;
+    white-space: nowrap;
+    line-height: 70rpx;
+    color: #999;
+    padding: 0 60rpx;
+    background-color: #fff;
+    transition: background-color .2s ease;
+    border-bottom: 1rpx solid #eee;
+}
+
+._search-history-box>view._hover {
+    background-color: #f4f4f4;
+}
+
+._search-history-box>._button {
+    margin: 10rpx 20rpx;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    border-radius: 6rpx;
+    border: 2rpx solid #eee;
+    align-self: flex-end;
+    color: #666;
+    transition: background-color .2s ease;
+}

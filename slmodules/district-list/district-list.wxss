@@ -1,0 +1,170 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.list-item {
+    background: #fff;
+    margin-top: 16rpx;
+    padding: 20rpx;
+    border: 2rpx solid #eee;
+}
+
+.list-item .jo {
+    font-size: 15px;
+    color: #000;
+}
+
+.list-item .pd {
+    padding: 20rpx;
+}
+
+.list-item .pd.nb {
+    padding-bottom: 0;
+}
+
+.list-item .tp {
+    padding: 0 10rpx;
+    border-radius: 6rpx;
+    background: #2fbd80;
+    color: #fff;
+    margin-right: 20rpx;
+    font-size: 24rpx;
+    font-weight: 700;
+}
+
+.list-item .top {
+    border-bottom: 1rpx solid #eee;
+    padding-bottom: 0;
+}
+
+.list-item .top .title {
+    font-size: 32rpx;
+}
+
+.list-item .top .jd {
+    display: inline-block;
+    padding: 6rpx 16rpx;
+    border-radius: 30rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: #2fbd80;
+    line-height: 26rpx;
+    height: 26rpx;
+    margin-left: 20rpx;
+}
+
+.list-item .info {
+    margin-top: 16rpx;
+}
+
+.list-item .title {
+    font-weight: 700;
+    color: #000;
+    font-size: 32rpx;
+}
+
+.list-item .ll {
+    padding-top: 10rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    font-size: 28rpx;
+    color: #999;
+    align-items: center;
+}
+
+.list-item .ll .lg {
+    margin-right: 20rpx;
+}
+
+.list-item .ll .iconfont {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.list-item image.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 40rpx;
+    margin-right: 20rpx;
+}
+
+.list-item .time {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.list-item .zw {
+    border-radius: 6rpx;
+    margin-left: 6rpx;
+    padding: 0 10rpx;
+    color: #2fbd80;
+    font-size: 24rpx;
+}
+
+.list-item .img image {
+    width: 32.3%;
+    margin-right: 1%;
+    height: 30vw;
+}
+
+.list-item .img {
+    padding-top: 20rpx;
+}
+
+.list-item .wgfs {
+    margin-right: 20rpx;
+}
+
+.list-item .fensi {
+    width: 76%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding-left: 76rpx;
+    box-sizing: border-box;
+}
+
+.list-item .fensi .icon {
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 28rpx;
+    padding-top: 4rpx;
+    width: 60rpx;
+    height: 60rpx;
+    background-color: #666;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.list-item .jo {
+    color: #000;
+    word-wrap: break-word;
+}
+
+.list-item .fensi image {
+    width: 52rpx;
+    height: 52rpx;
+    border-radius: 26rpx;
+    margin-right: 10rpx;
+}
+
+.list-item .jl {
+    color: aqua;
+    font-size: 24rpx;
+}
+
+.list-item .lg {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.list-item .fscount {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.list-item .pd.fensi-box {
+    padding-bottom: 0;
+}

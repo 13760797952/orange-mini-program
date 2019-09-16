@@ -1,0 +1,30 @@
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+}
+
+.main-view {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.coupon-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30rpx;
+}
+
+.coupon-item {
+    padding-top: 30rpx;
+}
+
+.coupon-item._failed {
+    filter: grayscale(1);
+}

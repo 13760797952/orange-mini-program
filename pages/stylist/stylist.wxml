@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="box-gb" wx:if="{{pageConfig.thumb_post_url}}">
+        <image bindload="imgLoad" mode="widthFix" src="{{pageConfig.thumb_post_url}}"></image>
+    </view>
+    <view class="box-stylist" wx:if="{{!(myDesingerList==null)&&myDesingerList.length>0}}">
+        <view class="box-cont">
+            <view class="box-ul">
+                <view class="box-li" wx:for="{{myDesingerList}}" wx:key="{{item.id}}">
+                    <view bindtap="clickRedirectToDesigner" class="box-img" data-id="{{item.id}}">
+                        <image src="{{item.thumb_url}}"></image>
+                    </view>
+                    <view bindtap="clickRedirectToDesigner" class="box-word" data-id="{{item.id}}">
+                        <view class="w-1">
+                            <text class="w-n">{{item.name}}</text>
+                            <text class="w-h">{{item.honour}}</text>
+                        </view>
+                        <view class="w-2">{{item.attr_1}}</view>
+                        <view class="w-3">{{item.attr_2}}</view>
+                    </view>
+                    <view bindtap="clickStylistCallMe" class="box-tel" data-tel="{{item.mobile}}" wx:if="{{item.mobile_status==='1'}}">
+                        <i class="icon iconfont icon-tel"></i>
+                        <view>电话</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

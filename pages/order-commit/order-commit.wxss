@@ -1,0 +1,82 @@
+@import "../../templates/address-overview/address-overview.wxss";
+
+@import "../../templates/buy-item/buy-item.wxss";
+
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+}
+
+.main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.address-select {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    transition: background-color .2s ease;
+    margin-bottom: 20rpx;
+}
+
+.address-select>i {
+    margin-left: auto;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.address-select-hover {
+    background-color: #f4f4f4;
+}
+
+.address-null {
+    font-size: 28rpx;
+    padding: 20rpx;
+    color: #999;
+}
+
+.buy-list {
+    background-color: #fff;
+}
+
+.bottom-panel {
+    height: 95rpx;
+    line-height: 95rpx;
+    background-color: #fff;
+    display: flex;
+    font-size: 28rpx;
+}
+
+ui-price {
+    font-size: 34rpx;
+}
+
+.minor-price {
+    color: #666;
+    font-weight: normal;
+}
+
+.pay-price {
+    font-size: 36rpx;
+    margin: 0 20rpx;
+}
+
+.pay-button {
+    margin-left: auto;
+    padding: 0 60rpx;
+    color: #fff;
+    transition: background-color .2s ease;
+}
+
+.pay-button._disabled {
+    background-color: #aaa!important;
+}

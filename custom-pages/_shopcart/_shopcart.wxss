@@ -1,0 +1,44 @@
+.main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.services-tip {
+    text-align: center;
+    display: flex;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    color: #666;
+}
+
+.services-tip>text {
+    flex: 1;
+}
+
+.cart-hot {
+    margin-top: auto;
+}
+
+.cart-hot-title {
+    font-size: 26rpx;
+    color: #999;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.cart-hot-title:before,.cart-hot-title:after {
+    content: '';
+    flex: 1;
+    margin-top: -1rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.cart-hot-title:before {
+    margin-right: 10rpx;
+}
+
+.cart-hot-title:after {
+    margin-left: 10rpx;
+}

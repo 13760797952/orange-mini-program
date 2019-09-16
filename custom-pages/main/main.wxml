@@ -1,0 +1,4 @@
+<shortcut-bubble catchtouchmove="stopPropagation" group="{{shortcutGroup}}" update="{{page}}"></shortcut-bubble>
+<include src="../pageGroup.wxml"></include>
+<custom-nav binddoubletaptab="onDoubleTapTab" catchtouchmove="stopPropagation" update="{{page}}"></custom-nav>
+<slcommon contactShow="{{shortcutGroup!=='shop'}}"></slcommon>

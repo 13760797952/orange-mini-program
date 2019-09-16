@@ -1,0 +1,57 @@
+<view class="container">
+    <view bindtap="bindLinkClick" class="box-gb" data-ctype="calc" data-url="{{pageConfig.page_url}}" wx:if="{{pageConfig.thumb_url}}">
+        <image bindload="imgLoad" mode="widthFix" src="{{pageConfig.thumb_url}}"></image>
+    </view>
+    <view class="box-cont" hidden="{{loadingShow}}">
+        <view class="box-calc">
+            <view class="box-title">
+                <view class="box-left-line"></view>
+                <text>你的装修预算</text>
+                <view class="box-right-line"></view>
+            </view>
+            <view class="box-body">
+                <view class="box-margin">
+                    <view class="box-padding">
+                        <view class="box-show">
+                            <view class="box-li" wx:for="{{calcNums}}" wx:key="{{index}}">
+                                <image src="{{item}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="box-yuan">元</view>
+                </view>
+                <view class="box-fay">
+                    <view class="box-ul">
+                        <view class="box-li">{{pageConfig.labour_cost_title}}：？ 元</view>
+                        <view class="box-li">{{pageConfig.stuff_cost_title}}：？ 元</view>
+                        <view class="box-li">{{pageConfig.style_cost_title}}：？ 元</view>
+                        <view class="box-li">{{pageConfig.qt_cost_title}}：？ 元</view>
+                    </view>
+                </view>
+                <view class="box-input">
+                    <picker bindchange="bindRegionChange" class="box-select-city" mode="region" value="{{regionSelectCity}}">
+                        <view class="picker">{{regionSelectCity[0]}} {{regionSelectCity[1]}} {{regionSelectCity[2]}}</view>
+                    </picker>
+                </view>
+                <view class="box-input mj">
+                    <input bindinput="bindAreaInput" maxlength="10" placeholder="请输入房屋面积" type="text" value="{{sendArea}}"></input>
+                    <span>㎡</span>
+                </view>
+                <view class="box-input">
+                    <picker bindchange="bindMultiPickerChange" class="box-house-type" mode="multiSelector" range="{{houseType}}" value="{{houseTypeValue}}">
+                        <view class="picker">{{sendHostType}}</view>
+                    </picker>
+                </view>
+                <view class="box-input">
+                    <input bindinput="bindTelInput" maxlength="20" placeholder="输入号码，报价自动发送" type="text" value="{{sendTel}}"></input>
+                    
+                </view>
+                <view class="box-btn">
+                    <button bindtap="fomrSubmitCalc" style="{{syscfg.color.btncolor.length>0?'background:'+syscfg.color.btncolor:''}}" type="default">立即计算</button>
+                </view>
+                <view class="box-tips">填写信息获取免费服务，定制更精准预算规划。</view>
+            </view>
+        </view>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

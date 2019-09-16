@@ -1,0 +1,35 @@
+<import src="../../templates/buy-item/buy-item.wxml"></import>
+<message-popup></message-popup>
+<shortcut-bubble group="shop"></shortcut-bubble>
+<switch-tabs scroll bindchange="tabChange" current="{{type}}" items="{{tabItems}}"></switch-tabs>
+<scroll-view enableBackToTop scrollY bindscrolltolower="nextPage" class="main-view">
+    <status-view binderrorbtntap="reLoad" config="{{statusViewConfig}}" state="{{statusViewState}}" wx:if="{{statusViewState}}">
+        <view class="empty-icon" slot="emptyBefore">
+            <image mode="aspectFit" src="/images/empty-box.png"></image>
+        </view>
+    </status-view>
+    <block wx:else>
+        <view class="orders-list">
+            <view bindtap="targetActionRun" class="orders-item" data-action=">order-detail?id={{item.id}}" hoverClass="_hover" wx:for="{{list}}" wx:key="{{index}}">
+                <view class="_top">
+                    <text class="_sn">订单号：{{item.orderSN}}</text>
+                    <text class="_state" style="color:{{statusMap[item.status].color}}">{{statusMap[item.status].title}}</text>
+                </view>
+                <view class="_mid">
+                    <template is="buy-item" data="{{...item}}" wx:for="{{item.buyList}}" wx:key="{{index}}"></template>
+                    <view class="_tip" wx:if="{{item.buyList.length<item.buyItemsLength}}">共 {{item.buyItemsLength}} 项商品</view>
+                </view>
+                <view class="_bottom">
+                    <view class="_left">
+						支付额：<ui-price class="pay-price" value="{{item.finalPrice}}"></ui-price>
+                    </view>
+                    <view class="_right">
+                        <view catchtap="targetActionRun" class="_button" data-action=">order-detail?id={{item.id}}&paynow=true" hoverClass="_hover" style="background-color:{{commonStyles.themeColor}};color:{{commonStyles.themeColorFront}};" wx:if="{{item.status===1}}">去付款</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <pager-loading config="{{pagerLoadingConfig}}" state="{{pagerLoadingState}}"></pager-loading>
+        <ipx-bottom></ipx-bottom>
+    </block>
+</scroll-view>

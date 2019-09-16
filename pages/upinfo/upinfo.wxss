@@ -1,0 +1,192 @@
+.box-info {
+    border: 1rpx solid #efedee;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    min-height: 300rpx;
+    font-size: 0;
+}
+
+.box-info .box-title {
+    text-align: center;
+    background: #fef3e1;
+}
+
+.box-info .box-title .box-up {
+    font-size: 30rpx;
+    color: #393532;
+    padding-top: 12rpx;
+    line-height: 68rpx;
+}
+
+.box-info .box-title .box-bottom {
+    font-size: 36rpx;
+    line-height: 48rpx;
+    color: #f69b32;
+    font-weight: bold;
+}
+
+.box-info .box-bb {
+    height: 30rpx;
+    overflow: hidden;
+}
+
+.box-info .box-bb .box-t {
+    width: 0;
+    height: 0;
+    border-width: 30rpx 355rpx 30rpx 355rpx;
+    border-style: solid;
+    border-color: #fef3e1 transparent transparent;
+}
+
+.box-info .box-word {
+    margin: 20rpx auto;
+    width: 380rpx;
+}
+
+.box-info .box-word .word {
+    text-align: left;
+    color: #646464;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.box-info .box-word .word .word-del {
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.box-tips {
+    margin-top: 10rpx;
+}
+
+.box-tips .item {
+    font-size: 26rpx;
+    color: #a6a6a6;
+    line-height: 50rpx;
+}
+
+.box-tips .item.color-gold {
+    color: #f69b32;
+}
+
+.box-form .box-title {
+    text-align: center;
+    padding: 90rpx 0 20rpx;
+    font-size: 30rpx;
+}
+
+.box-form .box-title text {
+    font-size: 46rpx;
+    line-height: 46rpx;
+    color: #f69b32;
+    display: inline-block;
+    padding: 0 60rpx;
+}
+
+.box-form .box-title .box-left-line,.box-form .box-title .box-right-line {
+    display: inline-block;
+    width: 70rpx;
+    height: 2rpx;
+    background: #f69b32;
+    vertical-align: 20rpx;
+}
+
+.box-form .box-title .box-left-line .after,.box-form .box-title .box-right-line .after {
+    display: block;
+    width: 34rpx;
+    height: 2rpx;
+    position: relative;
+    top: 20rpx;
+}
+
+.box-form .box-title .box-left-line .after {
+    right: -34rpx;
+}
+
+.box-form .box-title .box-right-line .after {
+    left: 0;
+}
+
+.box-form .box-subtitle {
+    color: #f69b32;
+    font-size: 26rpx;
+    text-align: center;
+}
+
+.box-form {
+    padding-bottom: 34rpx;
+}
+
+.box-form .box-item {
+    margin-top: 50rpx;
+    overflow: hidden;
+}
+
+.box-form .box-item .box-label {
+    background: #f8f8f8;
+    color: #7a7a7a;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    padding-left: 20rpx;
+}
+
+.box-form .box-item .box-opts {
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+}
+
+.box-form .box-item .box-opts .section {
+    padding-right: 20rpx;
+}
+
+.box-form .box-item .box-opts .section input {
+    border: 2rpx solid #f69b32;
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 20rpx;
+    border-radius: 10rpx;
+}
+
+.box-form .box-item .radio {
+    font-size: 26rpx;
+    min-width: 200rpx;
+    display: flex;
+    position: relative;
+    vertical-align: middle;
+    align-items: center;
+    line-height: 2.5;
+}
+
+.box-form .box-item radio .wx-radio-input {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.box-form .box-item .box-btn {
+    padding: 0 20rpx;
+}
+
+.box-form .box-item .box-btn.box-sp {
+    padding: 0 200rpx;
+}
+
+.box-form .box-item .box-tips {
+    padding: 40rpx 0;
+    text-align: center;
+    font-size: 26rpx;
+    color: #686868;
+}
+
+.box-form .box-item .box-btn.box-sp button {
+    border-radius: 50rpx;
+    background: #f69b32;
+    color: #fff;
+    border: none;
+}
+
+.radio radio .wx-radio-input.wx-radio-input-checked {
+    background-color: #f69b32!important;
+    border-color: #f69b32!important;
+}

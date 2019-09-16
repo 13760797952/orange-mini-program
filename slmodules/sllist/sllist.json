@@ -1,0 +1,21 @@
+{
+    "component": true,
+    "usingComponents": {
+        "slloading": "/slmodules/slloading/slloading",
+        "slcommon": "/slmodules/slcommons/slcommons",
+        "sllist": "/slmodules/sllist/sllist",
+        "district-list": "/slmodules/district-list/district-list",
+        "form-module": "../form-module/form-module",
+        "ipx-bottom": "/components/ipx-bottom/ipx-bottom",
+        "report-submit": "/components/report-submit/report-submit",
+        "status-view": "/components/status-view/status-view",
+        "pager-loading": "/components/pager-loading/pager-loading",
+        "loading-icon": "/components/loading-icon/loading-icon",
+        "simg": "/components/simg/simg",
+        "ui-price": "/components/ui-price/ui-price",
+        "shortcut-bubble": "/components/shortcut-bubble/shortcut-bubble",
+        "save-formid": "/slmodules/save-formid/save-formid",
+        "empty": "/components/empty/empty",
+        "copyright": "/components/copyright/copyright"
+    }
+}

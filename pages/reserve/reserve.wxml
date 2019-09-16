@@ -1,0 +1,36 @@
+<view class="container" style="min-height: {{syscfg.cpright.copyright_wxapp_l2!=''?'77':'81'}}vh">
+    <view class="box-gb" wx:if="{{pageConfig.thumb_post_url}}">
+        <image bindload="imgLoad" mode="widthFix" src="{{pageConfig.thumb_post_url}}"></image>
+    </view>
+    <view class="box-cont" hidden="{{loadingShow}}">
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="section">
+                <i class="icon iconfont icon-fnav icon-my"></i>
+                <input maxlength="50" name="user" placeholder="您的姓名" value="{{senduser}}"></input>
+            </view>
+            <view class="section">
+                <i class="icon iconfont icon-fnav icon-tel"></i>
+                <input maxlength="30" name="tel" placeholder="您的电话" type="number" value="{{sendtel}}"></input>
+            </view>
+            <view class="section">
+                <i class="icon iconfont icon-fnav icon-date"></i>
+                <view class="sdate">
+                    <picker bindchange="bindDateChange" mode="date" value="{{mydate}}">
+                        <view class="picker">{{mydate}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="section">
+                <i class="icon iconfont icon-fnav icon-guestbook"></i>
+                <textarea name="msg" placeholder="您的内容" value="{{sendmsg}}"></textarea>
+            </view>
+            <view class="section">
+                <input class="money" disabled="true" maxlength="30" placeholder="预约金额" value="预约金额 ￥{{pageConfig.reserve_money_format}}"></input>
+            </view>
+            <view class="box-btn">
+                <button formType="submit" style="{{syscfg.color.btncolor.length>0?'background:'+syscfg.color.btncolor:''}}" type="default">马上预约</button>
+            </view>
+        </form>
+    </view>
+</view>
+<slloading wx:if="{{loadingShow}}"></slloading>

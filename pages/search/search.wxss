@@ -1,0 +1,391 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAASAAAsAAAAABrwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY7lUcOY21hcAAAAYAAAABLAAABcOZBsvVnbHlmAAABzAAAAMsAAADMPwaZ1WhlYWQAAAKYAAAAMQAAADYTblVKaGhlYQAAAswAAAAgAAAAJAfTA31obXR4AAAC7AAAAAgAAAAICAD/7mxvY2EAAAL0AAAABgAAAAYAZgAAbWF4cAAAAvwAAAAeAAAAIAEOAEpuYW1lAAADHAAAAUUAAAJtPlT+fXBvc3QAAARkAAAAGwAAACxkiQEEeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByeSj6VZG7438AQw9zM0AYUZgTJAQDhOgwceJxjYGBgZWBgYAZiHSBmYWBgDGFgZAABP6AoI1icmYELLM7CoARWwwISfyr5/z+MBPJZwCQDIxvDKOABkzJQHjisIJiBEQBjlgnJAHicY2D6/+5/FQsbczODIIMtAwOjmZi4GBs7m5q6mpk9o5m5HSMjlFbXY1RXY2HnYxSXAyFzM3OghByjPBOIrabPrMZYv/AOP8fBKYtvC7DqG4px8WukMvYysQhycZlzGomoyVb921YdYmoiqCod+bFSWUGUX5QnRkC0i12an0eUq0zUSp05gOvI5MW3+TkPTfGYbizOza2o8bedmUWUXyDmWoK6gXQRe3nE52o1c5locz1+YT4eQY54IaE+TmF+fimOShFrTQBRoyuVAHicY2BkYGAA4tVJb9vi+W2+MnCzMIDADd2OFTD6/7v/VSxszM1ALgcDE0gUAF5tDJsAAAB4nGNgZGBgbvjfwBDDwvD/3f9fLGwMQBEUwAQAnzAGVwQAAAAEAP/uAAAAAABmAAB4nGNgZGBgYGKwA2IGMIuBgQsIGRj+g/kMAA68AVkAAHicZY9NTsMwEIVf+gekEqqoYIfkBWIBKP0Rq25YVGr3XXTfpk6bKokjx63UA3AejsAJOALcgDvwSCebNpbH37x5Y08A3OAHHo7fLfeRPVwyO3INF7gXrlN/EG6QX4SbaONVuEX9TdjHM6bCbXRheYPXuGL2hHdhDx18CNdwjU/hOvUv4Qb5W7iJO/wKt9Dx6sI+5l5XuI1HL/bHVi+cXqnlQcWhySKTOb+CmV7vkoWt0uqca1vEJlODoF9JU51pW91T7NdD5yIVWZOqCas6SYzKrdnq0AUb5/JRrxeJHoQm5Vhj/rbGAo5xBYUlDowxQhhkiMro6DtVZvSvsUPCXntWPc3ndFsU1P9zhQEC9M9cU7qy0nk6T4E9XxtSdXQrbsuelDSRXs1JErJCXta2VELqATZlV44RelzRiT8oZ0j/AAlabsgAAAB4nGNgYoAALgbsgImRiZGZgSm5goEBAAUtAPMA') format('woff');
+}
+
+.iconfont {
+    font-family: "iconfont"!important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+page {
+    background: #eee;
+}
+
+.quanjing {
+    min-height: 55vh;
+    padding-top: 230rpx;
+}
+
+.search-box {
+    padding: 30rpx 30rpx 16rpx;
+    font-size: 32rpx;
+    background: #fff;
+}
+
+.search-box .flex {
+    width: 600rpx;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10rpx 16rpx;
+}
+
+.search-box .quxiao {
+    color: #2fbd80;
+}
+
+.search-box .iconfont {
+    font-size: 32rpx;
+}
+
+.search-box input {
+    padding: 0 16rpx;
+}
+
+.flex-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.icon-cx:before {
+    content: "\e519";
+}
+
+.box-pic-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 80;
+    background: #fff;
+}
+
+.box-tab-pic {
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.box-tab-pic .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-tab-pic .box-li .box-item {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 106rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.box-tab-pic .box-li.active .box-item {
+    color: #2fbd80;
+}
+
+.box-pic-multi {
+    position: relative;
+}
+
+.box-pic-multi .box-options {
+    background: #fff;
+    display: flex;
+    width: 100%;
+    border-top: 2rpx solid #f5f5f5;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.box-options {
+    position: relative;
+}
+
+.box-options .box-options-body {
+    position: absolute;
+    width: 100vw;
+    background: #fff;
+    top: 95rpx;
+    left: 0;
+    height: 0;
+    z-index: 999;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.box-tab-pic .box-li .box-item i.iconfont {
+    font-size: 32rpx;
+}
+
+.box-options .box-options-body .box-ul {
+    padding-top: 30rpx;
+}
+
+.box-options .box-options-body.show {
+    transition: all .3s;
+}
+
+.box-pic-multi .box-options .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-pic-multi .box-options .box-li .box-item {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 90rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.box-pic-multi .box-options .box-li .box-item .icon {
+    font-size: 20rpx;
+    margin-left: 4rpx;
+}
+
+.box-pic-multi .box-options-body .box-ul {
+    width: 100%;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.box-pic-multi .box-options-body .box-li {
+    width: 170rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 20rpx 38rpx;
+    color: #404040;
+    border: 2rpx solid #eee;
+    float: left;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+}
+
+.box-pic-multi .box-options-body .box-li.active {
+    border-color: #2fbd80;
+    color: #2fbd80;
+}
+
+.box-pic-single {
+    position: relative;
+}
+
+.box-pic-single .box-options {
+    background: #fff;
+    display: flex;
+    width: 100%;
+    border-top: 2rpx solid #f5f5f5;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.box-pic-single .box-options .box-li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-pic-single .box-options .box-li .box-item {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 90rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.box-pic-single .box-options .box-li .box-item .icon {
+    font-size: 20rpx;
+    margin-left: 4rpx;
+}
+
+.box-pic-single .box-options-body .box-ul {
+    width: 100%;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.box-pic-single .box-options-body .box-li {
+    width: 170rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 20rpx 38rpx;
+    color: #404040;
+    border: 2rpx solid #eee;
+    float: left;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+}
+
+.box-pic-single .box-options-body .box-li.active {
+    border-color: #2fbd80;
+    color: #2fbd80;
+}
+
+.box-pic .box-pic-list-multi {
+    overflow: hidden;
+    padding-top: 250rpx;
+    background: #eee;
+    min-height: 55vh;
+    padding-bottom: 40rpx;
+}
+
+.box-pic .box-pic-list-multi .box-ul {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-multi .box-li {
+    font-size: 0;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 20rpx;
+    width: 343rpx;
+    border-radius: 10rpx 10rpx 0 0;
+    border: 1rpx solid #f5f5f5;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fl {
+    width: 700rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fl .box-li {
+    float: left;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fr {
+    width: 700rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-ul .fr .box-li {
+    float: right;
+}
+
+.box-pic .box-pic-list-multi .box-li image {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-title {
+    font-size: 24rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 40rpx;
+    color: #535253;
+    padding: 10rpx 20rpx 0;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr {
+    font-size: 24rpx;
+    color: #535253;
+    padding: 10rpx 20rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr .ba-left {
+    float: left;
+    width: 150rpx;
+}
+
+.box-pic .box-pic-list-multi .box-li .box-attr .ba-right {
+    float: right;
+    width: 150rpx;
+    text-align: right;
+}
+
+.box-pic .box-pic-list-single {
+    overflow: hidden;
+    padding-top: 250rpx;
+    background: #eee;
+    min-height: 55vh;
+    padding-bottom: 40rpx;
+}
+
+.box-pic .box-pic-list-single .box-ul {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-single .box-li {
+    font-size: 0;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+    width: 345rpx;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.box-pic .box-pic-list-single .box-ul .fl {
+    width: 700rpx;
+    float: left;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-single .box-ul .fl .box-li {
+    float: left;
+}
+
+.box-pic .box-pic-list-single .box-ul .fr {
+    width: 700rpx;
+    float: left;
+    overflow: hidden;
+    padding-right: 5rpx;
+}
+
+.box-pic .box-pic-list-single .box-ul .fr .box-li {
+    float: left;
+}
+
+.box-pic .box-pic-list-single .box-li image {
+    width: 100%;
+}
+
+.box-pic .box-pic-list-single .box-li .box-attr {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 24rpx;
+    color: #fff;
+    padding: 10rpx 20rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.box-pic .box-pic-list-single .box-li .box-attr .ba-right {
+    float: right;
+    width: 150rpx;
+    text-align: right;
+}
+
+.box-shadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 70;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

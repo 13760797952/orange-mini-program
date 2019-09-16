@@ -1,0 +1,43 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.page-top {
+    font-size: 28rpx;
+    position: relative;
+    padding: 0 30rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.page-top .iconfont {
+    font-size: 34rpx;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+}
+
+.page-top .icon-prev {
+    margin-right: 30rpx;
+}
+
+.page-top .title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    left: 0;
+}
+
+.page-top .title .tit {
+    max-width: 50vw;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
